@@ -1,0 +1,77 @@
+@use 'colors';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: url('../images/background.jpg');
+	font-family: 'Lato', sans-serif;
+}
+
+.homepage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	background: url('../images/background-welcome.jpg');
+	background-size: cover;
+	background-position: center;
+
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		width: 900px;
+		height: 610px;
+		background-size: cover;
+		background-position: center;
+	}
+
+	&__title {
+		width: 3em;
+		margin-bottom: 1em;
+		font-size: 3.5em;
+		font-family: 'Dancing Script', cursive;
+		text-transform: uppercase;
+		font-weight: 300;
+		text-align: center;
+	}
+
+	&__button {
+		padding: 1em 3em;
+		background-color: colors.$main-color;
+		border-radius: 16px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: colors.$white-color;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: colors.$second-color;
+		}
+	}
+}
+
+@media screen and (min-height: 768px) and (max-width: 992px) {
+	.homepage {
+		&__title {
+			font-size: 4em;
+		}
+	}
+}
+
+@media screen and (min-height: 912px) and (min-width: 1024px) {
+	.homepage {
+		&__title {
+			font-size: 5em;
+		}
+	}
+}
