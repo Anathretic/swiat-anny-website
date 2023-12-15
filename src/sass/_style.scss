@@ -10,7 +10,14 @@
 
 body {
 	background: url('../images/background.jpg');
+	background-attachment: fixed;
 	font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1660px;
 }
 
 .homepage {
@@ -60,6 +67,80 @@ body {
 	}
 }
 
+.main-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&__first-frame,
+	&__second-frame,
+	&__third-frame,
+	&__fourth-frame,
+	&__fifth-frame {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin: 2em 0;
+		width: 272px;
+		height: 401px;
+		background-image: url('../images/frame-400-horizontal.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	&__title {
+		width: 100%;
+		margin-bottom: 2em;
+		font-size: 2em;
+		font-family: 'Dancing Script', cursive;
+		text-transform: uppercase;
+		font-weight: 300;
+		text-align: center;
+	}
+
+	&__button {
+		padding: 0.75em 3em;
+		background-color: colors.$main-color;
+		border-radius: 16px;
+		font-size: 0.9em;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: colors.$white-color;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: colors.$second-color;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.main-section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		&__first-frame,
+		&__second-frame,
+		&__third-frame,
+		&__fourth-frame,
+		&__fifth-frame {
+			margin: 2em;
+		}
+
+		&__title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 2em;
+		}
+	}
+}
+
 @media screen and (min-height: 768px) and (max-width: 992px) {
 	.homepage {
 		&__title {
@@ -72,6 +153,30 @@ body {
 	.homepage {
 		&__title {
 			font-size: 5em;
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.main-section {
+		&__first-frame,
+		&__second-frame,
+		&__third-frame,
+		&__fourth-frame,
+		&__fifth-frame {
+			margin: 3em;
+			width: 410px;
+			height: 601px;
+			background-image: url('../images/frame-600-horizontal.png');
+		}
+
+		&__title {
+			font-size: 3em;
+		}
+	
+		&__button {
+			padding: 0.75em 3.5em;
+			font-size: 1em;
 		}
 	}
 }
