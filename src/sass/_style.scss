@@ -11,7 +11,7 @@
 body {
 	background: url('../images/background.jpg');
 	background-attachment: fixed;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper {
@@ -72,6 +72,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	padding: 1em 0;
 
 	&__first-frame,
 	&__second-frame,
@@ -116,6 +117,58 @@ body {
 	}
 }
 
+.footer {
+	padding: 1em 1em 0;
+	background-color: #708d75;
+	color: colors.$white-color;
+	font-size: 1em;
+	text-align: center;
+
+	&__text {
+		padding: 1em;
+	}
+
+	&__icons-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-top: 0.5em;
+	}
+
+	&__icon {
+		display: flex;
+		margin: 0.65em 0.65em 0.35em;
+		color: colors.$white-color;
+		font-size: 28px;
+		transition: color 0.3s;
+	}
+
+	&__copyright {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1.1em 1em;
+		letter-spacing: 1px;
+
+		&-icon {
+			margin-right: 2px;
+			font-size: 16px;
+		}
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.footer {
+		&__icons-box {
+			padding: 0.5em 1em;
+		}
+
+		&__icon {
+			margin: 0.75em 0.75em 0;
+		}
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.main-section {
 		display: flex;
@@ -139,6 +192,20 @@ body {
 			height: 2em;
 		}
 	}
+
+	.footer {
+		font-size: 1.1em;
+
+		&__icon {
+			font-size: 32px;
+		}
+
+		&__copyright {
+			&-icon {
+				font-size: 20px;
+			}
+		}
+	}
 }
 
 @media screen and (min-height: 768px) and (max-width: 992px) {
@@ -153,6 +220,24 @@ body {
 	.homepage {
 		&__title {
 			font-size: 5em;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.footer {
+		font-size: 1.2em;
+
+		&__text {
+			padding: 1em;
+		}
+
+		&__icon {
+			font-size: 36px;
+
+			&:hover {
+				color: colors.$second-color;
+			}
 		}
 	}
 }
@@ -173,7 +258,7 @@ body {
 		&__title {
 			font-size: 3em;
 		}
-	
+
 		&__button {
 			padding: 0.75em 3.5em;
 			font-size: 1em;
