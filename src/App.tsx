@@ -34,18 +34,6 @@ export const App: React.FC = () => {
 								zobacz
 							</Link>
 						</div>
-						<div className='main-section__fourth-frame'>
-							<h3 className='main-section__title'>kontakt</h3>
-							<Link to='/' className='main-section__button'>
-								napisz
-							</Link>
-						</div>
-						<div className='main-section__fifth-frame'>
-							<h3 className='main-section__title'>regulamin</h3>
-							<Link to='/' className='main-section__button'>
-								zobacz
-							</Link>
-						</div>
 					</div>
 				</div>
 			</main>
