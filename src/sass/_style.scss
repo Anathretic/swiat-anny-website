@@ -72,26 +72,23 @@ body {
 }
 
 .header {
+	position: sticky;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: sticky;
-	width: 100%;
-	height: 120px;
 	top: 0;
 	background-color: #708d75;
 
 	&__box {
 		display: flex;
-		justify-content: space-between;
+		justify-content: end;
 		align-items: center;
+		flex-direction: column;
 		width: 100%;
+		height: 120px;
 	}
 
 	&__title {
-		display: flex;
-		align-items: center;
-		padding-left: 0.5em;
 		font-size: 2.2em;
 		font-weight: 400;
 		font-family: 'Dancing Script', cursive;
@@ -102,31 +99,28 @@ body {
 		}
 	}
 
-	&__mobile-button {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 0.4em;
-		margin-right: 0.5em;
-		background-color: transparent;
-		color: colors.$white-color;
-		border: 1px solid colors.$white-color;
-		border-radius: 8px;
-		font-size: 26px;
+	&__nav {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr;
+		width: 100%;
+		padding-top: 1em;
 	}
 
-	&__nav-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	&__desktop-link {
-		margin: 1.5em;
+	&__nav-link {
+		padding: 0.8em 0;
 		color: colors.$white-color;
-		font-size: 1.1em;
+		border: 1px solid black;
+		font-size: 1em;
 		text-decoration: none;
+		text-align: center;
 		transition: color 0.3s;
+	}
+
+	&__nav-link:first-of-type,
+	&__nav-link:last-of-type {
+		border-left: none;
+		border-right: none;
 	}
 }
 
@@ -244,6 +238,7 @@ body {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			flex-direction: row;
 			padding: 0 2em;
 			margin: 0 auto;
 			width: 100%;
@@ -251,12 +246,19 @@ body {
 		}
 
 		&__title {
-			padding: 1em 0;
 			margin: 0 0.25em;
+			width: 100%;
 		}
 
-		&__nav-container {
-			padding-bottom: 0;
+		&__nav {
+			display: flex;
+			justify-content: flex-end;
+			padding: 0;
+		}
+
+		&__nav-link {
+			margin: 1.5em;
+			border: none;
 		}
 	}
 
@@ -316,7 +318,11 @@ body {
 
 @media screen and (min-width: 1024px) {
 	.header {
-		&__desktop-link {
+		&__title {
+			font-size: 3em;
+		}
+
+		&__nav-link {
 			font-size: 1.2em;
 
 			&:hover {
