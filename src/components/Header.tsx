@@ -6,7 +6,15 @@ export const Header: React.FC = () => {
 			<div className='header__box'>
 				<h2 className='header__title'>
 					<Link to='/' className='header__title-link'>
-						Anna Maluje
+						<span>Ś</span>
+						<span>w</span>
+						<span>i</span>
+						<span>a</span>
+						<span>t</span>
+						<span>A</span>
+						<span>n</span>
+						<span>n</span>
+						<span>y</span>
 					</Link>
 				</h2>
 				<nav className='header__nav'>

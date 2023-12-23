@@ -1,0 +1,14 @@
+@use 'colors';
+
+@keyframes title-animation {
+	0%,
+	100% {
+		-webkit-text-stroke-color: colors.$neon-pink;
+		text-shadow: 0 0 0.5em colors.$neon-pink;
+	}
+	20%,
+	80% {
+		-webkit-text-stroke-color: #111;
+		text-shadow: none;
+	}
+}

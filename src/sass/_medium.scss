@@ -1,0 +1,71 @@
+@use 'mixins';
+
+@media screen and (min-width: 768px) {
+	.homepage {
+		&__title {
+			font-size: 6em;
+		}
+	}
+
+	.header {
+		&__box {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row;
+			padding: 0 2em;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1600px;
+		}
+
+		&__title {
+			margin: 0 0.25em;
+			width: 100%;
+		}
+
+		&__nav {
+			display: flex;
+			justify-content: flex-end;
+			padding: 0;
+		}
+
+		&__nav-link {
+			margin: 1.5em;
+			border: none;
+		}
+	}
+
+	.main-section {
+		@include mixins.center-flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		&__first-frame,
+		&__second-frame,
+		&__third-frame,
+		&__fourth-frame,
+		&__fifth-frame {
+			margin: 2em;
+		}
+
+		&__title {
+			@include mixins.center-flex;
+			height: 2em;
+		}
+	}
+
+	.footer {
+		font-size: 1.1em;
+
+		&__icon {
+			font-size: 32px;
+		}
+
+		&__copyright {
+			&-icon {
+				font-size: 20px;
+			}
+		}
+	}
+}
