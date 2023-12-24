@@ -36,25 +36,6 @@
 		}
 	}
 
-	.main-section {
-		@include mixins.center-flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-
-		&__first-frame,
-		&__second-frame,
-		&__third-frame,
-		&__fourth-frame,
-		&__fifth-frame {
-			margin: 2em;
-		}
-
-		&__title {
-			@include mixins.center-flex;
-			height: 2em;
-		}
-	}
-
 	.footer {
 		font-size: 1.1em;
 

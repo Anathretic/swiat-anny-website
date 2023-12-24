@@ -11,14 +11,8 @@
 }
 
 body {
-	background: rgb(2, 0, 36);
+	background: rgb(0, 14, 36);
 	font-family: 'Montserrat', sans-serif;
-}
-
-.wrapper {
-	margin: 0 auto;
-	width: 100%;
-	max-width: 1660px;
 }
 
 .scroll-block {
@@ -27,12 +21,10 @@ body {
 
 .homepage {
 	@include mixins.center-flex;
+	@include mixins.background;
 	width: 100%;
 	height: 100%;
 	min-height: 100vh;
-	background: url('../images/background-welcome.jpg');
-	background-size: cover;
-	background-position: center;
 
 	&__container {
 		@include mixins.center-flex;
@@ -155,10 +147,10 @@ body {
 }
 
 .header {
-	position: sticky;
 	@include mixins.center-flex;
-	top: 0;
-	background-color: colors.$main-color;
+	position: fixed;
+	width: 100%;
+	background-color: rgb(0, 14, 36);
 
 	&__box {
 		display: flex;
@@ -252,53 +244,15 @@ body {
 
 .main-section {
 	@include mixins.center-flex;
+	@include mixins.background;
 	flex-direction: column;
-	padding: 1em 0;
-
-	&__first-frame,
-	&__second-frame,
-	&__third-frame,
-	&__fourth-frame,
-	&__fifth-frame {
-		@include mixins.center-flex;
-		flex-direction: column;
-		margin: 2em 0;
-		width: 272px;
-		height: 401px;
-		background-image: url('../images/frame-400-horizontal.png');
-		background-size: cover;
-		background-position: center;
-	}
-
-	&__title {
-		margin-bottom: 2em;
-		width: 100%;
-		font-size: 2em;
-		font-family: 'Dancing Script', cursive;
-		font-weight: 300;
-		text-transform: uppercase;
-		text-align: center;
-	}
-
-	&__button {
-		padding: 0.75em 3em;
-		background-color: colors.$main-color;
-		color: colors.$white-color;
-		border-radius: 16px;
-		font-size: 0.9em;
-		text-decoration: none;
-		text-transform: uppercase;
-		transition: background-color 0.3s;
-
-		&:hover {
-			background-color: colors.$second-color;
-		}
-	}
+	padding: 0 0 1em 0;
+	min-height: 100vh;
 }
 
 .footer {
 	padding: 1em 1em 0;
-	background-color: colors.$main-color;
+	background-color: rgb(0, 14, 36);
 	color: colors.$white-color;
 	font-size: 1em;
 	text-align: center;

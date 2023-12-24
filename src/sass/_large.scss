@@ -1,6 +1,10 @@
 @use 'colors';
 
 @media screen and (min-width: 1024px) {
+	body {
+		overflow-x: hidden;
+	}
+
 	.homepage {
 		&__title {
 			font-size: 7em;
@@ -23,6 +27,10 @@
 				color: colors.$second-color;
 			}
 		}
+	}
+
+	.main-section {
+		margin-right: -17px;
 	}
 
 	.footer {
@@ -50,28 +58,6 @@
 
 		&__button {
 			padding: 1em 6em;
-		}
-	}
-
-	.main-section {
-		&__first-frame,
-		&__second-frame,
-		&__third-frame,
-		&__fourth-frame,
-		&__fifth-frame {
-			margin: 3em;
-			width: 410px;
-			height: 601px;
-			background-image: url('../images/frame-600-horizontal.png');
-		}
-
-		&__title {
-			font-size: 3em;
-		}
-
-		&__button {
-			padding: 0.75em 3.5em;
-			font-size: 1em;
 		}
 	}
 }
