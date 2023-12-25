@@ -15,7 +15,7 @@ export const Welcome: React.FC = () => {
 					<span>n</span>
 					<span>y</span>
 				</h1>
-				<Link to='anna-maluje' className='homepage__button'>
+				<Link to='oferta' className='homepage__button'>
 					odkryj
 				</Link>
 			</div>
