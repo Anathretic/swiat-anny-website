@@ -1,4 +1,4 @@
-import { FaInstagram, FaRegCopyright } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 
 export const Footer: React.FC = () => {
 	const currentYear = new Date().getFullYear();
@@ -16,10 +16,7 @@ export const Footer: React.FC = () => {
 						<FaInstagram />
 					</a>
 				</div>
-				<p className='footer__copyright'>
-					<FaRegCopyright className='footer__copyright-icon' />
-					{currentYear} Świat Anny
-				</p>
+				<p className='footer__copyright'>&copy; {currentYear} Świat Anny</p>
 			</div>
 		</footer>
 	);

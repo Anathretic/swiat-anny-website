@@ -1,0 +1,11 @@
+@mixin center-flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin background {
+	background: url('../images/background-welcome.jpg');
+	background-size: cover;
+	background-position: center;
+}

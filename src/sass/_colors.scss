@@ -1,4 +1,10 @@
-$main-color: #708d75;
-$second-color: #3b443a;
-$beige-color: #eee7da;
-$white-color: #f7f5f2;
+$neon-pink: hsl(317, 100%, 50%);
+$dark-pink: hsl(323 21% 16%);
+$dark-blue: #000e24;
+$white-color: #e0e0e0;
+
+.dark-blue-gradient {
+	background-color: rgba(0, 14, 36, 0.822);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+}

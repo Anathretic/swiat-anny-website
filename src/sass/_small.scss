@@ -1,0 +1,49 @@
+@media screen and (min-width: 375px) {
+	.offer {
+		&__box {
+			width: 70%;
+		}
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.offer {
+		&__box {
+			width: 60%;
+		}
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.homepage {
+		&__title {
+			font-size: 5em;
+		}
+
+		&__button {
+			padding: 1em 4em;
+		}
+	}
+
+	.header {
+		&__title {
+			font-size: 2.5em;
+		}
+	}
+
+	.offer {
+		&__box {
+			width: 45%;
+		}
+	}
+
+	.footer {
+		&__icons-box {
+			padding: 0.5em 1em;
+		}
+
+		&__icon {
+			margin: 0.75em 0.75em 0;
+		}
+	}
+}

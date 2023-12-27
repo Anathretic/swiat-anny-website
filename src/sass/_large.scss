@@ -1,0 +1,89 @@
+@use 'colors';
+
+@media screen and (min-width: 1024px) {
+	body {
+		overflow-x: hidden;
+	}
+
+	.homepage {
+		&__title {
+			font-size: 7em;
+		}
+
+		&__button {
+			padding: 1em 5em;
+		}
+	}
+
+	.header {
+		&__title {
+			font-size: 3em;
+		}
+
+		&__nav-link {
+			font-size: 1.2em;
+		}
+	}
+
+	.offer {
+		&__container {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		&__box {
+			width: 30%;
+		}
+	}
+
+	.footer {
+		font-size: 1.2em;
+
+		&__text {
+			padding: 1em;
+		}
+
+		&__icon {
+			font-size: 36px;
+		}
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.homepage {
+		&__title {
+			font-size: 10em;
+		}
+
+		&__button {
+			padding: 1em 6em;
+		}
+	}
+
+	.offer {
+		padding-top: 0;
+
+		&__container {
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		&__box {
+			width: 25%;
+			max-width: 315px;
+		}
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.offer {
+		margin-right: -17px;
+
+		&__box {
+			margin: 0 3em;
+			width: 20%;
+			max-width: 315px;
+		}
+	}
+}
