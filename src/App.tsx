@@ -1,7 +1,8 @@
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
 import { Welcome } from './components/Welcome';
+import { Header } from './components/Header';
+import { Offer } from './components/Offer';
+import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
 	return (
@@ -12,9 +13,7 @@ export const App: React.FC = () => {
 				element={
 					<>
 						<Header />
-						<main>
-							<div className='main-section'></div>
-						</main>
+						<Offer />
 						<Footer />
 					</>
 				}

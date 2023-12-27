@@ -9,6 +9,9 @@
 	}
 
 	.header {
+		background-color: transparent;
+		transition: background-color 0.3s;
+
 		&__box {
 			display: flex;
 			justify-content: space-between;
@@ -83,6 +86,16 @@
 				filter: blur(2em);
 				opacity: 1;
 			}
+		}
+	}
+
+	.header-active {
+		background-color: rgb(0, 14, 36);
+	}
+
+	.offer {
+		&__box {
+			width: 40%;
 		}
 	}
 
