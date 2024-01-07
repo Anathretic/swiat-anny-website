@@ -138,4 +138,14 @@
 			}
 		}
 	}
+
+	.notfound {
+		&__btn {
+			padding: 1em 5em;
+		}
+
+		&__img {
+			width: 70%;
+		}
+	}
 }
