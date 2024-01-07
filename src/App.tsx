@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Offer } from './components/Offer';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
+import { PageNotFound } from './components/PageNotFound';
 
 export const App: React.FC = () => {
 	return (
@@ -17,17 +18,17 @@ export const App: React.FC = () => {
 				}>
 				<Route path='/' element={<Welcome />} />
 				<Route
-					path='oferta'
 					element={
 						<>
 							<Header />
-							<Offer />
+							<Outlet />
 							<Footer />
 						</>
-					}
-				/>
+					}>
+					<Route path='oferta' element={<Offer />} />
+				</Route>
 			</Route>
-			<Route path='*' element={<div>Strona nie istnieje!</div>} />
+			<Route path='*' element={<PageNotFound />} />
 		</Routes>
 	);
 };
