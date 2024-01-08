@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
 						Kontakt
 					</NavLink>
 					<NavLink
-						to='/'
+						to='/regulamin'
 						className={({ isActive }) => {
 							return 'header__nav-link ' + (isActive && 'header__nav-link-active');
 						}}>

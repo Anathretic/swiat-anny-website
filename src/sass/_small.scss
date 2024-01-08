@@ -4,6 +4,14 @@
 	}
 }
 
+@media screen and (max-width: 360px) {
+	.terms {
+		&__container {
+			width: 95%;
+		}
+	}
+}
+
 @media screen and (min-width: 375px) {
 	.offer {
 		&__box {
@@ -16,6 +24,12 @@
 	.offer {
 		&__box {
 			width: 60%;
+		}
+	}
+
+	.terms {
+		&__box {
+			width: 75%;
 		}
 	}
 
