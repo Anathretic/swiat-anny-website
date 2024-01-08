@@ -364,6 +364,65 @@ body {
 	}
 }
 
+.terms {
+	@include mixins.center-flex;
+	@include mixins.background;
+	padding: 140px 0 1.25em;
+	min-height: 100vh;
+	color: colors.$white-color;
+
+	&__container {
+		@include mixins.center-flex;
+		flex-direction: column;
+		width: 75%;
+		color: colors.$white-color;
+		border: colors.$neon-pink 0.125em solid;
+		border-radius: 1em;
+		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		text-align: center;
+	}
+
+	&__box {
+		padding: 0.75em;
+		margin-top: 1.25em;
+	}
+
+	&__box:last-of-type {
+		margin-bottom: 1.25em;
+	}
+
+	&__title {
+		margin-bottom: 0.75em;
+		color: colors.$neon-pink;
+		font-size: 1.1em;
+		font-weight: 500;
+		text-shadow: 0 0 0.3em currentColor;
+	}
+
+	&__text {
+		font-weight: 300;
+		font-size: 0.9em;
+
+		&--special {
+			margin-top: 1em;
+		}
+
+		span {
+			font-weight: 500;
+		}
+	}
+
+	&__text-link {
+		position: relative;
+		display: inline-block;
+		color: colors.$white-color;
+		font-weight: 500;
+		text-decoration: none;
+		text-shadow: 0 0 0.2em currentColor;
+		transition: color 0.3s;
+	}
+}
+
 .footer {
 	padding: 1em 1em 0;
 	background-color: colors.$dark-blue;
