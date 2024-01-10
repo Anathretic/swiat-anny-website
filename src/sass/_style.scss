@@ -373,9 +373,28 @@ body {
 .carousel {
 	width: 92%;
 	border-radius: 0.5em;
-	
+
 	&__item {
 		width: 100%;
+	}
+}
+
+.contact {
+	@include mixins.center-flex;
+	@include mixins.background;
+	min-height: 100vh;
+}
+
+.loader {
+	padding: 0.75em 0;
+
+	&__spinner {
+		height: 40px;
+		width: 40px;
+		border: 2px solid red;
+		border-top: 4px solid #3498db;
+		border-radius: 50%;
+		animation: loader-spin 1s linear infinite;
 	}
 }
 
