@@ -99,11 +99,35 @@
 		}
 	}
 
+	.contact {
+		&__form-title {
+			font-size: 1.6em;
+		}
+
+		&__form-input,
+		&__form-textarea,
+		&__form-input-error,
+		&__form-error {
+			width: 65%;
+		}
+
+		&__form-submit-button {
+			font-size: 1em;
+		}
+	}
+
+	.loader {
+		margin: 1.82em 0;
+	}
+
+	.contact,
 	.terms {
 		&__container {
 			width: 66%;
 		}
+	}
 
+	.terms {
 		&__text-link {
 			&::before {
 				content: '';

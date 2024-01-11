@@ -11,7 +11,10 @@
 }
 
 body {
-	background-color: colors.$dark-blue;
+	background-image: url('../images/background-welcome.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -25,7 +28,6 @@ body {
 
 .homepage {
 	@include mixins.center-flex;
-	@include mixins.background;
 	width: 100%;
 	height: 100%;
 	min-height: 100vh;
@@ -263,7 +265,6 @@ body {
 }
 
 .offer {
-	@include mixins.background;
 	padding-top: 120px;
 
 	&__container {
@@ -373,15 +374,183 @@ body {
 .carousel {
 	width: 92%;
 	border-radius: 0.5em;
-	
+
 	&__item {
 		width: 100%;
 	}
 }
 
+.contact {
+	@include mixins.center-flex;
+	padding: 140px 0 1.25em;
+	min-height: 100vh;
+
+	&__container {
+		width: 75%;
+		color: colors.$white-color;
+		border: colors.$neon-pink 0.125em solid;
+		border-radius: 1em;
+		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		text-align: center;
+	}
+
+	&__form {
+		@include mixins.center-flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	&__form-title {
+		padding: 1.5em;
+		font-size: 1.5em;
+		font-weight: 200;
+		text-shadow: 0 0 0.3em currentColor;
+	}
+
+	&__form-strap {
+		width: 90%;
+		border-color: colors.$special-contact-border;
+	}
+
+	&__form-box {
+		@include mixins.center-flex;
+		flex-direction: column;
+		padding: 1em 0;
+		width: 100%;
+	}
+
+	&__form-box:nth-of-type(1) {
+		padding-top: 1.5em;
+	}
+
+	&__form-box:nth-of-type(5) {
+		padding-bottom: 1.25em;
+		height: 200px;
+	}
+
+	&__form-label {
+		padding-bottom: 5px;
+		font-size: 1.1em;
+		text-shadow: 0 0 0.3em currentColor;
+	}
+
+	&__form-input,
+	&__form-textarea {
+		padding: 0.75em;
+		width: 90%;
+		background-color: colors.$dark-blue;
+		color: colors.$white-color;
+		font-family: 'Montserrat', sans-serif;
+		border: colors.$neon-pink 0.125em solid;
+		border-radius: 0.5em;
+		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		text-shadow: 0 0 0.2em currentColor;
+		transition: box-shadow 0.3s;
+
+		&:focus {
+			outline: none;
+			box-shadow: inset 0 0 1em colors.$neon-pink, 0 0 1em colors.$neon-pink;
+		}
+	}
+
+	&__form-textarea {
+		min-height: 100px;
+		max-height: 120px;
+		resize: vertical;
+	}
+
+	&__form-input-error,
+	&__form-error {
+		padding: 8px;
+		height: 2px;
+		width: 90%;
+		color: colors.$neon-pink;
+		text-shadow: 0 0 0.5em currentColor;
+		font-size: 0.95em;
+	}
+
+	&__form-submit-button {
+		display: inline-block;
+		position: relative;
+		padding: 1em 4em;
+		margin: 1.5em 0;
+		background-color: transparent;
+		color: colors.$neon-pink;
+		font-size: 0.9em;
+		font-family: 'Montserrat', sans-serif;
+		border: colors.$neon-pink 0.125em solid;
+		border-radius: 0.25em;
+		text-decoration: none;
+		text-shadow: 0 0 0.5em currentColor;
+		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		transition: background-color 150ms linear;
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 90%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: colors.$neon-pink;
+
+			pointer-events: none;
+
+			transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
+			filter: blur(2em);
+			transition: opacity 150ms linear;
+			opacity: 0.7;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			box-shadow: 0 0 2em 0.5em colors.$neon-pink;
+			transition: opacity 150ms linear;
+			opacity: 0;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: colors.$neon-pink;
+			color: colors.$dark-pink;
+			text-shadow: none;
+		}
+
+		&:hover::before,
+		&:focus::before {
+			opacity: 1;
+		}
+
+		&:hover::after,
+		&:focus::after {
+			opacity: 1;
+		}
+	}
+}
+
+.loader {
+	margin: 1.48em 0;
+
+	&__spinner {
+		position: relative;
+		width: 1em;
+		height: 1em;
+		color: colors.$neon-pink;
+		font-size: 45px;
+		border-radius: 50%;
+		animation: spin-animation 1.7s infinite ease, round-animation 1.7s infinite ease;
+		overflow: hidden;
+	}
+}
+
 .terms {
 	@include mixins.center-flex;
-	@include mixins.background;
 	padding: 140px 0 1.25em;
 	min-height: 100vh;
 	color: colors.$white-color;
@@ -475,6 +644,7 @@ body {
 	padding: 1em;
 	width: 100%;
 	min-height: 100vh;
+	background-color: colors.$dark-blue;
 
 	&__img {
 		width: 90%;

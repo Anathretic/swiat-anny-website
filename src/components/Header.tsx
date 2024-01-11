@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
 						Oferta
 					</NavLink>
 					<NavLink
-						to='/'
+						to='/kontakt'
 						className={({ isActive }) => {
 							return 'header__nav-link ' + (isActive && 'header__nav-link-active');
 						}}>

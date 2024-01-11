@@ -28,7 +28,7 @@ export const CookieBanner: React.FC = ({ ...otherProps }) => {
 			{...otherProps}>
 			<p className='cookie-banner-text'>
 				Ta strona używa plików cookie wyłącznie w celach technicznych (np. google reCaptcha). Dowiedz się więcej z{' '}
-				<Link to='/polityka-prywatnosci' className='cookie-banner-link'>
+				<Link to='/regulamin' className='cookie-banner-link'>
 					regulaminu
 				</Link>
 				.
