@@ -5,9 +5,19 @@
 }
 
 @media screen and (max-width: 360px) {
+	.contact,
 	.terms {
 		&__container {
 			width: 95%;
+		}
+	}
+}
+
+@media screen and (min-width: 320px) {
+	.contact {
+		&__form-input,
+		&__form-textarea {
+			width: 85%;
 		}
 	}
 }
@@ -18,12 +28,32 @@
 			width: 70%;
 		}
 	}
+
+	.contact {
+		&__form-input,
+		&__form-textarea {
+			width: 80%;
+		}
+	}
 }
 
 @media screen and (min-width: 500px) {
 	.offer {
 		&__box {
 			width: 60%;
+		}
+	}
+
+	.contact {
+		&__form-box:nth-of-type(5) {
+			height: 130px;
+		}
+
+		&__form-input,
+		&__form-textarea,
+		&__form-input-error,
+		&__form-error {
+			width: 70%;
 		}
 	}
 

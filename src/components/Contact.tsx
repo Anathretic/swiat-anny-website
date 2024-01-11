@@ -16,7 +16,7 @@ export const Contact: React.FC = () => {
 	const [buttonText, setButtonText] = useContactFormButton();
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
-	const isMobile = useMediaQuery({ query: '(max-width: 500px)' });
+	const isMobile = useMediaQuery({ query: '(max-width: 499px)' });
 
 	const {
 		register,
@@ -76,8 +76,10 @@ export const Contact: React.FC = () => {
 
 	return (
 		<div className='contact'>
-			<div className='contact__container'>
+			<div className='contact__container dark-blue-gradient'>
 				<form className='contact__form' onSubmit={handleSubmit(onSubmit)}>
+					<h3 className='contact__form-title'>Zapytaj mnie!</h3>
+					<hr className='contact__form-strap' />
 					<div className='contact__form-box'>
 						<label className='contact__form-label' htmlFor='name'>
 							Imię:
@@ -136,17 +138,26 @@ export const Contact: React.FC = () => {
 							{...register('message')}></textarea>
 						<p className='contact__form-input-error'>{errors.message?.message}</p>
 					</div>
-					<ReCAPTCHA
-						key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
-						size={isMobile ? 'compact' : 'normal'}
-						sitekey={import.meta.env.VITE_SITE_KEY}
-						ref={refCaptcha}
-					/>
-					<div className='contact__form-error'>
-						<p>{errorValue}</p>
-					</div>
 					<div className='contact__form-box'>
-						{isLoading ? <Loader /> : <input className='contact__form-submit' type='submit' value={buttonText} />}
+						<ReCAPTCHA
+							key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
+							size={isMobile ? 'compact' : 'normal'}
+							sitekey={import.meta.env.VITE_SITE_KEY}
+							ref={refCaptcha}
+						/>
+						<div className='contact__form-error'>
+							<p>{errorValue}</p>
+						</div>
+					</div>
+					<hr className='contact__form-strap' />
+					<div className='contact__form-box'>
+						{isLoading ? (
+							<Loader />
+						) : (
+							<button className='contact__form-submit-button' type='submit'>
+								{buttonText}
+							</button>
+						)}
 					</div>
 				</form>
 			</div>

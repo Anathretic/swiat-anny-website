@@ -36,6 +36,14 @@
 		}
 	}
 
+	.contact {
+		&__form-input,
+		&__form-textarea {
+			font-size: 0.9em;
+		}
+	}
+
+	.contact,
 	.terms {
 		&__container {
 			width: 50%;
@@ -98,8 +106,6 @@
 
 @media screen and (min-width: 1440px) {
 	.offer {
-		margin-right: -17px;
-
 		&__box {
 			margin: 0 3em;
 			width: 20%;
@@ -108,23 +114,33 @@
 	}
 
 	.contact {
-		margin-right: -17px;
+		&__form-title {
+			font-size: 1.7em;
+		}
+
+		&__form-input,
+		&__form-textarea,
+		&__form-input-error,
+		&__form-error {
+			width: 60%;
+		}
+	}
+
+	.contact,
+	.terms {
+		&__container {
+			width: 40%;
+			max-width: 620px;
+		}
 	}
 
 	.terms {
-		margin-right: -17px;
-
 		&__title {
 			font-size: 1.2em;
 		}
 
 		&__text {
 			font-size: 1em;
-		}
-
-		&__container {
-			width: 40%;
-			max-width: 620px;
 		}
 	}
 }

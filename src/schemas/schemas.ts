@@ -8,21 +8,21 @@ const errorMessage = { requiredField: 'To pole jest wymagane!' };
 export const contactSchema = yup.object({
 	name: yup
 		.string()
-		.min(3, 'Imię powinno składać się z minimum 3 liter!')
-		.max(16, 'Imię nie powinno mieć więcej niż 16 liter!')
-		.minUppercase(1, 'Powinieneś zacząć z dużej litery, prawda?')
-		.matches(/^[a-zA-Z]+$/, 'Tylko litery! Imię nie ma spacji..')
+		.min(3, 'Imię jest zbyt krótkie!')
+		.max(16, 'Imię jest zbyt długie!')
+		.minUppercase(1, 'Zacznij z dużej litery!')
+		.matches(/^[a-zA-Z]+$/, 'Tylko litery! Bez spacji!')
 		.required(errorMessage.requiredField),
-	email: yup.string().email('Wprowadź poprawny adres e-mail!').required(errorMessage.requiredField),
+	email: yup.string().email('Wprowadź poprawny e-mail!').required(errorMessage.requiredField),
 	subject: yup
 		.string()
-		.min(3, 'Temat powinien mieć przynajmniej 3 litery!')
-		.max(25, 'Temat nie powinien mieć więcej niż 25 liter!')
+		.min(3, 'Temat jest zbyt krótki!')
+		.max(25, 'Temat jest zbyt długi!')
 		.matches(/^[a-zA-Z ]+$/, 'Tylko litery!')
 		.required(errorMessage.requiredField),
 	message: yup
 		.string()
 		.min(5, 'Rozpisz się..')
-		.max(500, 'Za dużo! Nie więcej niż 150 słów..')
+		.max(500, 'Nie więcej niż 150 słów..')
 		.required(errorMessage.requiredField),
 });
