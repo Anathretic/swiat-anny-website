@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { scrollToTop } from '../utils/scrollToTop';
 
 export const Header: React.FC = () => {
 	const [headerBackground, setHeaderBackground] = useState(false);
@@ -41,21 +42,24 @@ export const Header: React.FC = () => {
 						to='/oferta'
 						className={({ isActive }) => {
 							return 'header__nav-link ' + (isActive && 'header__nav-link-active');
-						}}>
+						}}
+						onClick={scrollToTop}>
 						Oferta
 					</NavLink>
 					<NavLink
 						to='/kontakt'
 						className={({ isActive }) => {
 							return 'header__nav-link ' + (isActive && 'header__nav-link-active');
-						}}>
+						}}
+						onClick={scrollToTop}>
 						Kontakt
 					</NavLink>
 					<NavLink
 						to='/regulamin'
 						className={({ isActive }) => {
 							return 'header__nav-link ' + (isActive && 'header__nav-link-active');
-						}}>
+						}}
+						onClick={scrollToTop}>
 						Regulamin
 					</NavLink>
 				</nav>

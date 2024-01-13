@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { OfferDataModel } from '../../models/offer.model';
 import { CarouselComponent } from './CarouselComponent';
+import { scrollToTop } from '../../utils/scrollToTop';
 
 export const OfferBox: React.FC<OfferDataModel> = ({ title, text, firstSrc, secondSrc, firstAlt, secondAlt }) => {
 	return (
@@ -8,7 +9,7 @@ export const OfferBox: React.FC<OfferDataModel> = ({ title, text, firstSrc, seco
 			<CarouselComponent firstSrc={firstSrc} secondSrc={secondSrc} firstAlt={firstAlt} secondAlt={secondAlt} />
 			<h3 className='offer__box-title'>{title}</h3>
 			<p className='offer__box-text'>{text}</p>
-			<Link to='/' className='offer__box-button'>
+			<Link to='/' className='offer__box-button' onClick={scrollToTop}>
 				Zamów
 			</Link>
 		</div>

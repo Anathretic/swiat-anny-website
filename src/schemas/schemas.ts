@@ -10,15 +10,15 @@ export const contactSchema = yup.object({
 		.string()
 		.min(3, 'Imię jest zbyt krótkie!')
 		.max(16, 'Imię jest zbyt długie!')
-		.minUppercase(1, 'Zacznij z dużej litery!')
-		.matches(/^[a-zA-Z]+$/, 'Tylko litery! Bez spacji!')
+		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]+$/, 'Tylko litery! Bez spacji!')
 		.required(errorMessage.requiredField),
 	email: yup.string().email('Wprowadź poprawny e-mail!').required(errorMessage.requiredField),
 	subject: yup
 		.string()
 		.min(3, 'Temat jest zbyt krótki!')
 		.max(25, 'Temat jest zbyt długi!')
-		.matches(/^[a-zA-Z ]+$/, 'Tylko litery!')
+		.minLowercase(5, 'Zbyt mało liter!')
+		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]+$/, 'Tylko litery!')
 		.required(errorMessage.requiredField),
 	message: yup
 		.string()
