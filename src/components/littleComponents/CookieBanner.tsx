@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import CookieConsent from 'react-cookie-consent';
+import { scrollToTop } from '../../utils/scrollToTop';
 
 export const CookieBanner: React.FC = ({ ...otherProps }) => {
 	return (
@@ -28,7 +29,7 @@ export const CookieBanner: React.FC = ({ ...otherProps }) => {
 			{...otherProps}>
 			<p className='cookie-banner-text'>
 				Ta strona używa plików cookie wyłącznie w celach technicznych (np. google reCaptcha). Dowiedz się więcej z{' '}
-				<Link to='/regulamin' className='cookie-banner-link'>
+				<Link to='/regulamin' className='cookie-banner-link' onClick={scrollToTop}>
 					regulaminu
 				</Link>
 				.
