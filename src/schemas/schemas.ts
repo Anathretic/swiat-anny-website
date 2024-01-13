@@ -17,7 +17,7 @@ export const contactSchema = yup.object({
 		.string()
 		.min(3, 'Temat jest zbyt krótki!')
 		.max(25, 'Temat jest zbyt długi!')
-		.minLowercase(5, 'Zbyt mało liter!')
+		.minLowercase(4, 'Zbyt mało liter!')
 		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ ]+$/, 'Tylko litery!')
 		.required(errorMessage.requiredField),
 	message: yup
