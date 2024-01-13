@@ -40,9 +40,9 @@ export const Contact: React.FC = () => {
 		refCaptcha.current?.reset();
 
 		const params = {
-			name,
+			name: name.charAt(0).toUpperCase() + name.slice(1),
 			email,
-			subject,
+			subject: subject.charAt(0).toUpperCase() + subject.slice(1),
 			message,
 			'g-recaptcha-response': token,
 		};
