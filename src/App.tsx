@@ -18,7 +18,15 @@ export const App: React.FC = () => {
 						<Outlet />
 					</>
 				}>
-				<Route path='/' element={<Welcome />} />
+				<Route
+					path='/'
+					element={
+						<>
+							<Welcome />
+							<Footer />
+						</>
+					}
+				/>
 				<Route
 					element={
 						<>

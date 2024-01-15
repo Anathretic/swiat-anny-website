@@ -1,10 +1,6 @@
 @use 'colors';
 
 @media screen and (min-width: 1024px) {
-	body {
-		overflow-x: hidden;
-	}
-
 	.homepage {
 		&__title {
 			font-size: 7em;
