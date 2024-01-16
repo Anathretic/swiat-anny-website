@@ -7,6 +7,7 @@ import { TermsAndConditions } from './components/TermsAndConditions';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/littleComponents/CookieBanner';
 import { PageNotFound } from './components/PageNotFound';
+import { OrderPopup } from './components/OrderPopup';
 
 export const App: React.FC = () => {
 	return (
@@ -35,10 +36,11 @@ export const App: React.FC = () => {
 							<Footer />
 						</>
 					}>
-					<Route path='oferta' element={<Offer />} />
-					<Route path='kontakt' element={<Contact />} />
-					<Route path='regulamin' element={<TermsAndConditions />} />
+					<Route path='/oferta' element={<Offer />}></Route>
+					<Route path='/kontakt' element={<Contact />} />
+					<Route path='/regulamin' element={<TermsAndConditions />} />
 				</Route>
+				<Route path='/zloz-zamowienie' element={<OrderPopup />} />
 			</Route>
 			<Route path='*' element={<PageNotFound />} />
 		</Routes>

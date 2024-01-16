@@ -15,6 +15,7 @@ export const Offer: React.FC = () => {
 							secondSrc={data.secondSrc}
 							firstAlt={data.firstAlt}
 							secondAlt={data.secondAlt}
+							paintingSize={data.paintingSize}
 						/>
 					))}
 				</div>

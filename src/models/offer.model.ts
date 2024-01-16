@@ -5,5 +5,6 @@ export interface OfferDataModel {
 	secondSrc: string;
 	firstAlt: string;
 	secondAlt: string;
+	paintingSize: string;
 	id?: number;
 }
