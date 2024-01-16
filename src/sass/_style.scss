@@ -315,6 +315,8 @@ body {
 		margin: 1.5em;
 		color: colors.$neon-pink;
 		background-color: transparent;
+		font-size: 0.9em;
+		font-family: 'Montserrat', sans-serif;
 		border: colors.$neon-pink 0.125em solid;
 		border-radius: 0.25em;
 		text-shadow: 0 0 0.5em currentColor;
@@ -378,6 +380,15 @@ body {
 	&__item {
 		width: 100%;
 	}
+}
+
+.order-popup {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: colors.$dark-blue;
 }
 
 .contact {
