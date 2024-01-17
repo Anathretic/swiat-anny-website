@@ -25,7 +25,8 @@
 		"react-responsive-carousel": "^3.2.23",
 		"react-router-dom": "^6.21.0",
 		"redux": "^5.0.1",
-		"sass": "^1.69.5"
+		"sass": "^1.69.5",
+		"yup-phone-lite": "^2.0.1"
 	},
 	"devDependencies": {
 		"@types/node": "^20.8.10",

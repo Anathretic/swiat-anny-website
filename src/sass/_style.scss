@@ -382,13 +382,14 @@ body {
 	}
 }
 
-.order-popup {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
+.order {
+	min-height: 100vh;
 	background-color: colors.$dark-blue;
+	color: colors.$white-color;
+
+	&__form-select {
+		pointer-events: none;
+	}
 }
 
 .contact {
