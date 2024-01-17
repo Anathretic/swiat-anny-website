@@ -1,5 +1,6 @@
 import * as yup from 'yup';
 import YupPassword from 'yup-password';
+import 'yup-phone-lite';
 
 YupPassword(yup);
 
@@ -23,6 +24,29 @@ export const contactSchema = yup.object({
 	message: yup
 		.string()
 		.min(5, 'Rozpisz się..')
-		.max(500, 'Nie więcej niż 150 słów..')
+		.max(2500, 'Nie więcej niż 500 słów..')
+		.required(errorMessage.requiredField),
+});
+
+export const orderSchema = yup.object({
+	firstName: yup
+		.string()
+		.min(3, 'Imię jest zbyt krótkie!')
+		.max(16, 'Imię jest zbyt długie!')
+		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]+$/, 'Tylko litery! Bez spacji!')
+		.required(errorMessage.requiredField),
+	secondName: yup
+		.string()
+		.min(2, 'Nazwisko jest zbyt krótkie!')
+		.max(51, 'Nazwisko jest zbyt długie!')
+		.matches(/^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ-]+$/, 'Tylko litery! Bez spacji!')
+		.required(errorMessage.requiredField),
+	email: yup.string().email('Wprowadź poprawny e-mail!').required(errorMessage.requiredField),
+	phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
+	size: yup.string().oneOf(['S', 'M', 'L'], 'Wybierz opcję!').required(errorMessage.requiredField),
+	message: yup
+		.string()
+		.min(5, 'Rozpisz się..')
+		.max(2500, 'Nie więcej niż 500 słów..')
 		.required(errorMessage.requiredField),
 });

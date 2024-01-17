@@ -7,7 +7,7 @@ import { TermsAndConditions } from './components/TermsAndConditions';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/littleComponents/CookieBanner';
 import { PageNotFound } from './components/PageNotFound';
-import { OrderPopup } from './components/OrderPopup';
+import { Order } from './components/Order';
 
 export const App: React.FC = () => {
 	return (
@@ -40,7 +40,7 @@ export const App: React.FC = () => {
 					<Route path='/kontakt' element={<Contact />} />
 					<Route path='/regulamin' element={<TermsAndConditions />} />
 				</Route>
-				<Route path='/zloz-zamowienie' element={<OrderPopup />} />
+				<Route path='/zloz-zamowienie' element={<Order />} />
 			</Route>
 			<Route path='*' element={<PageNotFound />} />
 		</Routes>
