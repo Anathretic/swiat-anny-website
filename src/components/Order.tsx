@@ -1,21 +1,26 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useMediaQuery } from 'react-responsive';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks';
-import {
-	getPopupSelectPaintingSizeInitialValue,
-	resetSize,
-} from '../redux/popupSelectPaintingSizeReduxSlice/popupSelectPaintingSizeSlice';
+import { getPaintingSizeInitialValue, resetSize } from '../redux/paintingSizeReduxSlice/paintingSizeSlice';
 import { orderSchema } from '../schemas/schemas';
 import { OrderInputs } from '../models/inputs.model';
-import { OrderInput, OrderTextarea } from './littleComponents/OrderFormElements';
+import { FormInput, FormTextarea } from './littleComponents/FormElements';
+import { Loader } from './littleComponents/Loader';
+import { useContactFormButton } from '../hooks/useContactFormButton';
+import { scrollToTop } from '../utils/scrollToTop';
 
 export const Order: React.FC = () => {
-	const selectedSize = useAppSelector(getPopupSelectPaintingSizeInitialValue);
-	const disptach = useAppDispatch();
+	const [isLoading, setIsLoading] = useState(false);
+	const [errorValue, setErrorValue] = useState('');
+
+	const [buttonText, setButtonText] = useContactFormButton();
+
+	const selectedSize = useAppSelector(getPaintingSizeInitialValue);
+	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
@@ -23,8 +28,8 @@ export const Order: React.FC = () => {
 
 	const {
 		register,
+		reset,
 		handleSubmit,
-		// reset,
 		formState: { errors },
 	} = useForm<OrderInputs>({
 		defaultValues: {
@@ -45,16 +50,42 @@ export const Order: React.FC = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const onSubmit: SubmitHandler<OrderInputs> = ({ firstName, secondName, email, phone, size, message }) => {
-		console.log(firstName, secondName, email, phone, size, message);
+	const onSubmit: SubmitHandler<OrderInputs> = async ({ firstName, secondName, email, phone, size, message }) => {
+		setIsLoading(true);
+		setErrorValue('');
+		const token = refCaptcha.current?.getValue();
+		refCaptcha.current?.reset();
+
+		const params = {
+			firstName: firstName.charAt(0).toUpperCase() + firstName.slice(1),
+			secondName: secondName.charAt(0).toUpperCase() + secondName.slice(1),
+			email,
+			phone,
+			size,
+			message,
+			'g-recaptcha-response': token,
+		};
+
+		if (token) {
+			console.log(params);
+			setButtonText('Wysłane!');
+			setIsLoading(false);
+			dispatch(resetSize());
+			reset();
+			setTimeout(() => {
+				navigate('/');
+				scrollToTop();
+			}, 2500);
+		}
 	};
 
 	return (
 		<div className='order'>
-			<div className='order__container'>
-				<form className='order__form' onSubmit={handleSubmit(onSubmit)}>
-					<h3 className='order__form-title'>Zamówienie</h3>
-					<OrderInput
+			<div className='order__container dark-blue-gradient'>
+				<form className='form' onSubmit={handleSubmit(onSubmit)}>
+					<h3 className='form__title'>Zamówienie</h3>
+					<hr className='form__strap' />
+					<FormInput
 						label='Imię:'
 						inputName='firstName'
 						placeholder='Wprowadź imię..'
@@ -62,7 +93,7 @@ export const Order: React.FC = () => {
 						aria-invalid={errors.firstName ? true : false}
 						{...register('firstName')}
 					/>
-					<OrderInput
+					<FormInput
 						label='Nazwisko:'
 						inputName='secondName'
 						placeholder='Wprowadź nazwisko..'
@@ -70,7 +101,7 @@ export const Order: React.FC = () => {
 						aria-invalid={errors.secondName ? true : false}
 						{...register('secondName')}
 					/>
-					<OrderInput
+					<FormInput
 						label='E-mail:'
 						inputName='email'
 						placeholder='Wprowadź e-mail..'
@@ -78,7 +109,7 @@ export const Order: React.FC = () => {
 						aria-invalid={errors.email ? true : false}
 						{...register('email')}
 					/>
-					<OrderInput
+					<FormInput
 						label='Nr telefonu:'
 						inputName='phone'
 						placeholder='Wprowadź numer telefonu..'
@@ -86,44 +117,44 @@ export const Order: React.FC = () => {
 						aria-invalid={errors.phone ? true : false}
 						{...register('phone')}
 					/>
-					<OrderInput
+					<FormInput
 						label='Rozmiar:'
 						inputName='size'
+						placeholder='Wprowadź rozmiar..'
 						children={errors.size?.message}
 						aria-invalid={errors.size ? true : false}
 						value={selectedSize}
 						readOnly={true}
 						{...register('size')}
 					/>
-					<OrderTextarea
+					<FormTextarea
 						label='Wiadomość:'
 						inputName='message'
-						placeholder='Wprowadź wiadomość..'
+						placeholder='Opisz jak widzisz swoją kompozycję..'
 						children={errors.message?.message}
 						aria-invalid={errors.message ? true : false}
 						{...register('message')}
 					/>
-					<div className='order__form-box'>
+					<div className='form__box'>
 						<ReCAPTCHA
 							key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
 							size={isMobile ? 'compact' : 'normal'}
 							sitekey={import.meta.env.VITE_SITE_KEY}
 							ref={refCaptcha}
 						/>
-						<div className='order__form-error'>{/* <p>{errorValue}</p> */}</div>
+						<div className='form__error'>
+							<p>{errorValue}</p>
+						</div>
 					</div>
-					<div className='order__form-box'>
-						<button className='order__form-submit-button' type='submit'>
-							Wyślij
-						</button>
-						<button
-							type='button'
-							onClick={() => {
-								disptach(resetSize());
-								navigate(-1);
-							}}>
-							Cofnij
-						</button>
+					<hr className='form__strap' />
+					<div className='form__box'>
+						{isLoading ? (
+							<Loader />
+						) : (
+							<button className='form__button' type='submit'>
+								{buttonText}
+							</button>
+						)}
 					</div>
 				</form>
 			</div>

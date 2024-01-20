@@ -103,19 +103,19 @@
 		}
 	}
 
-	.contact {
-		&__form-title {
+	.form {
+		&__title {
 			font-size: 1.6em;
 		}
 
-		&__form-input,
-		&__form-textarea,
-		&__form-input-error,
-		&__form-error {
+		&__input,
+		&__textarea,
+		&__input-error,
+		&__error {
 			width: 65%;
 		}
 
-		&__form-submit-button {
+		&__button {
 			font-size: 1em;
 		}
 	}
@@ -124,6 +124,7 @@
 		margin: 1.82em 0;
 	}
 
+	.order,
 	.contact,
 	.terms {
 		&__container {

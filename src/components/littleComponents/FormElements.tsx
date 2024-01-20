@@ -1,15 +1,15 @@
 import React from 'react';
 import { InputAndTextarea } from '../../models/formElements.model';
 
-export const OrderInput: React.FC<InputAndTextarea> = React.forwardRef<HTMLInputElement, InputAndTextarea>(
+export const FormInput: React.FC<InputAndTextarea> = React.forwardRef<HTMLInputElement, InputAndTextarea>(
 	({ label, inputName, placeholder, value, readOnly, children, ...props }, ref) => {
 		return (
-			<div className='order__form-box'>
-				<label className='order__form-label' htmlFor={inputName}>
+			<div className='form__box'>
+				<label className='form__label' htmlFor={inputName}>
 					{label}
 				</label>
 				<input
-					className='order__form-input'
+					className='form__input'
 					type='text'
 					id={inputName}
 					placeholder={placeholder}
@@ -19,27 +19,27 @@ export const OrderInput: React.FC<InputAndTextarea> = React.forwardRef<HTMLInput
 					autoComplete='off'
 					{...props}
 				/>
-				<p className='order__form-input-error'>{children}</p>
+				<p className='form__input-error'>{children}</p>
 			</div>
 		);
 	}
 );
 
-export const OrderTextarea: React.FC<InputAndTextarea> = React.forwardRef<HTMLTextAreaElement, InputAndTextarea>(
+export const FormTextarea: React.FC<InputAndTextarea> = React.forwardRef<HTMLTextAreaElement, InputAndTextarea>(
 	({ label, inputName, placeholder, children, ...props }, ref) => {
 		return (
-			<div className='order__form-box'>
-				<label className='order__form-label' htmlFor={inputName}>
+			<div className='form__box'>
+				<label className='form__label' htmlFor={inputName}>
 					{label}
 				</label>
 				<textarea
-					className='order__form-textarea'
+					className='form__textarea'
 					id='message'
 					placeholder={placeholder}
 					autoComplete='off'
 					ref={ref}
 					{...props}></textarea>
-				<p className='order__form-input-error'>{children}</p>
+				<p className='form__input-error'>{children}</p>
 			</div>
 		);
 	}
