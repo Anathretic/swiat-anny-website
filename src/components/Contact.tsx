@@ -7,6 +7,7 @@ import emailjs from '@emailjs/browser';
 import { contactSchema } from '../schemas/schemas';
 import { ContactInputs } from '../models/inputs.model';
 import { Loader } from './littleComponents/Loader';
+import { FormInput, FormTextarea } from './littleComponents/FormElements';
 import { useContactFormButton } from '../hooks/useContactFormButton';
 
 export const Contact: React.FC = () => {
@@ -50,10 +51,10 @@ export const Contact: React.FC = () => {
 		if (token) {
 			await emailjs
 				.send(
-					`${import.meta.env.VITE_SERVICE_ID}`,
-					`${import.meta.env.VITE_TEMPLATE_ID}`,
+					`${import.meta.env.VITE_CONTACT_SERVICE_ID}`,
+					`${import.meta.env.VITE_CONTACT_TEMPLATE_ID}`,
 					params,
-					`${import.meta.env.VITE_PUBLIC_KEY}`
+					`${import.meta.env.VITE_CONTACT_PUBLIC_KEY}`
 				)
 				.then(() => {
 					setButtonText('Wysłane!');
@@ -77,84 +78,58 @@ export const Contact: React.FC = () => {
 	return (
 		<div className='contact'>
 			<div className='contact__container dark-blue-gradient'>
-				<form className='contact__form' onSubmit={handleSubmit(onSubmit)}>
-					<h3 className='contact__form-title'>Zapytaj mnie!</h3>
-					<hr className='contact__form-strap' />
-					<div className='contact__form-box'>
-						<label className='contact__form-label' htmlFor='name'>
-							Imię:
-						</label>
-						<input
-							aria-invalid={errors.name ? true : false}
-							className='contact__form-input'
-							type='text'
-							id='name'
-							placeholder='Wprowadź imię..'
-							autoComplete='off'
-							{...register('name')}
-						/>
-						<p className='contact__form-input-error'>{errors.name?.message}</p>
-					</div>
-					<div className='contact__form-box'>
-						<label className='contact__form-label' htmlFor='email'>
-							E-mail:
-						</label>
-						<input
-							aria-invalid={errors.email ? true : false}
-							className='contact__form-input'
-							type='text'
-							id='email'
-							placeholder='Wprowadź adres e-mail..'
-							autoComplete='off'
-							{...register('email')}
-						/>
-						<p className='contact__form-input-error'>{errors.email?.message}</p>
-					</div>
-					<div className='contact__form-box'>
-						<label className='contact__form-label' htmlFor='subject'>
-							Temat:
-						</label>
-						<input
-							aria-invalid={errors.subject ? true : false}
-							className='contact__form-input'
-							type='text'
-							id='subject'
-							placeholder='Wprowadź temat wiadomości..'
-							autoComplete='off'
-							{...register('subject')}
-						/>
-						<p className='contact__form-input-error'>{errors.subject?.message}</p>
-					</div>
-					<div className='contact__form-box'>
-						<label className='contact__form-label' htmlFor='message'>
-							Wiadomość:
-						</label>
-						<textarea
-							aria-invalid={errors.message ? true : false}
-							className='contact__form-textarea'
-							id='message'
-							placeholder='Wprowadź wiadomość..'
-							autoComplete='off'
-							{...register('message')}></textarea>
-						<p className='contact__form-input-error'>{errors.message?.message}</p>
-					</div>
-					<div className='contact__form-box'>
+				<form className='form' onSubmit={handleSubmit(onSubmit)}>
+					<h3 className='form__title'>Zapytaj mnie!</h3>
+					<hr className='form__strap' />
+					<FormInput
+						label='Imię:'
+						inputName='name'
+						placeholder='Wprowadź imię..'
+						children={errors.name?.message}
+						aria-invalid={errors.name ? true : false}
+						{...register('name')}
+					/>
+					<FormInput
+						label='E-mail:'
+						inputName='email'
+						placeholder='Wprowadź e-mail..'
+						children={errors.email?.message}
+						aria-invalid={errors.email ? true : false}
+						{...register('email')}
+					/>
+					<FormInput
+						label='Temat:'
+						inputName='subject'
+						placeholder='Wprowadź temat..'
+						children={errors.subject?.message}
+						aria-invalid={errors.subject ? true : false}
+						{...register('subject')}
+					/>
+					<FormTextarea
+						label='Wiadomość:'
+						inputName='message'
+						placeholder='Wprowadź wiadomość..'
+						children={errors.message?.message}
+						aria-invalid={errors.message ? true : false}
+						{...register('message')}
+					/>
+					<div className='form__box'>
 						<ReCAPTCHA
 							key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
 							size={isMobile ? 'compact' : 'normal'}
 							sitekey={import.meta.env.VITE_SITE_KEY}
 							ref={refCaptcha}
 						/>
-						<div className='contact__form-error'>
+						<div className='form__error'>
 							<p>{errorValue}</p>
 						</div>
 					</div>
-					<hr className='contact__form-strap' />
-					<div className='contact__form-box'>
+					<hr className='form__strap' />
+					<div className='form__box'>
 						{isLoading ? (
 							<Loader />
 						) : (
-							<button className='contact__form-submit-button' type='submit'>
+							<button className='form__button' type='submit'>
 								{buttonText}
 							</button>
 						)}

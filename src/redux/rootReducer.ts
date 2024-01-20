@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import popupSelectPaintingSizeSlice from './popupSelectPaintingSizeReduxSlice/popupSelectPaintingSizeSlice';
+import paintingSizeSlice from './paintingSizeReduxSlice/paintingSizeSlice';
 
 export const rootReducer = combineReducers({
-	popupSelectPaintingSizeReduxStore: popupSelectPaintingSizeSlice.reducer,
+	paintingSizeReduxStore: paintingSizeSlice.reducer,
 });

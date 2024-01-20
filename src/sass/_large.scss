@@ -32,13 +32,14 @@
 		}
 	}
 
-	.contact {
-		&__form-input,
-		&__form-textarea {
+	.form {
+		&__input,
+		&__textarea {
 			font-size: 0.9em;
 		}
 	}
 
+	.order,
 	.contact,
 	.terms {
 		&__container {
@@ -109,19 +110,20 @@
 		}
 	}
 
-	.contact {
-		&__form-title {
+	.form {
+		&__title {
 			font-size: 1.7em;
 		}
 
-		&__form-input,
-		&__form-textarea,
-		&__form-input-error,
-		&__form-error {
+		&__input,
+		&__textarea,
+		&__input-error,
+		&__error {
 			width: 60%;
 		}
 	}
 
+	.order,
 	.contact,
 	.terms {
 		&__container {

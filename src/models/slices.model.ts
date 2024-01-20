@@ -1,7 +1,3 @@
-export interface HandlePopup {
-	value: boolean;
-}
-
-export interface SelectSize {
+export interface Size {
 	size: string;
 }

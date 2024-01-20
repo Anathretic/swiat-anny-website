@@ -1,4 +1,4 @@
-type Size = 'S' | 'M' | 'L';
+type Size = 'Mały' | 'Średni' | 'Duży';
 
 export interface ContactInputs {
 	name: string;

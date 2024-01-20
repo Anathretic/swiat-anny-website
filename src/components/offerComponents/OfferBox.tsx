@@ -3,7 +3,7 @@ import { OfferDataModel } from '../../models/offer.model';
 import { CarouselComponent } from './CarouselComponent';
 import { scrollToTop } from '../../utils/scrollToTop';
 import { useAppDispatch } from '../../hooks/reduxHooks';
-import { setSize } from '../../redux/popupSelectPaintingSizeReduxSlice/popupSelectPaintingSizeSlice';
+import { setSize } from '../../redux/paintingSizeReduxSlice/paintingSizeSlice';
 
 export const OfferBox: React.FC<OfferDataModel> = ({
 	title,

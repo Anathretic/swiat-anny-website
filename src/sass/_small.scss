@@ -5,6 +5,7 @@
 }
 
 @media screen and (max-width: 360px) {
+	.order,
 	.contact,
 	.terms {
 		&__container {
@@ -14,9 +15,9 @@
 }
 
 @media screen and (min-width: 320px) {
-	.contact {
-		&__form-input,
-		&__form-textarea {
+	.form {
+		&__input,
+		&__textarea {
 			width: 85%;
 		}
 	}
@@ -29,9 +30,9 @@
 		}
 	}
 
-	.contact {
-		&__form-input,
-		&__form-textarea {
+	.form {
+		&__input,
+		&__textarea {
 			width: 80%;
 		}
 	}
@@ -44,15 +45,27 @@
 		}
 	}
 
-	.contact {
-		&__form-box:nth-of-type(5) {
-			height: 130px;
+	.order {
+		.form {
+			&__box:nth-of-type(7) {
+				height: 130px;
+			}
 		}
+	}
 
-		&__form-input,
-		&__form-textarea,
-		&__form-input-error,
-		&__form-error {
+	.contact {
+		.form {
+			&__box:nth-of-type(5) {
+				height: 130px;
+			}
+		}
+	}
+
+	.form {
+		&__input,
+		&__textarea,
+		&__input-error,
+		&__error {
 			width: 70%;
 		}
 	}
