@@ -10,7 +10,7 @@ export const offerData: Array<OfferDataModel> = [
 		secondSrc: Image,
 		firstAlt: 'To jest testowy obraz!',
 		secondAlt: 'To jest testowy obraz!',
-		paintingSize: 'S',
+		paintingSize: 'Mały',
 	},
 	{
 		id: 2,
@@ -20,7 +20,7 @@ export const offerData: Array<OfferDataModel> = [
 		secondSrc: Image,
 		firstAlt: 'To jest testowy obraz!',
 		secondAlt: 'To jest testowy obraz!',
-		paintingSize: 'M',
+		paintingSize: 'Średni',
 	},
 	{
 		id: 3,
@@ -30,6 +30,6 @@ export const offerData: Array<OfferDataModel> = [
 		secondSrc: Image,
 		firstAlt: 'To jest testowy obraz!',
 		secondAlt: 'To jest testowy obraz!',
-		paintingSize: 'L',
+		paintingSize: 'Duży',
 	},
 ];

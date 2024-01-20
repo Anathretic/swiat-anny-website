@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
 		<header className={`header ${headerBackground && 'header-active'}`}>
 			<div className='header__box'>
 				<h2 className='header__title'>
-					<Link to='/' className='header__title-link'>
+					<Link to='/' className='header__title-link' onClick={scrollToTop}>
 						<span>Ś</span>
 						<span>w</span>
 						<span>i</span>
