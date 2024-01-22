@@ -413,7 +413,7 @@ body {
 
 .contact {
 	@include mixins.center-flex;
-	padding: 140px 0 1.25em;
+	padding: 180px 0 4em;
 	min-height: 100vh;
 
 	.form {
@@ -429,6 +429,7 @@ body {
 }
 
 .form {
+	position: relative;
 	@include mixins.center-flex;
 	flex-direction: column;
 	width: 100%;
@@ -438,6 +439,23 @@ body {
 		font-size: 1.5em;
 		font-weight: 200;
 		text-shadow: 0 0 0.3em currentColor;
+	}
+
+	&__close-button {
+		position: absolute;
+		padding: 0.35em;
+		margin: 0.35em;
+		top: 0;
+		right: 0;
+		font-size: 1.6em;
+		color: colors.$special-contact-border;
+		text-decoration: none;
+		transition: color 0.3s, text-shadow 0.3s;
+
+		&:hover {
+			color: colors.$white-color;
+			text-shadow: 0 0 0.3em currentColor;
+		}
 	}
 
 	&__strap {
@@ -556,6 +574,22 @@ body {
 			opacity: 1;
 		}
 	}
+
+	&__special-text {
+		padding: 0 2em;
+		margin-bottom: 1em;
+		font-size: 0.9em;
+		text-shadow: 0 0 0.3em currentColor;
+
+		a {
+			color: colors.$white-color;
+			transition: color 0.3s;
+
+			&:hover {
+				color: colors.$neon-pink;
+			}
+		}
+	}
 }
 
 .loader {
@@ -575,7 +609,7 @@ body {
 
 .terms {
 	@include mixins.center-flex;
-	padding: 140px 0 1.25em;
+	padding: 180px 0 4em;
 	min-height: 100vh;
 	color: colors.$white-color;
 
