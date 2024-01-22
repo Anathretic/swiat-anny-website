@@ -51,10 +51,10 @@ export const Contact: React.FC = () => {
 		if (token) {
 			await emailjs
 				.send(
-					`${import.meta.env.VITE_CONTACT_SERVICE_ID}`,
+					`${import.meta.env.VITE_SERVICE_ID}`,
 					`${import.meta.env.VITE_CONTACT_TEMPLATE_ID}`,
 					params,
-					`${import.meta.env.VITE_CONTACT_PUBLIC_KEY}`
+					`${import.meta.env.VITE_PUBLIC_KEY}`
 				)
 				.then(() => {
 					setButtonText('Wysłane!');

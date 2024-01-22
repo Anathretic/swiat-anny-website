@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { scrollToTop } from '../utils/scrollToTop';
 
 export const Welcome: React.FC = () => {
 	return (
@@ -15,7 +16,7 @@ export const Welcome: React.FC = () => {
 					<span>n</span>
 					<span>y</span>
 				</h1>
-				<Link to='oferta' className='homepage__button'>
+				<Link to='oferta' className='homepage__button' onClick={scrollToTop}>
 					odkryj
 				</Link>
 			</div>

@@ -13,17 +13,19 @@ export const TermsAndConditions: React.FC = () => {
 				<div className='terms__box'>
 					<p className='terms__title'>2. Kiedy zbieram Twoje dane?</p>
 					<p className='terms__text'>
-						Dane użytkownika (takie jak adres e-mail, czy numer telefonu) są gromadzone wyłącznie podczas korzystania z formularza
-						kontaktowego i/lub składania zamówienia.
+						Dane użytkownika (takie jak adres e-mail, czy numer telefonu) są gromadzone wyłącznie podczas korzystania z
+						formularza kontaktowego i/lub składania zamówienia.
 					</p>
 				</div>
 				<div className='terms__box'>
 					<p className='terms__title'>3. Jak wygląda przepływ danych?</p>
 					<p className='terms__text'>
-						Twoje dane zbierane poprzez formularz kontaktowy i formularz zamówieniowy są przetwarzane wyłącznie w celach kontaktowych oraz realizacji zamówienia. Nikomu ich
-						nie udostępniam, ani nie sprzedaję.
+						Twoje dane zbierane poprzez formularz kontaktowy i formularz zamówieniowy są przetwarzane wyłącznie w celach
+						kontaktowych oraz realizacji zamówienia. Nikomu ich nie udostępniam, ani nie sprzedaję.
 					</p>
-					<p className='terms__text terms__text--special'>Korzystanie z formularza kontaktowego, jak i zamówieniowego, jest dobrowolne.</p>
+					<p className='terms__text terms__text--special'>
+						Korzystanie z formularza kontaktowego, jak i zamówieniowego, jest dobrowolne.
+					</p>
 				</div>
 				<div className='terms__box'>
 					<p className='terms__title'>4. Pozostałe informacje</p>

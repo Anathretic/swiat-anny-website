@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from '@emailjs/browser';
 import { useMediaQuery } from 'react-responsive';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -56,6 +57,8 @@ export const Order: React.FC = () => {
 		const token = refCaptcha.current?.getValue();
 		refCaptcha.current?.reset();
 
+		const orderID = Math.floor(Math.random() * 1000000000);
+
 		const params = {
 			firstName: firstName.charAt(0).toUpperCase() + firstName.slice(1),
 			secondName: secondName.charAt(0).toUpperCase() + secondName.slice(1),
@@ -63,19 +66,39 @@ export const Order: React.FC = () => {
 			phone,
 			size,
 			message,
+			orderID,
 			'g-recaptcha-response': token,
 		};
 
 		if (token) {
-			console.log(params);
-			setButtonText('Wysłane!');
+			await emailjs
+				.send(
+					`${import.meta.env.VITE_SERVICE_ID}`,
+					`${import.meta.env.VITE_ORDER_TEMPLATE_ID}`,
+					params,
+					`${import.meta.env.VITE_PUBLIC_KEY}`
+				)
+				.then(() => {
+					setButtonText('Wysłane!');
+					reset();
+					setTimeout(() => {
+						dispatch(resetSize());
+						navigate('/');
+						scrollToTop();
+					}, 1500);
+				})
+				.catch(err => {
+					setErrorValue('Something went wrong..');
+					if (err instanceof Error) {
+						console.log(`Your error is here: ${err.message}`);
+					}
+				})
+				.finally(() => {
+					setIsLoading(false);
+				});
+		} else {
 			setIsLoading(false);
-			dispatch(resetSize());
-			reset();
-			setTimeout(() => {
-				navigate('/');
-				scrollToTop();
-			}, 2500);
+			setErrorValue('Nie bądź 🤖!');
 		}
 	};
 
@@ -84,6 +107,15 @@ export const Order: React.FC = () => {
 			<div className='order__container dark-blue-gradient'>
 				<form className='form' onSubmit={handleSubmit(onSubmit)}>
 					<h3 className='form__title'>Zamówienie</h3>
+					<Link
+						to='/oferta'
+						className='form__close-button'
+						onClick={() => {
+							scrollToTop;
+							dispatch(resetSize());
+						}}>
+						X
+					</Link>
 					<hr className='form__strap' />
 					<FormInput
 						label='Imię:'
@@ -155,6 +187,15 @@ export const Order: React.FC = () => {
 								{buttonText}
 							</button>
 						)}
+					</div>
+					<div className='form__box'>
+						<p className='form__special-text'>
+							Poprzez kliknięcie przycisku akceptujesz{' '}
+							<Link to='/regulamin' onClick={scrollToTop}>
+								regulamin
+							</Link>{' '}
+							oraz wyrażasz zgodę na realizację zamówienia.
+						</p>
 					</div>
 				</form>
 			</div>
