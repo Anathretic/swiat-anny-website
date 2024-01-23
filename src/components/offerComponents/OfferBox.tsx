@@ -6,20 +6,19 @@ import { useAppDispatch } from '../../hooks/reduxHooks';
 import { setSize } from '../../redux/paintingSizeReduxSlice/paintingSizeSlice';
 
 export const OfferBox: React.FC<OfferDataModel> = ({
-	title,
+	paintingSize,
 	text,
 	firstSrc,
 	secondSrc,
 	firstAlt,
 	secondAlt,
-	paintingSize,
 }) => {
 	const dispatch = useAppDispatch();
 
 	return (
 		<div className='offer__box dark-blue-gradient'>
 			<CarouselComponent firstSrc={firstSrc} secondSrc={secondSrc} firstAlt={firstAlt} secondAlt={secondAlt} />
-			<h3 className='offer__box-title'>{title}</h3>
+			<h3 className='offer__box-title'>{paintingSize}</h3>
 			<p className='offer__box-text'>{text}</p>
 			<Link
 				to='/zloz-zamowienie'

@@ -9,13 +9,12 @@ export const Offer: React.FC = () => {
 					{offerData.map(data => (
 						<OfferBox
 							key={data.id}
-							title={data.title}
+							paintingSize={data.paintingSize}
 							text={data.text}
 							firstSrc={data.firstSrc}
 							secondSrc={data.secondSrc}
 							firstAlt={data.firstAlt}
 							secondAlt={data.secondAlt}
-							paintingSize={data.paintingSize}
 						/>
 					))}
 				</div>
