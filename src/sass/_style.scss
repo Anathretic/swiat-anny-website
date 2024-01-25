@@ -266,6 +266,7 @@ body {
 
 .offer {
 	padding-top: 120px;
+	min-height: 100vh;
 
 	&__container {
 		@include mixins.center-flex;

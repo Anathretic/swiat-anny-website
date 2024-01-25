@@ -43,7 +43,10 @@ export const orderSchema = yup.object({
 		.required(errorMessage.requiredField),
 	email: yup.string().email('Wprowadź poprawny e-mail!').required(errorMessage.requiredField),
 	phone: yup.string().phone('PL', 'Podaj prawidłowy numer!').required(errorMessage.requiredField),
-	size: yup.string().oneOf(['Mały', 'Średni', 'Duży'], 'Wybierz opcję!').required(errorMessage.requiredField),
+	size: yup
+		.string()
+		.oneOf(['20cm x 20cm', '30cm x 24cm', '40cm x 30cm'], 'Wybierz opcję!')
+		.required(errorMessage.requiredField),
 	message: yup
 		.string()
 		.min(5, 'Rozpisz się..')

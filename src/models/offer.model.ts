@@ -1,9 +1,25 @@
-export interface OfferDataModel {
+export interface OfferBoxModel {
 	paintingSize: string;
-	text: string;
-	firstSrc: string;
-	secondSrc: string;
+	offerText: string;
+	firstImage: {
+		data: {
+			attributes: {
+				url: string;
+			};
+		};
+	};
+	secondImage: {
+		data: {
+			attributes: {
+				url: string;
+			};
+		};
+	};
 	firstAlt: string;
 	secondAlt: string;
-	id?: number;
+}
+
+export interface OfferData {
+	id: number;
+	attributes: OfferBoxModel;
 }

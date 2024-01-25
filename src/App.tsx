@@ -1,3 +1,5 @@
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { Welcome } from './components/Welcome';
 import { Header } from './components/Header';
@@ -9,40 +11,48 @@ import { CookieBanner } from './components/littleComponents/CookieBanner';
 import { PageNotFound } from './components/PageNotFound';
 import { Order } from './components/Order';
 
+// Apollo client
+const client = new ApolloClient({
+	uri: 'http://localhost:1337/graphql',
+	cache: new InMemoryCache(),
+});
+
 export const App: React.FC = () => {
 	return (
-		<Routes>
-			<Route
-				element={
-					<>
-						<CookieBanner />
-						<Outlet />
-					</>
-				}>
-				<Route
-					path='/'
-					element={
-						<>
-							<Welcome />
-							<Footer />
-						</>
-					}
-				/>
+		<ApolloProvider client={client}>
+			<Routes>
 				<Route
 					element={
 						<>
-							<Header />
+							<CookieBanner />
 							<Outlet />
-							<Footer />
 						</>
 					}>
-					<Route path='/oferta' element={<Offer />}></Route>
-					<Route path='/kontakt' element={<Contact />} />
-					<Route path='/regulamin' element={<TermsAndConditions />} />
+					<Route
+						path='/'
+						element={
+							<>
+								<Welcome />
+								<Footer />
+							</>
+						}
+					/>
+					<Route
+						element={
+							<>
+								<Header />
+								<Outlet />
+								<Footer />
+							</>
+						}>
+						<Route path='/oferta' element={<Offer />}></Route>
+						<Route path='/kontakt' element={<Contact />} />
+						<Route path='/regulamin' element={<TermsAndConditions />} />
+					</Route>
+					<Route path='/zloz-zamowienie' element={<Order />} />
 				</Route>
-				<Route path='/zloz-zamowienie' element={<Order />} />
-			</Route>
-			<Route path='*' element={<PageNotFound />} />
-		</Routes>
+				<Route path='*' element={<PageNotFound />} />
+			</Routes>
+		</ApolloProvider>
 	);
 };

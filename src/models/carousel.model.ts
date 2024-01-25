@@ -1,6 +1,6 @@
 export interface CarouselProps {
-	firstSrc: string;
-	secondSrc: string;
+	firstImage: string;
+	secondImage: string;
 	firstAlt: string;
 	secondAlt: string;
 }

@@ -4,9 +4,9 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { CarouselProps } from '../../models/carousel.model';
 
 export const CarouselComponent: React.FC<CarouselProps> = ({
-	firstSrc,
+	firstImage,
 	firstAlt,
-	secondSrc,
+	secondImage,
 	secondAlt,
 	...carouselProps
 }) => {
@@ -21,10 +21,10 @@ export const CarouselComponent: React.FC<CarouselProps> = ({
 			interval={5000}
 			{...carouselProps}>
 			<div>
-				<img src={firstSrc} alt={firstAlt} className='carousel__item' />
+				<img src={firstImage} alt={firstAlt} className='carousel__item' />
 			</div>
 			<div>
-				<img src={secondSrc} alt={secondAlt} className='carousel__item' />
+				<img src={secondImage} alt={secondAlt} className='carousel__item' />
 			</div>
 		</Carousel>
 	);
