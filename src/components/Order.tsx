@@ -194,7 +194,7 @@ export const Order: React.FC = () => {
 							<Link to='/regulamin' onClick={scrollToTop}>
 								regulamin
 							</Link>{' '}
-							oraz wyrażasz zgodę na realizację zamówienia. W przypadku, gdy rozmiar ma być inny proszę o kontakt przez{' '}
+							oraz wyrażasz zgodę na realizację zamówienia. W przypadku, gdy rozmiar ma być inny proszę o wiadomość przez{' '}
 							<Link to='/kontakt' onClick={scrollToTop}>
 								formularz kontaktowy.
 							</Link>
