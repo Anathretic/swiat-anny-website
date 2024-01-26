@@ -10,22 +10,14 @@ const OFFERS = gql`
 				attributes {
 					paintingSize
 					offerText
-					firstImage {
+					image {
 						data {
 							attributes {
 								url
 							}
 						}
 					}
-					secondImage {
-						data {
-							attributes {
-								url
-							}
-						}
-					}
-					firstAlt
-					secondAlt
+					imageAlt
 				}
 			}
 		}
@@ -50,10 +42,8 @@ export const Offer: React.FC = () => {
 									key={id}
 									paintingSize={data.attributes.paintingSize}
 									offerText={data.attributes.offerText}
-									firstImage={data.attributes.firstImage}
-									secondImage={data.attributes.secondImage}
-									firstAlt={data.attributes.firstAlt}
-									secondAlt={data.attributes.secondAlt}
+									image={data.attributes.image}
+									imageAlt={data.attributes.imageAlt}
 								/>
 							))}
 						</>

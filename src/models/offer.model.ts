@@ -1,22 +1,19 @@
+export interface OfferImage {
+	image: string;
+	imageAlt: string;
+}
+
 export interface OfferBoxModel {
 	paintingSize: string;
 	offerText: string;
-	firstImage: {
+	image: {
 		data: {
 			attributes: {
 				url: string;
 			};
 		};
 	};
-	secondImage: {
-		data: {
-			attributes: {
-				url: string;
-			};
-		};
-	};
-	firstAlt: string;
-	secondAlt: string;
+	imageAlt: string;
 }
 
 export interface OfferData {
