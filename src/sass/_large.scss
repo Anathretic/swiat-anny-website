@@ -86,7 +86,7 @@
 	}
 
 	.offer {
-		padding-top: 0;
+		padding-top: 20px;
 
 		&__container {
 			padding: 0;
@@ -104,9 +104,16 @@
 @media screen and (min-width: 1440px) {
 	.offer {
 		&__box {
+			padding: 2em 1em;
 			margin: 0 3em;
 			width: 20%;
 			max-width: 315px;
+		}
+
+		&__box:nth-of-type(2) {
+			height: 575px;
+			width: 30%;
+			max-width: 325px;
 		}
 	}
 

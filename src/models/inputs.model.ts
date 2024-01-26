@@ -1,4 +1,4 @@
-type Size = 'Mały' | 'Średni' | 'Duży';
+type Size = '20cm x 20cm' | '30cm x 24cm' | '40cm x 30cm';
 
 export interface ContactInputs {
 	name: string;

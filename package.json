@@ -11,9 +11,11 @@
 		"prepare": "husky install"
 	},
 	"dependencies": {
+		"@apollo/client": "^3.8.10",
 		"@emailjs/browser": "^3.12.1",
 		"@hookform/resolvers": "^3.3.2",
 		"@reduxjs/toolkit": "^2.0.1",
+		"graphql": "^16.8.1",
 		"react": "^18.2.0",
 		"react-cookie-consent": "^9.0.0",
 		"react-dom": "^18.2.0",
