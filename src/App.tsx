@@ -1,5 +1,4 @@
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { Welcome } from './components/Welcome';
 import { Header } from './components/Header';
@@ -12,8 +11,15 @@ import { PageNotFound } from './components/PageNotFound';
 import { Order } from './components/Order';
 
 // Apollo client
-const client = new ApolloClient({
+const httpLink = createHttpLink({
 	uri: `${import.meta.env.VITE_STRAPI_URL}/graphql`,
+	headers: {
+		Authorization: `Bearer ${import.meta.env.VITE_STRAPI_TOKEN}`,
+	},
+});
+
+const client = new ApolloClient({
+	link: httpLink,
 	cache: new InMemoryCache(),
 });
 
