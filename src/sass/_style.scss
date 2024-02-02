@@ -372,6 +372,14 @@ body {
 			opacity: 1;
 		}
 	}
+
+	&__error {
+		padding: 0.5em;
+		color: colors.$white-color;
+		font-size: 1.2em;
+		text-align: center;
+		text-shadow: 0 0 0.3em currentColor;
+	}
 }
 
 .image-component {

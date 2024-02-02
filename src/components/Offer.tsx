@@ -1,22 +1,17 @@
+import { useQuery, gql } from '@apollo/client';
 import { OfferBox } from './offerComponents/OfferBox';
 import { OfferData } from '../models/offer.model';
-import { useQuery, gql } from '@apollo/client';
+import { Loader } from './littleComponents/Loader';
 
 const OFFERS = gql`
-	query GetOffers {
-		annaOffers {
-			data {
-				id
-				attributes {
+	query Offer {
+		offerCollection {
+			edges {
+				node {
+					id
 					paintingSize
-					offerText
-					image {
-						data {
-							attributes {
-								url
-							}
-						}
-					}
+					text
+					imageID
 					imageAlt
 				}
 			}
@@ -27,28 +22,28 @@ const OFFERS = gql`
 export const Offer: React.FC = () => {
 	const { loading, error, data } = useQuery(OFFERS);
 
-	if (error) {
-		console.log('An error has occurred! Look: ' + error.message);
-	}
-
 	return (
 		<main>
 			<div className='offer'>
 				<div className='offer__container'>
-					{!loading ? (
-						<>
-							{data.annaOffers.data.map((data: OfferData, id: number) => (
-								<OfferBox
-									key={id}
-									paintingSize={data.attributes.paintingSize}
-									offerText={data.attributes.offerText}
-									image={data.attributes.image}
-									imageAlt={data.attributes.imageAlt}
-								/>
-							))}
-						</>
+					{!error ? (
+						!loading ? (
+							<>
+								{data.offerCollection.edges.map((data: OfferData, id: number) => (
+									<OfferBox
+										key={id}
+										paintingSize={data.node.paintingSize}
+										text={data.node.text}
+										imageID={data.node.imageID}
+										imageAlt={data.node.imageAlt}
+									/>
+								))}
+							</>
+						) : (
+							<Loader />
+						)
 					) : (
-						<div>Loading...</div>
+						<p className='offer__error'>Ups! Wystąpił nieoczekiwany błąd! Spróbuj ponownie..</p>
 					)}
 				</div>
 			</div>

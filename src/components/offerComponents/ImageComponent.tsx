@@ -1,9 +1,9 @@
 import { OfferImage } from '../../models/offer.model';
 
-export const ImageComponent: React.FC<OfferImage> = ({ image, imageAlt }) => {
+export const ImageComponent: React.FC<OfferImage> = ({ imageID, imageAlt }) => {
 	return (
 		<div className='image-component'>
-			<img src={image} alt={imageAlt} className='image-component__item' />
+			<img src={`https://drive.google.com/thumbnail?id=${imageID}`} alt={imageAlt} className='image-component__item' />
 		</div>
 	);
 };
