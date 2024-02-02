@@ -1,22 +1,16 @@
 export interface OfferImage {
-	image: string;
+	imageID: string;
 	imageAlt: string;
 }
 
 export interface OfferBoxModel {
 	paintingSize: string;
-	offerText: string;
-	image: {
-		data: {
-			attributes: {
-				url: string;
-			};
-		};
-	};
+	text: string;
+	imageID: string;
 	imageAlt: string;
 }
 
 export interface OfferData {
 	id: number;
-	attributes: OfferBoxModel;
+	node: OfferBoxModel;
 }

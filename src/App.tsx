@@ -12,9 +12,9 @@ import { Order } from './components/Order';
 
 // Apollo client
 const httpLink = createHttpLink({
-	uri: `${import.meta.env.VITE_STRAPI_URL}/graphql`,
+	uri: `${import.meta.env.VITE_API_URL}/graphql/v1`,
 	headers: {
-		Authorization: `Bearer ${import.meta.env.VITE_STRAPI_TOKEN}`,
+		apiKey: `${import.meta.env.VITE_API_KEY}`,
 	},
 });
 
