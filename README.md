@@ -2,14 +2,14 @@
 
 ## About
 
-A commercial website that is set up to showcase painted images and contact with website owner via a form if you are interested in the service.
+A commercial website configured to showcase painted images and contact the site owner via a form in case of questions. In addition, a form for order processing has been added. After placing an order, the user will receive an e-mail confirmation.
 
-The plan is to store the data in Firebase and load it from the server. Optional use of pixi.js
+The offers section was done using Supabase, so I decided to use and get used to working in GraphQL with the Apollo client, which was a new experience for me.
 
 ## Links & Tools
 
-**NoSQL database:** [Firebase](https://firebase.google.com/)
+**Used:** HTML, SASS (CSS preprocessor), React (incl. Redux, React-Query, React-Hook-Form), TypeScript, GraphQL, Apollo Client, Vite, Yup, Husky
 
-**Used:** HTML, SASS (CSS preprocessor), React (incl. Redux), TypeScript, Vite, Yup, Husky
+**Tools:** [EmailJS](https://www.emailjs.com/), [Supabase](https://supabase.com/)
 
-**URL:** Work in progress
+**URL:** [Świat Anny](https://swiat-anny.pl/)
