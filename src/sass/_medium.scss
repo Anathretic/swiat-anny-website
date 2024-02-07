@@ -1,6 +1,20 @@
 @use 'colors';
 @use 'mixins';
 
+@media screen and (min-width: 500px) and (max-height: 600px) {
+	.offer {
+		&__error {
+			top: 58%;
+		}
+	}
+
+	.loader {
+		&--offer {
+			top: 58%;
+		}
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.homepage {
 		&__title {

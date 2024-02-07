@@ -181,7 +181,7 @@ export const Order: React.FC = () => {
 					<hr className='form__strap' />
 					<div className='form__box'>
 						{isLoading ? (
-							<Loader />
+							<Loader className='loader'/>
 						) : (
 							<button className='form__button' type='submit'>
 								{buttonText}

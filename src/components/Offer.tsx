@@ -40,7 +40,7 @@ export const Offer: React.FC = () => {
 								))}
 							</>
 						) : (
-							<Loader />
+							<Loader className='loader loader--offer' />
 						)
 					) : (
 						<p className='offer__error'>Ups! Wystąpił nieoczekiwany błąd! Spróbuj ponownie..</p>
