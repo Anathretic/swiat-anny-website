@@ -374,6 +374,9 @@ body {
 	}
 
 	&__error {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
 		padding: 0.5em;
 		color: colors.$white-color;
 		font-size: 1.2em;
@@ -615,6 +618,12 @@ body {
 		border-radius: 50%;
 		animation: spin-animation 1.7s infinite ease, round-animation 1.7s infinite ease;
 		overflow: hidden;
+	}
+
+	&--offer {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 }
 
