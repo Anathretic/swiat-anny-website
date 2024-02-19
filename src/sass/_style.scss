@@ -399,7 +399,7 @@ body {
 .order,
 .contact {
 	&__container {
-		width: 75%;
+		width: 85%;
 		color: colors.$white-color;
 		border: colors.$neon-pink 0.125em solid;
 		border-radius: 1em;
@@ -635,8 +635,9 @@ body {
 
 	&__container {
 		@include mixins.center-flex;
+		padding: 0.5em;
 		flex-direction: column;
-		width: 75%;
+		width: 85%;
 		color: colors.$white-color;
 		border: colors.$neon-pink 0.125em solid;
 		border-radius: 1em;
