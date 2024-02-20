@@ -13,6 +13,7 @@ const OFFERS = gql`
 					text
 					imageID
 					imageAlt
+					price
 				}
 			}
 		}
@@ -36,6 +37,7 @@ export const Offer: React.FC = () => {
 										text={data.node.text}
 										imageID={data.node.imageID}
 										imageAlt={data.node.imageAlt}
+										price={data.node.price}
 									/>
 								))}
 							</>

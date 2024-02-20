@@ -293,19 +293,25 @@ body {
 		animation: border-animation 4s infinite linear;
 	}
 
-	&__box-title {
-		padding: 1em;
+	&__box-special-text {
+		padding: 0.75em;
 		color: colors.$neon-pink;
-		font-size: 1.3em;
+		font-size: 1.2em;
 		font-weight: 400;
+		line-height: 32px;
 		text-shadow: 0 0 0.3em currentColor;
 		transition: color 0.3s text-shadow 0.3s;
 
 		-webkit-transform: translate3D(0, 0, 0);
+
+		span {
+			color: colors.$white-color;
+			text-shadow: none;
+		}
 	}
 
 	&__box-text {
-		padding: 0.5em;
+		padding: 1em 0.5em;
 		font-size: 0.9em;
 	}
 
@@ -313,7 +319,7 @@ body {
 		display: inline-block;
 		position: relative;
 		padding: 0.75em 3em;
-		margin: 1.5em;
+		margin: 0.75em 1.5em 1.5em;
 		color: colors.$neon-pink;
 		background-color: transparent;
 		font-size: 0.9em;
@@ -386,11 +392,10 @@ body {
 }
 
 .image-component {
+	padding: 0.5em 0 0.5em;
 	width: 92%;
-	border-radius: 0.5em;
 
 	&__item {
-		padding-top: 0.5em;
 		width: 100%;
 		border-radius: 1.25em;
 	}
