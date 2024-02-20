@@ -8,6 +8,7 @@ export interface OfferBoxModel {
 	text: string;
 	imageID: string;
 	imageAlt: string;
+	price: string;
 }
 
 export interface OfferData {
