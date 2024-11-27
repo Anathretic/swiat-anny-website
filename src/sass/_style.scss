@@ -10,6 +10,10 @@
 	margin: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-image: url('../images/background-welcome.jpg');
 	background-size: center;
@@ -310,6 +314,24 @@ body {
 		}
 	}
 
+	&__box-image-type {
+		padding: 0.25em 0;
+		color: transparent;
+		font-size: 7em;
+		font-family: 'Dancing Script', cursive;
+		font-weight: 400;
+	}
+
+	&__box-image-type-text {
+		color: transparent;
+		text-shadow: 0 0 0.5em colors.$neon-pink;
+		text-transform: capitalize;
+		text-decoration: none;
+		-webkit-text-stroke-color: colors.$neon-pink;
+		-webkit-text-stroke-width: 1px;
+		animation: title-animation 4s linear infinite;
+	}
+
 	&__box-text {
 		padding: 1em 0.5em;
 		font-size: 0.9em;
@@ -388,16 +410,6 @@ body {
 		font-size: 1.2em;
 		text-align: center;
 		text-shadow: 0 0 0.3em currentColor;
-	}
-}
-
-.image-component {
-	padding: 0.5em 0 0.5em;
-	width: 92%;
-
-	&__item {
-		width: 100%;
-		border-radius: 1.25em;
 	}
 }
 

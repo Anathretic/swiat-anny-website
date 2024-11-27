@@ -1,14 +1,9 @@
-export interface OfferImage {
-	imageID: string;
-	imageAlt: string;
-}
-
 export interface OfferBoxModel {
 	paintingSize: string;
 	text: string;
-	imageID: string;
-	imageAlt: string;
+	imageType: string;
 	price: string;
+	delay: string;
 }
 
 export interface OfferData {

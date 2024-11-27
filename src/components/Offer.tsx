@@ -11,9 +11,9 @@ const OFFERS = gql`
 					id
 					paintingSize
 					text
-					imageID
-					imageAlt
+					imageType
 					price
+					delay
 				}
 			}
 		}
@@ -35,9 +35,9 @@ export const Offer: React.FC = () => {
 										key={id}
 										paintingSize={data.node.paintingSize}
 										text={data.node.text}
-										imageID={data.node.imageID}
-										imageAlt={data.node.imageAlt}
+										imageType={data.node.imageType}
 										price={data.node.price}
+										delay={data.node.delay}
 									/>
 								))}
 							</>
