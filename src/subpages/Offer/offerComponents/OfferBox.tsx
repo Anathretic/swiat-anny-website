@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { OfferBoxModel } from '../../models/offer.model';
-import { scrollToTop } from '../../utils/scrollToTop';
-import { useAppDispatch } from '../../hooks/reduxHooks';
-import { setSize } from '../../redux/paintingSizeReduxSlice/paintingSizeSlice';
+import { OfferBoxModel } from '../../../models/offer.model';
+import { scrollToTop } from '../../../utils/scrollToTop';
+import { useAppDispatch } from '../../../hooks/reduxHooks';
+import { setSize } from '../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
 
 export const OfferBox: React.FC<OfferBoxModel> = ({ paintingSize, text, imageType, price, delay }) => {
 	const dispatch = useAppDispatch();

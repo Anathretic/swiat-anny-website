@@ -183,12 +183,13 @@ body {
 
 		-webkit-transform: translate3D(0, 0, 0);
 
-		&-link {
+		&-container {
 			color: transparent;
 			text-shadow: 0 0 0.5em colors.$neon-pink;
 			text-decoration: none;
 			-webkit-text-stroke-color: colors.$neon-pink;
 			-webkit-text-stroke-width: 1px;
+			cursor: default;
 
 			span {
 				animation: title-animation 6s linear infinite;
@@ -275,7 +276,7 @@ body {
 	&__container {
 		@include mixins.center-flex;
 		flex-direction: column;
-		margin-top: 20px;
+		margin: 2em 0;
 		padding: 1em 0;
 		width: 100%;
 	}

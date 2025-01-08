@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { MailToProps } from '../../models/mailToProps.model';
+import { MailToButtonModel } from '../models/mailToButton.model';
 
-export const MailToButton: React.FC<MailToProps> = ({ mailto, label, ...otherProps }) => {
+const MailToButton: React.FC<MailToButtonModel> = ({ mailto, label, ...otherProps }) => {
 	const handleMailto = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
 		e.preventDefault();
 		window.location.href = mailto;
@@ -13,3 +13,5 @@ export const MailToButton: React.FC<MailToProps> = ({ mailto, label, ...otherPro
 		</Link>
 	);
 };
+
+export default MailToButton;
