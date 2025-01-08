@@ -1,27 +1,8 @@
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import { Outlet, Route, Routes } from 'react-router-dom';
-import { Welcome } from './components/Welcome';
-import { Header } from './components/Header';
-import { Offer } from './components/Offer';
-import { Contact } from './components/Contact';
-import { TermsAndConditions } from './components/TermsAndConditions';
-import { Footer } from './components/Footer';
-import { CookieBanner } from './components/littleComponents/CookieBanner';
-import { PageNotFound } from './components/PageNotFound';
-import { Order } from './components/Order';
-
-// Apollo client
-const httpLink = createHttpLink({
-	uri: `${import.meta.env.VITE_API_URL}/graphql/v1`,
-	headers: {
-		apiKey: `${import.meta.env.VITE_API_KEY}`,
-	},
-});
-
-const client = new ApolloClient({
-	link: httpLink,
-	cache: new InMemoryCache(),
-});
+import { client } from './apollo/apolloClient';
+import { Contact, Offer, Order, PageNotFound, TermsAndConditions, Welcome } from './subpages';
+import { CookieBanner, Footer, Header } from './components';
 
 export const App: React.FC = () => {
 	return (

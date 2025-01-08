@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import CookieConsent from 'react-cookie-consent';
-import { scrollToTop } from '../../utils/scrollToTop';
+import { scrollToTop } from '../utils/scrollToTop';
 
-export const CookieBanner: React.FC = ({ ...otherProps }) => {
+const CookieBanner: React.FC = ({ ...otherProps }) => {
 	return (
 		<CookieConsent
 			location='bottom'
@@ -36,3 +36,5 @@ export const CookieBanner: React.FC = ({ ...otherProps }) => {
 		</CookieConsent>
 	);
 };
+
+export default CookieBanner;

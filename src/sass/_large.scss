@@ -12,6 +12,9 @@
 	}
 
 	.header {
+		background-color: transparent;
+		transition: background-color 0.3s;
+
 		&__title {
 			font-size: 3em;
 		}
@@ -21,11 +24,15 @@
 		}
 	}
 
+	.header-active {
+		background-color: rgb(0, 14, 36);
+	}
+
 	.offer {
 		&__container {
 			flex-direction: row;
 			flex-wrap: wrap;
-			margin-top: 40px;
+			margin: 3em 0;
 		}
 
 		&__box {

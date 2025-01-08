@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { scrollToTop } from '../utils/scrollToTop';
+import { NavLink } from 'react-router-dom';
+import { scrollToTop } from '../../utils/scrollToTop';
 
-export const Header: React.FC = () => {
+const Header: React.FC = () => {
 	const [headerBackground, setHeaderBackground] = useState(false);
 
 	const showHeaderBackground = () => {
@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
 		<header className={`header ${headerBackground && 'header-active'}`}>
 			<div className='header__box'>
 				<h2 className='header__title'>
-					<Link to='/' className='header__title-link' onClick={scrollToTop}>
+					<div className='header__title-container' onClick={scrollToTop}>
 						<span>Ś</span>
 						<span>w</span>
 						<span>i</span>
@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
 						<span>n</span>
 						<span>n</span>
 						<span>y</span>
-					</Link>
+					</div>
 				</h2>
 				<nav className='header__nav'>
 					<NavLink
@@ -67,3 +67,5 @@ export const Header: React.FC = () => {
 		</header>
 	);
 };
+
+export default Header;

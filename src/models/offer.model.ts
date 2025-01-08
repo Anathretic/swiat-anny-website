@@ -6,7 +6,7 @@ export interface OfferBoxModel {
 	delay: string;
 }
 
-export interface OfferData {
+export interface OfferDataModel {
 	id: number;
 	node: OfferBoxModel;
 }

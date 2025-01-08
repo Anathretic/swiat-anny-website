@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import NotFoundImage from '../images/notfound-img.svg';
 
-export const PageNotFound: React.FC = () => {
+const PageNotFound: React.FC = () => {
 	return (
 		<div className='notfound'>
 			<img className='notfound__img' src={NotFoundImage} alt='Page not found image' />
@@ -14,3 +14,5 @@ export const PageNotFound: React.FC = () => {
 		</div>
 	);
 };
+
+export default PageNotFound;

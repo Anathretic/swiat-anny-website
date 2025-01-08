@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { scrollToTop } from '../utils/scrollToTop';
 
-export const Welcome: React.FC = () => {
+const Welcome: React.FC = () => {
 	return (
 		<div className='homepage'>
 			<div className='homepage__container'>
@@ -23,3 +23,5 @@ export const Welcome: React.FC = () => {
 		</div>
 	);
 };
+
+export default Welcome;

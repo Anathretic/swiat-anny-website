@@ -1,26 +1,10 @@
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { OfferBox } from './offerComponents/OfferBox';
-import { OfferData } from '../models/offer.model';
-import { Loader } from './littleComponents/Loader';
+import { FormLoader } from '../../components/Forms/components/FormElements';
+import { OFFERS } from '../../graphql/offerGraph';
+import { OfferDataModel } from '../../models/offer.model';
 
-const OFFERS = gql`
-	query Offer {
-		offerCollection {
-			edges {
-				node {
-					id
-					paintingSize
-					text
-					imageType
-					price
-					delay
-				}
-			}
-		}
-	}
-`;
-
-export const Offer: React.FC = () => {
+const Offer: React.FC = () => {
 	const { loading, error, data } = useQuery(OFFERS);
 
 	return (
@@ -30,7 +14,7 @@ export const Offer: React.FC = () => {
 					{!error ? (
 						!loading ? (
 							<>
-								{data.offerCollection.edges.map((data: OfferData, id: number) => (
+								{data.offerCollection.edges.map((data: OfferDataModel, id: number) => (
 									<OfferBox
 										key={id}
 										paintingSize={data.node.paintingSize}
@@ -42,7 +26,7 @@ export const Offer: React.FC = () => {
 								))}
 							</>
 						) : (
-							<Loader className='loader loader--offer' />
+							<FormLoader className='loader loader--offer' />
 						)
 					) : (
 						<p className='offer__error'>Ups! Wystąpił nieoczekiwany błąd! Spróbuj ponownie..</p>
@@ -52,3 +36,5 @@ export const Offer: React.FC = () => {
 		</main>
 	);
 };
+
+export default Offer;
