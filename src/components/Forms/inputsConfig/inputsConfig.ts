@@ -41,7 +41,7 @@ export const orderFormInputsConfig = (errors: FieldErrors, register: UseFormRegi
 	{
 		label: 'Nazwisko:',
 		inputName: 'secondName',
-		placeholder: 'Wprowadź imię..',
+		placeholder: 'Wprowadź nazwisko..',
 		errorMessage: errors.secondName?.message,
 		isInvalid: !!errors.secondName,
 		register: register('secondName'),
