@@ -1,8 +1,8 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
-import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
 import emailjs from '@emailjs/browser';
-import { FormInput, FormLoader, FormTextarea } from './components/FormElements';
+import { FormInput, FormRecaptchaV2, FormSubmit, FormTextarea } from './components/FormElements';
+import { contactFormInputsConfig } from './inputsConfig/inputsConfig';
 import { ContactComponentModel, ContactFormModel } from '../../models/contactForm.model';
 import { contactSchema } from '../../schemas/schemas';
 
@@ -30,6 +30,8 @@ export const ContactForm: React.FC<ContactComponentModel> = ({
 		},
 		resolver: yupResolver(contactSchema),
 	});
+
+	const contactFormInputs = contactFormInputsConfig(errors, register);
 
 	const onSubmit: SubmitHandler<ContactFormModel> = async ({ firstName, email, subject, message }) => {
 		setIsLoading(true);
@@ -76,59 +78,28 @@ export const ContactForm: React.FC<ContactComponentModel> = ({
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
 			<h3 className='form__title'>Zapytaj mnie!</h3>
 			<hr className='form__strap' />
-			<FormInput
-				label='Imię:'
-				inputName='name'
-				placeholder='Wprowadź imię..'
-				children={errors.firstName?.message}
-				aria-invalid={errors.firstName ? true : false}
-				{...register('firstName')}
-			/>
-			<FormInput
-				label='E-mail:'
-				inputName='email'
-				placeholder='Wprowadź e-mail..'
-				children={errors.email?.message}
-				aria-invalid={errors.email ? true : false}
-				{...register('email')}
-			/>
-			<FormInput
-				label='Temat:'
-				inputName='subject'
-				placeholder='Wprowadź temat..'
-				children={errors.subject?.message}
-				aria-invalid={errors.subject ? true : false}
-				{...register('subject')}
-			/>
+			{contactFormInputs.map((input, id) => (
+				<FormInput
+					key={id}
+					label={input.label}
+					inputName={input.inputName}
+					placeholder={input.placeholder}
+					errorMessage={input.errorMessage}
+					aria-invalid={input.isInvalid}
+					{...input.register}
+				/>
+			))}
 			<FormTextarea
 				label='Wiadomość:'
 				inputName='message'
 				placeholder='Wprowadź wiadomość..'
-				children={errors.message?.message}
+				errorMessage={errors.message?.message}
 				aria-invalid={errors.message ? true : false}
 				{...register('message')}
 			/>
-			<div className='form__box'>
-				<ReCAPTCHA
-					key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
-					size={isMobile ? 'compact' : 'normal'}
-					sitekey={import.meta.env.VITE_SITE_KEY}
-					ref={refCaptcha}
-				/>
-				<div className='form__error'>
-					<p>{errorValue}</p>
-				</div>
-			</div>
+			<FormRecaptchaV2 isMobile={isMobile} refCaptcha={refCaptcha} errorValue={errorValue} />
 			<hr className='form__strap' />
-			<div className='form__box'>
-				{isLoading ? (
-					<FormLoader className='loader' />
-				) : (
-					<button className='form__button' type='submit'>
-						{buttonText}
-					</button>
-				)}
-			</div>
+			<FormSubmit isLoading={isLoading} buttonText={buttonText} />
 		</form>
 	);
 };
