@@ -2,9 +2,9 @@
 
 ## About
 
-A commercial website configured to showcase painted images and contact the site owner via a form in case of questions. In addition, a form for order processing has been added. After placing an order, the user will receive an e-mail confirmation.
+A commercial website designed to place orders for images and facilitate user interaction via a contact form for enquiries. In addition, an order processing form was integrated, ensuring that users receive an email confirmation after placing an order.
 
-The offers section was done using Supabase, so I decided to use and get used to working in GraphQL with the Apollo client, which was a new experience for me.
+The offers section was implemented using Supabase. In order to broaden my skills and learn new tools, I decided to work with GraphQL and the Apollo client for this part of the project. This experience gave me an insight into a modern and efficient approach to data management.
 
 ## Links & Tools
 
