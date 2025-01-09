@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import { OfferBox } from './offerComponents/OfferBox';
-import { FormLoader } from '../../components/Forms/components/FormElements';
+import { Loader } from '../../components';
 import { OFFERS } from '../../graphql/offerGraph';
 import { OfferDataModel } from '../../models/offer.model';
 
@@ -26,7 +26,7 @@ const Offer: React.FC = () => {
 								))}
 							</>
 						) : (
-							<FormLoader className='loader loader--offer' />
+							<Loader className='loader loader--offer' />
 						)
 					) : (
 						<p className='offer__error'>Ups! Wystąpił nieoczekiwany błąd! Spróbuj ponownie..</p>

@@ -17,8 +17,8 @@ const Order: React.FC = () => {
 	const selectedSize = useAppSelector(getPaintingSizeInitialValue);
 
 	useEffect(() => {
-		if (selectedSize === '') navigate('/');
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		if (selectedSize === '') navigate('/oferta');
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (

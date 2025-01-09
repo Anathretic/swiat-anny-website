@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { FormCloseButton, FormInput, FormLoader, FormTextarea } from './components/FormElements';
+import { FormCloseButton, FormInput, FormRecaptchaV2, FormSubmit, FormTextarea } from './components/FormElements';
+import { orderFormInputsConfig } from './inputsConfig/inputsConfig.ts';
 import { useAppDispatch } from '../../hooks/reduxHooks.ts';
 import { resetSize } from '../../redux/paintingSizeReduxSlice/paintingSizeSlice.ts';
 import { orderSchema } from '../../schemas/schemas';
@@ -40,6 +40,7 @@ export const OrderForm: React.FC<OrderComponentModel> = ({
 	});
 
 	const dispatch = useAppDispatch();
+	const orderFormInputs = orderFormInputsConfig(errors, register);
 
 	const onSubmit: SubmitHandler<OrderFormModel> = async ({ firstName, secondName, email, phone, size, message }) => {
 		setIsLoading(true);
@@ -103,77 +104,30 @@ export const OrderForm: React.FC<OrderComponentModel> = ({
 				}}
 			/>
 			<hr className='form__strap' />
-			<FormInput
-				label='Imię:'
-				inputName='firstName'
-				placeholder='Wprowadź imię..'
-				children={errors.firstName?.message}
-				aria-invalid={errors.firstName ? true : false}
-				{...register('firstName')}
-			/>
-			<FormInput
-				label='Nazwisko:'
-				inputName='secondName'
-				placeholder='Wprowadź nazwisko..'
-				children={errors.secondName?.message}
-				aria-invalid={errors.secondName ? true : false}
-				{...register('secondName')}
-			/>
-			<FormInput
-				label='E-mail:'
-				inputName='email'
-				placeholder='Wprowadź e-mail..'
-				children={errors.email?.message}
-				aria-invalid={errors.email ? true : false}
-				{...register('email')}
-			/>
-			<FormInput
-				label='Nr telefonu:'
-				inputName='phone'
-				placeholder='Wprowadź numer telefonu..'
-				children={errors.phone?.message}
-				aria-invalid={errors.phone ? true : false}
-				{...register('phone')}
-			/>
-			<FormInput
-				label='Rozmiar:'
-				inputName='size'
-				placeholder='Wprowadź rozmiar..'
-				children={errors.size?.message}
-				aria-invalid={errors.size ? true : false}
-				value={selectedSize}
-				readOnly={true}
-				{...register('size')}
-			/>
+			{orderFormInputs.map((input, id) => (
+				<FormInput
+					key={id}
+					label={input.label}
+					inputName={input.inputName}
+					placeholder={input.placeholder}
+					errorMessage={input.errorMessage}
+					aria-invalid={input.isInvalid}
+					value={input.inputName === 'size' ? selectedSize : undefined}
+					readOnly={input.inputName === 'size' && true}
+					{...input.register}
+				/>
+			))}
 			<FormTextarea
 				label='Wiadomość:'
 				inputName='message'
 				placeholder='Opisz jak widzisz swoją kompozycję..'
-				children={errors.message?.message}
+				errorMessage={errors.message?.message}
 				aria-invalid={errors.message ? true : false}
 				{...register('message')}
 			/>
-			<div className='form__box'>
-				<ReCAPTCHA
-					key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
-					size={isMobile ? 'compact' : 'normal'}
-					sitekey={import.meta.env.VITE_SITE_KEY}
-					ref={refCaptcha}
-				/>
-				<div className='form__error'>
-					<p>{errorValue}</p>
-				</div>
-			</div>
+			<FormRecaptchaV2 isMobile={isMobile} refCaptcha={refCaptcha} errorValue={errorValue} />
 			<hr className='form__strap' />
-			<div className='form__box'>
-				{isLoading ? (
-					<FormLoader className='loader' />
-				) : (
-					<button className='form__button' type='submit'>
-						{buttonText}
-					</button>
-				)}
-			</div>
+			<FormSubmit isLoading={isLoading} buttonText={buttonText} />
 			<div className='form__box'>
 				<p className='form__special-text'>
 					Poprzez kliknięcie przycisku akceptujesz{' '}

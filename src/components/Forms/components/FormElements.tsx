@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CloseButtonModel, InputAndTextareaModel, LoaderModel } from '../../../models/formElements.model';
+import ReCAPTCHA from 'react-google-recaptcha';
+import Loader from '../../Loader';
+import {
+	CloseButtonModel,
+	InputAndTextareaModel,
+	RecaptchaV2Model,
+	SubmitModel,
+} from '../../../models/formElements.model';
 
 export const FormInput: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLInputElement, InputAndTextareaModel>(
-	({ label, inputName, placeholder, value, readOnly, children, ...props }, ref) => {
+	({ label, inputName, placeholder, value, readOnly, errorMessage, ...props }, ref) => {
 		return (
 			<div className='form__box'>
 				<label className='form__label' htmlFor={inputName}>
@@ -20,7 +27,7 @@ export const FormInput: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLI
 					autoComplete='off'
 					{...props}
 				/>
-				<p className='form__input-error'>{children}</p>
+				<p className='form__input-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
 			</div>
 		);
 	}
@@ -29,7 +36,7 @@ export const FormInput: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLI
 export const FormTextarea: React.FC<InputAndTextareaModel> = React.forwardRef<
 	HTMLTextAreaElement,
 	InputAndTextareaModel
->(({ label, inputName, placeholder, children, ...props }, ref) => {
+>(({ label, inputName, placeholder, errorMessage, ...props }, ref) => {
 	return (
 		<div className='form__box'>
 			<label className='form__label' htmlFor={inputName}>
@@ -42,15 +49,37 @@ export const FormTextarea: React.FC<InputAndTextareaModel> = React.forwardRef<
 				autoComplete='off'
 				ref={ref}
 				{...props}></textarea>
-			<p className='form__input-error'>{children}</p>
+			<p className='form__input-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
 		</div>
 	);
 });
 
-export const FormLoader: React.FC<LoaderModel> = ({ className }) => {
+export const FormRecaptchaV2: React.FC<RecaptchaV2Model> = ({ isMobile, refCaptcha, errorValue }) => {
 	return (
-		<div className={className}>
-			<div className='loader__spinner' />
+		<div className='form__box'>
+			<ReCAPTCHA
+				key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
+				size={isMobile ? 'compact' : 'normal'}
+				sitekey={import.meta.env.VITE_SITE_KEY}
+				ref={refCaptcha}
+			/>
+			<div className='form__error'>
+				<p>{errorValue}</p>
+			</div>
+		</div>
+	);
+};
+
+export const FormSubmit: React.FC<SubmitModel> = ({ isLoading, buttonText }) => {
+	return (
+		<div className='form__box'>
+			{isLoading ? (
+				<Loader className='loader' />
+			) : (
+				<button className='form__button' type='submit'>
+					{buttonText}
+				</button>
+			)}
 		</div>
 	);
 };
