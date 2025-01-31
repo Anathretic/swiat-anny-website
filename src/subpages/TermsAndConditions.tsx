@@ -4,6 +4,8 @@ const TermsAndConditions: React.FC = () => {
 	return (
 		<div className='terms'>
 			<div className='terms__container dark-blue-gradient'>
+				<h2 className='terms__main-title'>Regulamin</h2>
+				<hr className='terms__strap' />
 				<div className='terms__box'>
 					<p className='terms__title'>1. Administrator danych</p>
 					<p className='terms__text'>

@@ -76,7 +76,7 @@ export const ContactForm: React.FC<ContactComponentModel> = ({
 
 	return (
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
-			<h3 className='form__title'>Zapytaj mnie!</h3>
+			<h2 className='form__title'>Kontakt</h2>
 			<hr className='form__strap' />
 			{contactFormInputs.map((input, id) => (
 				<FormInput
