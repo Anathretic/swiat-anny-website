@@ -95,7 +95,7 @@ export const OrderForm: React.FC<OrderComponentModel> = ({
 
 	return (
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
-			<h3 className='form__title'>Zamówienie</h3>
+			<h2 className='form__title'>Zamówienie</h2>
 			<FormCloseButton
 				path='/oferta'
 				onClick={() => {

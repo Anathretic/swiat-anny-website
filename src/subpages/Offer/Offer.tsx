@@ -11,9 +11,11 @@ const Offer: React.FC = () => {
 		<main>
 			<div className='offer'>
 				<div className='offer__container'>
+					<h2 className='offer__title'>Oferta</h2>
+					<hr className='offer__strap' />
 					{!error ? (
 						!loading ? (
-							<>
+							<div className='offer__wrapper'>
 								{data.offerCollection.edges.map((data: OfferDataModel, id: number) => (
 									<OfferBox
 										key={id}
@@ -24,7 +26,7 @@ const Offer: React.FC = () => {
 										delay={data.node.delay}
 									/>
 								))}
-							</>
+							</div>
 						) : (
 							<Loader className='loader loader--offer' />
 						)

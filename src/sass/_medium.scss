@@ -102,6 +102,14 @@
 	}
 
 	.offer {
+		&__container {
+			margin: 1em 0 2em;
+		}
+
+		&__title {
+			font-size: 2.5em;
+		}
+
 		&__box {
 			width: 50%;
 		}
@@ -145,6 +153,10 @@
 	}
 
 	.terms {
+		&__main-title {
+			font-size: 1.6em;
+		}
+
 		&__text-link {
 			&::before {
 				content: '';

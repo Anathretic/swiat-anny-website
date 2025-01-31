@@ -16,7 +16,7 @@ html {
 
 body {
 	background-image: url('../images/background-welcome.jpg');
-	background-size: center;
+	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	background-color: colors.$dark-blue;
@@ -191,10 +191,10 @@ body {
 			text-decoration: none;
 			-webkit-text-stroke-color: colors.$neon-pink;
 			-webkit-text-stroke-width: 1px;
-			cursor: default;
 
 			span {
 				animation: title-animation 6s linear infinite;
+				cursor: pointer;
 			}
 
 			span:nth-child(1) {
@@ -218,7 +218,7 @@ body {
 			}
 
 			span:nth-child(6) {
-				margin-left: 15px;
+				padding-left: 15px;
 				animation-delay: 2.5s;
 			}
 
@@ -273,7 +273,7 @@ body {
 
 .offer {
 	padding-top: 120px;
-	min-height: 100vh;
+	min-height: 84vh;
 
 	&__container {
 		@include mixins.center-flex;
@@ -281,6 +281,27 @@ body {
 		margin: 2em 0;
 		padding: 1em 0;
 		width: 100%;
+	}
+
+	&__title {
+		padding: 0 0.5em 0.5em;
+		font-size: 2em;
+		font-weight: 200;
+		text-shadow: 0 0 0.3em currentColor;
+	}
+
+	&__strap {
+		width: 30%;
+		max-width: 330px;
+		border-color: rgb(224, 224, 224, 0.9);
+		box-shadow: 0 0 5px rgba(224, 224, 224, 0.8);
+	}
+
+	&__wrapper {
+		@include mixins.center-flex;
+		flex-direction: column;
+		width: 100%;
+		padding-top: 2.5em;
 	}
 
 	&__box {
@@ -655,7 +676,6 @@ body {
 
 	&__container {
 		@include mixins.center-flex;
-		padding: 0.5em;
 		flex-direction: column;
 		width: 85%;
 		color: colors.$white-color;
@@ -665,13 +685,25 @@ body {
 		text-align: center;
 	}
 
+	&__main-title {
+		padding: 1.5em;
+		font-size: 1.5em;
+		font-weight: 200;
+		text-shadow: 0 0 0.3em currentColor;
+	}
+
+	&__strap {
+		width: 90%;
+		border-color: colors.$special-contact-border;
+	}
+
 	&__box {
-		padding: 0.75em;
+		padding: 1em;
 		margin-top: 1.25em;
 	}
 
 	&__box:last-of-type {
-		margin-bottom: 1.25em;
+		margin-bottom: 2em;
 	}
 
 	&__title {
