@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Loader from '../../Loader';
-import {
-	CloseButtonModel,
-	InputAndTextareaModel,
-	RecaptchaV2Model,
-	SubmitModel,
-} from '../../../models/formElements.model';
+import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
+import { getContactAndOrderFormInitialValues } from '../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
+import { CloseButtonModel, InputAndTextareaModel, ReCaptchaV2Model } from '../../../models/formElements.model';
+import { resetSize } from '../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
+import { scrollToTop } from '../../../utils/scrollToTop';
 
 export const FormInput: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLInputElement, InputAndTextareaModel>(
 	({ label, inputName, placeholder, value, readOnly, errorMessage, ...props }, ref) => {
@@ -54,7 +54,10 @@ export const FormTextarea: React.FC<InputAndTextareaModel> = React.forwardRef<
 	);
 });
 
-export const FormRecaptchaV2: React.FC<RecaptchaV2Model> = ({ isMobile, refCaptcha, errorValue }) => {
+export const FormRecaptchaV2: React.FC<ReCaptchaV2Model> = ({ refCaptcha }) => {
+	const isMobile = useMediaQuery({ query: '(max-width: 499px)' });
+	const { errorValue } = useAppSelector(getContactAndOrderFormInitialValues);
+
 	return (
 		<div className='form__box'>
 			<ReCAPTCHA
@@ -70,7 +73,9 @@ export const FormRecaptchaV2: React.FC<RecaptchaV2Model> = ({ isMobile, refCaptc
 	);
 };
 
-export const FormSubmit: React.FC<SubmitModel> = ({ isLoading, buttonText }) => {
+export const FormSubmit: React.FC = () => {
+	const { isLoading, buttonText } = useAppSelector(getContactAndOrderFormInitialValues);
+
 	return (
 		<div className='form__box'>
 			{isLoading ? (
@@ -84,9 +89,17 @@ export const FormSubmit: React.FC<SubmitModel> = ({ isLoading, buttonText }) => 
 	);
 };
 
-export const FormCloseButton: React.FC<CloseButtonModel> = ({ path, onClick }) => {
+export const FormCloseButton: React.FC<CloseButtonModel> = ({ path }) => {
+	const dispatch = useAppDispatch();
+
 	return (
-		<Link to={path} className='form__close-button' onClick={onClick}>
+		<Link
+			to={path}
+			className='form__close-button'
+			onClick={() => {
+				dispatch(resetSize());
+				scrollToTop();
+			}}>
 			X
 		</Link>
 	);

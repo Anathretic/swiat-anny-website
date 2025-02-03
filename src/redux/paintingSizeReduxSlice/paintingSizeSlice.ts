@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { PaintingSizeModel } from '../../models/reduxSlices.model';
+import { PaintingSizeSliceModel } from '../../models/reduxSlices.model';
 
-const initialState: PaintingSizeModel = {
+const initialState: PaintingSizeSliceModel = {
 	size: '',
 };
 

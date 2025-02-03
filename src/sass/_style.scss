@@ -284,24 +284,18 @@ body {
 	}
 
 	&__title {
-		padding: 0 0.5em 0.5em;
-		font-size: 2em;
-		font-weight: 200;
-		text-shadow: 0 0 0.3em currentColor;
-	}
-
-	&__strap {
-		width: 30%;
-		max-width: 330px;
-		border-color: rgb(224, 224, 224, 0.9);
-		box-shadow: 0 0 5px rgba(224, 224, 224, 0.8);
+		position: absolute;
+		top: -10%;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
 	}
 
 	&__wrapper {
 		@include mixins.center-flex;
 		flex-direction: column;
 		width: 100%;
-		padding-top: 2.5em;
+		padding-top: 1em;
 	}
 
 	&__box {

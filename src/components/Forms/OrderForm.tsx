@@ -1,27 +1,23 @@
-import { Link } from 'react-router-dom';
+import { useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FormCloseButton, FormInput, FormRecaptchaV2, FormSubmit, FormTextarea } from './components/FormElements';
 import { orderFormInputsConfig } from './inputsConfig/inputsConfig.ts';
 import { useAppDispatch } from '../../hooks/reduxHooks.ts';
+import {
+	setButtonText,
+	setErrorValue,
+	setIsLoading,
+} from '../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice.ts';
 import { resetSize } from '../../redux/paintingSizeReduxSlice/paintingSizeSlice.ts';
 import { orderSchema } from '../../schemas/schemas';
 import { OrderComponentModel, OrderFormModel } from '../../models/orderForm.model.ts';
 import { scrollToTop } from '../../utils/scrollToTop.ts';
 
-export const OrderForm: React.FC<OrderComponentModel> = ({
-	isLoading,
-	setIsLoading,
-	errorValue,
-	setErrorValue,
-	buttonText,
-	setButtonText,
-	isMobile,
-	refCaptcha,
-	navigate,
-	selectedSize,
-}) => {
+export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 	const {
 		register,
 		reset,
@@ -39,12 +35,14 @@ export const OrderForm: React.FC<OrderComponentModel> = ({
 		resolver: yupResolver(orderSchema),
 	});
 
+	const navigate = useNavigate();
+	const refCaptcha = useRef<ReCAPTCHA>(null);
 	const dispatch = useAppDispatch();
 	const orderFormInputs = orderFormInputsConfig(errors, register);
 
 	const onSubmit: SubmitHandler<OrderFormModel> = async ({ firstName, secondName, email, phone, size, message }) => {
-		setIsLoading(true);
-		setErrorValue('');
+		dispatch(setIsLoading(true));
+		dispatch(setErrorValue(''));
 		const token = refCaptcha.current?.getValue();
 		refCaptcha.current?.reset();
 
@@ -70,39 +68,34 @@ export const OrderForm: React.FC<OrderComponentModel> = ({
 					`${import.meta.env.VITE_PUBLIC_KEY}`
 				)
 				.then(() => {
-					setButtonText('Wysłane!');
+					dispatch(setButtonText('Wysłane!'));
 					reset();
 					setTimeout(() => {
 						dispatch(resetSize());
+						dispatch(setButtonText('Wyślij'));
 						navigate('/');
 						scrollToTop();
 					}, 1500);
 				})
 				.catch(err => {
-					setErrorValue('Coś poszło nie tak..');
+					dispatch(setErrorValue('Coś poszło nie tak..'));
 					if (err instanceof Error) {
 						console.log(`Twój error to: ${err.message}`);
 					}
 				})
 				.finally(() => {
-					setIsLoading(false);
+					dispatch(setIsLoading(false));
 				});
 		} else {
-			setIsLoading(false);
-			setErrorValue('Nie bądź 🤖!');
+			dispatch(setIsLoading(false));
+			dispatch(setErrorValue('Nie bądź 🤖!'));
 		}
 	};
 
 	return (
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
 			<h2 className='form__title'>Zamówienie</h2>
-			<FormCloseButton
-				path='/oferta'
-				onClick={() => {
-					dispatch(resetSize());
-					scrollToTop();
-				}}
-			/>
+			<FormCloseButton path='/oferta' />
 			<hr className='form__strap' />
 			{orderFormInputs.map((input, id) => (
 				<FormInput
@@ -125,9 +118,9 @@ export const OrderForm: React.FC<OrderComponentModel> = ({
 				aria-invalid={errors.message ? true : false}
 				{...register('message')}
 			/>
-			<FormRecaptchaV2 isMobile={isMobile} refCaptcha={refCaptcha} errorValue={errorValue} />
+			<FormRecaptchaV2 refCaptcha={refCaptcha} />
 			<hr className='form__strap' />
-			<FormSubmit isLoading={isLoading} buttonText={buttonText} />
+			<FormSubmit />
 			<div className='form__box'>
 				<p className='form__special-text'>
 					Poprzez kliknięcie przycisku akceptujesz{' '}
