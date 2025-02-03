@@ -24,18 +24,10 @@ export interface InputConfigModel {
 	register: ReturnType<UseFormRegister<Form>>;
 }
 
-export interface RecaptchaV2Model {
-	isMobile: boolean;
+export interface ReCaptchaV2Model {
 	refCaptcha: React.RefObject<ReCAPTCHA>;
-	errorValue: string;
-}
-
-export interface SubmitModel {
-	isLoading: boolean;
-	buttonText: string;
 }
 
 export interface CloseButtonModel {
 	path: string;
-	onClick: React.MouseEventHandler<HTMLAnchorElement>;
 }

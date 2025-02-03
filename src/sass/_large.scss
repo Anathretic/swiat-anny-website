@@ -30,22 +30,16 @@
 
 	.offer {
 		&__container {
-			flex-direction: row;
 			flex-wrap: wrap;
 			margin-bottom: 3em;
 			padding-top: 0;
 			padding-bottom: 3.2em;
 		}
 
-		&__title {
-			padding: 0.5em;
-			font-size: 3em;
-		}
-
 		&__wrapper {
 			flex-direction: row;
 			flex-wrap: wrap;
-			padding-top: 4em;
+			padding-top: 2em;
 		}
 
 		&__box {

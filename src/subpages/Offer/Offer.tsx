@@ -12,7 +12,6 @@ const Offer: React.FC = () => {
 			<div className='offer'>
 				<div className='offer__container'>
 					<h2 className='offer__title'>Oferta</h2>
-					<hr className='offer__strap' />
 					{!error ? (
 						!loading ? (
 							<div className='offer__wrapper'>
