@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Loader from '../../Loader';
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
-import { getContactAndOrderFormInitialValues } from '../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
+import {
+	getContactAndOrderFormInitialValues,
+	setButtonText,
+} from '../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
 import { CloseButtonModel, InputAndTextareaModel, ReCaptchaV2Model } from '../../../models/formElements.model';
 import { resetSize } from '../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
 import { scrollToTop } from '../../../utils/scrollToTop';
@@ -75,6 +78,18 @@ export const FormRecaptchaV2: React.FC<ReCaptchaV2Model> = ({ refCaptcha }) => {
 
 export const FormSubmit: React.FC = () => {
 	const { isLoading, buttonText } = useAppSelector(getContactAndOrderFormInitialValues);
+	const dispatch = useAppDispatch();
+
+	const checkButtonValue = () => {
+		if (buttonText !== 'Wyślij') {
+			setTimeout(() => {
+				dispatch(setButtonText('Wyślij'));
+			}, 2500);
+		}
+	};
+
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	useEffect(checkButtonValue, [buttonText]);
 
 	return (
 		<div className='form__box'>
