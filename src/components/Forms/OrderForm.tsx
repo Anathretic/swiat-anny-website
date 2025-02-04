@@ -72,10 +72,9 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 					reset();
 					setTimeout(() => {
 						dispatch(resetSize());
-						dispatch(setButtonText('Wyślij'));
 						navigate('/');
 						scrollToTop();
-					}, 1500);
+					}, 2500);
 				})
 				.catch(err => {
 					dispatch(setErrorValue('Coś poszło nie tak..'));

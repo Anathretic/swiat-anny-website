@@ -5,14 +5,14 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import emailjs from '@emailjs/browser';
 import { FormInput, FormRecaptchaV2, FormSubmit, FormTextarea } from './components/FormElements';
 import { contactFormInputsConfig } from './inputsConfig/inputsConfig';
-import { ContactFormModel } from '../../models/contactForm.model';
-import { contactSchema } from '../../schemas/schemas';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import {
 	setButtonText,
 	setErrorValue,
 	setIsLoading,
 } from '../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
+import { ContactFormModel } from '../../models/contactForm.model';
+import { contactSchema } from '../../schemas/schemas';
 
 export const ContactForm: React.FC = () => {
 	const {
@@ -68,9 +68,6 @@ export const ContactForm: React.FC = () => {
 				})
 				.finally(() => {
 					dispatch(setIsLoading(false));
-					setTimeout(() => {
-						dispatch(dispatch(setButtonText('Wyślij')));
-					}, 2500);
 				});
 		} else {
 			dispatch(setIsLoading(false));
