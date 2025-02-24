@@ -93,7 +93,7 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 
 	return (
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
-			<h2 className='form__title'>Zamówienie</h2>
+			<h3 className='form__title'>Zamówienie</h3>
 			<FormCloseButton path='/oferta' />
 			<hr className='form__strap' />
 			{orderFormInputs.map((input, id) => (

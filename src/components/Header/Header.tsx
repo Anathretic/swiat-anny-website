@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { scrollToTop } from '../../utils/scrollToTop';
+import { HashLink } from 'react-router-hash-link';
 
 const Header: React.FC = () => {
-	const [headerBackground, setHeaderBackground] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
 
 	const showHeaderBackground = () => {
 		if (window.scrollY > 30) {
-			setHeaderBackground(true);
+			setIsScrolled(true);
 		} else {
-			setHeaderBackground(false);
+			setIsScrolled(false);
 		}
 	};
 
@@ -19,49 +18,29 @@ const Header: React.FC = () => {
 		return () => {
 			window.removeEventListener('scroll', showHeaderBackground);
 		};
-	}, [headerBackground]);
+	}, [isScrolled]);
 
 	return (
-		<header className={`header ${headerBackground && 'header-active'}`}>
+		<header className={`header ${isScrolled && 'header-active'}`}>
 			<div className='header__box'>
 				<h2 className='header__title'>
-					<div className='header__title-container' onClick={scrollToTop}>
-						<span>Ś</span>
-						<span>w</span>
-						<span>i</span>
-						<span>a</span>
-						<span>t</span>
-						<span>A</span>
-						<span>n</span>
-						<span>n</span>
-						<span>y</span>
-					</div>
+					<HashLink smooth to='/#'>
+						Świat Anny
+					</HashLink>
 				</h2>
 				<nav className='header__nav'>
-					<NavLink
-						to='/oferta'
-						className={({ isActive }) => {
-							return 'header__nav-link ' + (isActive && 'header__nav-link-active');
-						}}
-						onClick={scrollToTop}>
+					<HashLink smooth to='/#historia' className={'header__nav-link'}>
+						Historia
+					</HashLink>
+					<HashLink smooth to='/#oferta' className={'header__nav-link'}>
 						Oferta
-					</NavLink>
-					<NavLink
-						to='/kontakt'
-						className={({ isActive }) => {
-							return 'header__nav-link ' + (isActive && 'header__nav-link-active');
-						}}
-						onClick={scrollToTop}>
+					</HashLink>
+					<HashLink smooth to='/#opinie' className={'header__nav-link'}>
+						Opinie
+					</HashLink>
+					<HashLink smooth to='/#kontakt' className={'header__nav-link'}>
 						Kontakt
-					</NavLink>
-					<NavLink
-						to='/regulamin'
-						className={({ isActive }) => {
-							return 'header__nav-link ' + (isActive && 'header__nav-link-active');
-						}}
-						onClick={scrollToTop}>
-						Regulamin
-					</NavLink>
+					</HashLink>
 				</nav>
 			</div>
 		</header>

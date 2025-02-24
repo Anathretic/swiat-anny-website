@@ -14,11 +14,11 @@ const Order: React.FC = () => {
 	}, []);
 
 	return (
-		<div className='order'>
+		<section className='order'>
 			<div className='order__container dark-blue-gradient'>
 				<OrderForm selectedSize={selectedSize} />
 			</div>
-		</div>
+		</section>
 	);
 };
 

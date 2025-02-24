@@ -77,7 +77,7 @@ export const ContactForm: React.FC = () => {
 
 	return (
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
-			<h2 className='form__title'>Kontakt</h2>
+			<h3 className='form__title'>Kontakt</h3>
 			<hr className='form__strap' />
 			{contactFormInputs.map((input, id) => (
 				<FormInput

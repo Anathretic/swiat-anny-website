@@ -1,8 +1,9 @@
 import { ApolloProvider } from '@apollo/client';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { client } from './apollo/apolloClient';
-import { Contact, Offer, Order, PageNotFound, TermsAndConditions, Welcome } from './subpages';
+import { Order, PageNotFound, TermsAndConditions } from './subpages';
 import { CookieBanner, Footer, Header } from './components';
+import { Contact, Offer, Welcome, AboutMe, Opinions } from './sections';
 
 export const App: React.FC = () => {
 	return (
@@ -11,8 +12,10 @@ export const App: React.FC = () => {
 				<Route
 					element={
 						<>
-							<CookieBanner />
+							<Header />
 							<Outlet />
+							<Footer />
+							<CookieBanner />
 						</>
 					}>
 					<Route
@@ -20,24 +23,16 @@ export const App: React.FC = () => {
 						element={
 							<>
 								<Welcome />
-								<Footer />
+								<AboutMe />
+								<Offer />
+								<Opinions />
+								<Contact />
 							</>
 						}
 					/>
-					<Route
-						element={
-							<>
-								<Header />
-								<Outlet />
-								<Footer />
-							</>
-						}>
-						<Route path='/oferta' element={<Offer />}></Route>
-						<Route path='/kontakt' element={<Contact />} />
-						<Route path='/regulamin' element={<TermsAndConditions />} />
-					</Route>
-					<Route path='/zloz-zamowienie' element={<Order />} />
+					<Route path='/regulamin' element={<TermsAndConditions />} />
 				</Route>
+				<Route path='/zloz-zamowienie' element={<Order />} />
 				<Route path='*' element={<PageNotFound />} />
 			</Routes>
 		</ApolloProvider>

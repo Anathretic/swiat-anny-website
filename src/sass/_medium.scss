@@ -16,7 +16,7 @@
 }
 
 @media screen and (min-width: 768px) {
-	.homepage {
+	.welcome {
 		&__title {
 			font-size: 6em;
 		}
@@ -48,7 +48,7 @@
 
 		&__nav-link {
 			margin: 0.75em;
-			padding: 1em;
+			padding: 0.5em;
 			border: none;
 			text-transform: uppercase;
 			transition: all 0.3s;
@@ -102,10 +102,6 @@
 	}
 
 	.offer {
-		&__container {
-			margin: 1em 0 2em;
-		}
-
 		&__box {
 			width: 50%;
 		}
@@ -231,6 +227,14 @@
 
 		&__img {
 			width: 70%;
+		}
+	}
+}
+
+@media screen and (min-width: 868px) {
+	.header {
+		&__nav-link {
+			padding: 1em;
 		}
 	}
 }
