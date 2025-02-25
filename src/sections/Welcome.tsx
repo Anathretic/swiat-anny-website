@@ -10,6 +10,7 @@ const Welcome: React.FC = () => {
 					<span>i</span>
 					<span>a</span>
 					<span>t</span>
+					<br className='welcome__special-br-tag'/>
 					<span>A</span>
 					<span>n</span>
 					<span>n</span>

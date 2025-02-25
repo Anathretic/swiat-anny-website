@@ -94,7 +94,7 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 	return (
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
 			<h3 className='form__title'>Zamówienie</h3>
-			<FormCloseButton path='/oferta' />
+			<FormCloseButton path='/' />
 			<hr className='form__strap' />
 			{orderFormInputs.map((input, id) => (
 				<FormInput
@@ -126,10 +126,8 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 					<Link to='/regulamin' onClick={scrollToTop}>
 						regulamin
 					</Link>{' '}
-					oraz wyrażasz zgodę na realizację zamówienia. W przypadku, gdy rozmiar ma być inny proszę o wiadomość przez{' '}
-					<Link to='/kontakt' onClick={scrollToTop}>
-						formularz kontaktowy.
-					</Link>
+					oraz wyrażasz zgodę na realizację zamówienia. W przypadku, gdy rozmiar ma być inny proszę o wiadomość przez
+					formularz kontaktowy.
 				</p>
 			</div>
 		</form>

@@ -3,6 +3,18 @@
 		padding: 0.75em;
 	}
 
+	.welcome {
+		&__title {
+			span:nth-child(7) {
+				margin-left: 0;
+			}
+		}
+
+		&__special-br-tag {
+			display: block;
+		}
+	}
+
 	.form {
 		&__close-button {
 			padding: 0.1em 0.25em;
@@ -35,12 +47,22 @@
 		&__box {
 			width: 80%;
 		}
+
+		&__error {
+			padding: 7em 0.5em 0;
+		}
 	}
 
 	.form {
 		&__input,
 		&__textarea {
 			width: 80%;
+		}
+	}
+
+	.loader {
+		&--offer {
+			padding: 8em 0.5em 0;
 		}
 	}
 }
@@ -116,12 +138,6 @@
 		}
 	}
 
-	.offer {
-		&__box {
-			width: 45%;
-		}
-	}
-
 	.footer {
 		&__icons-box {
 			padding: 0.5em 1em;
@@ -135,6 +151,20 @@
 	.notfound {
 		&__img {
 			width: 80%;
+		}
+	}
+}
+
+@media screen and (min-height: 320px) and (max-height: 550px) {
+	.offer {
+		&__error {
+			padding: 2em 0.5em 0;
+		}
+	}
+
+	.loader {
+		&--offer {
+			padding: 3em 0.5em 0;
 		}
 	}
 }

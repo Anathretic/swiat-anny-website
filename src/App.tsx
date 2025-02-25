@@ -21,13 +21,13 @@ export const App: React.FC = () => {
 					<Route
 						path='/'
 						element={
-							<>
+							<main>
 								<Welcome />
 								<AboutMe />
 								<Offer />
 								<Opinions />
 								<Contact />
-							</>
+							</main>
 						}
 					/>
 					<Route path='/regulamin' element={<TermsAndConditions />} />

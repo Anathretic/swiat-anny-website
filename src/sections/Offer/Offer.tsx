@@ -11,6 +11,7 @@ const Offer: React.FC = () => {
 		<section id='oferta' className='offer'>
 			<div className='offer__container'>
 				<h2 className='offer__title'>Oferta</h2>
+				<div className='offer__title-decoration'/>
 				{!error ? (
 					!loading ? (
 						<div className='offer__wrapper'>
@@ -29,7 +30,7 @@ const Offer: React.FC = () => {
 						<Loader className='loader loader--offer' />
 					)
 				) : (
-					<p className='offer__error'>Ups! Wystąpił nieoczekiwany błąd! Spróbuj ponownie..</p>
+					<p className='offer__error'>Ups! Wygląda na to, że serwer ma przerwę..</p>
 				)}
 			</div>
 		</section>
