@@ -41,7 +41,9 @@
 }
 
 @media screen and (min-width: 350px) {
+	.history,
 	.offer,
+	.opinions,
 	.contact {
 		&__title {
 			font-size: 2.75rem;

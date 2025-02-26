@@ -79,6 +79,12 @@
 		}
 	}
 
+	.history {
+		&__content-box {
+			max-width: 450px;
+		}
+	}
+
 	.offer {
 		&__box {
 			width: 50%;

@@ -24,10 +24,28 @@
 		}
 	}
 
+	.history,
 	.offer,
+	.opinions,
 	.contact {
 		&__title {
 			font-size: 3rem;
+		}
+	}
+
+	.history,
+	.opinions {
+		&__container {
+			padding-top: 0;
+			padding-bottom: 3.2em;
+		}
+	}
+
+	.history {
+		&__image-box {
+			img {
+				max-width: 450px;
+			}
 		}
 	}
 
@@ -167,6 +185,14 @@
 		}
 	}
 
+	.history,
+	.opinions {
+		&__container {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 	.offer {
 		&__container {
 			width: 100%;
@@ -184,6 +210,52 @@
 	.header {
 		&__nav-link {
 			font-size: 1.2em;
+		}
+	}
+
+	.history,
+	.opinions {
+		padding-top: 70px;
+
+		&__wrapper {
+			padding: 4em 0 2em;
+		}
+
+		&__title {
+			padding: 0.5rem 0.85rem;
+			font-size: 3.5rem;
+		}
+
+		&__title-decoration {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	.history {
+		&__wrapper {
+			align-items: start;
+			flex-direction: row;
+			gap: 3em;
+		}
+
+		&__image-box {
+			max-width: 600px;
+
+			img {
+				max-width: 450px;
+			}
+		}
+
+		&__content-container {
+			padding: 0 2em;
+		}
+
+		&__content-box:nth-of-type(1) {
+			padding: 0 0 2em;
+		}
+
+		&__content-box:nth-of-type(3) {
+			padding: 2em 0 0;
 		}
 	}
 
@@ -251,6 +323,10 @@
 			padding: 0.5rem 0.85rem 0 0.7rem;
 			width: 100%;
 			font-size: 3.5rem;
+		}
+
+		&__title-decoration {
+			display: none;
 		}
 
 		&__title-info-box {
@@ -339,6 +415,12 @@
 }
 
 @media screen and (min-width: 1720px) {
+	.history {
+		&__wrapper {
+			gap: 6em;
+		}
+	}
+
 	.contact {
 		&__title-box {
 			margin-left: 2em;

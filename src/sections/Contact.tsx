@@ -7,6 +7,7 @@ const Contact: React.FC = () => {
 			<div className='contact__container'>
 				<div className='contact__title-box'>
 					<h2 className='contact__title'>Kontakt</h2>
+					<div className='contact__title-decoration' />
 					<p className='contact__title-subtext'>
 						Gotowy na podróż przez zakamarki sztuki? Świetnie! Ale jeśli Twoją głowę męczy jakieś pytanie skorzystaj z
 						formularza kontaktowego lub zadzwoń na poniższy numer!

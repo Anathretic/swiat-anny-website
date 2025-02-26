@@ -205,6 +205,80 @@ body {
 	}
 }
 
+.history {
+	position: relative;
+	padding: 30px 0 40px;
+	width: 100%;
+	overflow: hidden;
+
+	&__container {
+		position: relative;
+		@include mixins.center-flex;
+		flex-direction: column;
+		padding: 1em 0;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 2160px;
+	}
+
+	&__title {
+		position: relative;
+		padding-bottom: 0.5rem;
+		font-size: 2.5rem;
+		text-align: center;
+		font-weight: 300;
+	}
+
+	&__title-decoration {
+		height: 1px;
+		width: 50px;
+		color: globals.$white-color;
+		border: 1px solid globals.$white-color;
+		margin-bottom: 2rem;
+	}
+
+	&__wrapper {
+		@include mixins.center-flex;
+		flex-direction: column;
+		width: 100%;
+		padding-top: 1em;
+	}
+
+	&__content-container {
+		padding: 1em 2em;
+	}
+
+	&__image-box {
+		@include mixins.center-flex;
+		width: 100%;
+
+		img {
+			width: 85%;
+			max-width: 350px;
+			border-radius: 0.125em;
+			box-shadow: 0px 10px 40px 0 rgba(49, 32, 43, 0.35);
+		}
+	}
+
+	&__content-box {
+		padding: 2em 0;
+		width: 100%;
+		max-width: 350px;
+		text-align: left;
+
+		h3 {
+			font-size: 1.5em;
+			font-weight: 400;
+		}
+
+		p {
+			padding: 1.25em 0 1em;
+			font-weight: 200;
+			line-height: 1.5em;
+		}
+	}
+}
+
 .offer {
 	position: relative;
 	padding: 30px 0 40px;
@@ -323,6 +397,7 @@ body {
 	&__box-text {
 		padding: 1em 0.5em;
 		font-size: 0.9em;
+		line-height: 1.5em;
 	}
 
 	&__box-button {
@@ -477,6 +552,47 @@ body {
 	}
 }
 
+.opinions {
+	position: relative;
+	padding: 30px 0 40px;
+	width: 100%;
+	background-color: globals.$dark-pink;
+	overflow: hidden;
+
+	&__container {
+		position: relative;
+		@include mixins.center-flex;
+		flex-direction: column;
+		padding: 1em 0;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 2160px;
+	}
+
+	&__title {
+		position: relative;
+		padding-bottom: 0.5rem;
+		font-size: 2.5rem;
+		text-align: center;
+		font-weight: 300;
+	}
+
+	&__title-decoration {
+		height: 1px;
+		width: 50px;
+		color: globals.$white-color;
+		border: 1px solid globals.$white-color;
+		margin-bottom: 2rem;
+	}
+
+	&__wrapper {
+		@include mixins.center-flex;
+		flex-direction: column;
+		width: 100%;
+		padding-top: 1em;
+	}
+}
+
 .contact {
 	position: relative;
 	padding: 30px 0 40px;
@@ -492,10 +608,18 @@ body {
 	}
 
 	&__title {
-		padding-bottom: 2rem;
+		padding-bottom: 0.5rem;
 		font-size: 2.5rem;
 		text-align: center;
 		font-weight: 300;
+	}
+
+	&__title-decoration {
+		height: 1px;
+		width: 50px;
+		color: globals.$white-color;
+		border: 1px solid globals.$white-color;
+		margin-bottom: 2rem;
 	}
 
 	&__title-box,
@@ -850,7 +974,7 @@ body {
 	padding: 1em;
 	width: 100%;
 	min-height: 100vh;
-	background-color: globals.$dark-blue;
+	background-color: #021533;
 
 	&__img {
 		width: 90%;
