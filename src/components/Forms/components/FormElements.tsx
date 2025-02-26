@@ -52,7 +52,7 @@ export const FormTextarea: React.FC<InputAndTextareaModel> = React.forwardRef<
 				autoComplete='off'
 				ref={ref}
 				{...props}></textarea>
-			<p className='form__input-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
+			<p className='form__textarea-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
 		</div>
 	);
 });
@@ -62,14 +62,14 @@ export const FormRecaptchaV2: React.FC<ReCaptchaV2Model> = ({ refCaptcha }) => {
 	const { errorValue } = useAppSelector(getContactAndOrderFormInitialValues);
 
 	return (
-		<div className='form__box'>
+		<div className='form__recaptcha-box'>
 			<ReCAPTCHA
 				key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
 				size={isMobile ? 'compact' : 'normal'}
 				sitekey={import.meta.env.VITE_SITE_KEY}
 				ref={refCaptcha}
 			/>
-			<div className='form__error'>
+			<div className='form__recaptcha-error'>
 				<p>{errorValue}</p>
 			</div>
 		</div>
@@ -96,7 +96,7 @@ export const FormSubmit: React.FC = () => {
 			{isLoading ? (
 				<Loader className='loader' />
 			) : (
-				<button className='form__button' type='submit'>
+				<button className='form__submit' type='submit'>
 					{buttonText}
 				</button>
 			)}

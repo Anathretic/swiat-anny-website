@@ -1,4 +1,4 @@
-@use 'colors';
+@use 'globals';
 @use 'animations';
 @use 'mixins';
 
@@ -16,8 +16,8 @@ html {
 }
 
 body {
-	background-color: colors.$dark-blue;
-	color: colors.$white-color;
+	background-color: globals.$dark-blue;
+	color: globals.$white-color;
 	font-family: 'Montserrat', sans-serif;
 }
 
@@ -34,7 +34,7 @@ body {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background-color: colors.$dark-blue;
+	background-color: globals.$dark-blue;
 	z-index: 10;
 
 	&__box {
@@ -53,7 +53,7 @@ body {
 		font-weight: 400;
 
 		a {
-			color: colors.$white-color;
+			color: globals.$white-color;
 			text-decoration: none;
 		}
 	}
@@ -70,7 +70,7 @@ body {
 		display: inline-block;
 		position: relative;
 		padding: 0.8em 0;
-		color: colors.$white-color;
+		color: globals.$white-color;
 		border: 1px solid black;
 		font-size: 1em;
 		text-decoration: none;
@@ -115,7 +115,7 @@ body {
 
 	&__title {
 		margin-bottom: 1em;
-		color: colors.$white-color;
+		color: globals.$white-color;
 		font-size: 4em;
 		font-family: 'Dancing Script', cursive;
 		font-weight: 300;
@@ -143,13 +143,13 @@ body {
 		display: inline-block;
 		position: relative;
 		padding: 1em 2em;
-		color: colors.$neon-pink;
-		border: colors.$neon-pink 0.125em solid;
+		color: globals.$neon-pink;
+		border: globals.$neon-pink 0.125em solid;
 		border-radius: 0.25em;
 		text-decoration: none;
 		text-transform: uppercase;
 		text-shadow: 0 0 0.5em currentColor;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 		transition: all 150ms linear;
 		opacity: 0;
 
@@ -162,7 +162,7 @@ body {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: colors.$neon-pink;
+			background-color: globals.$neon-pink;
 
 			pointer-events: none;
 
@@ -179,15 +179,15 @@ body {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			box-shadow: 0 0 2em 0.5em colors.$neon-pink;
+			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
 			transition: opacity 150ms linear;
 			opacity: 0;
 		}
 
 		&:hover,
 		&:focus {
-			background-color: colors.$neon-pink;
-			color: colors.$dark-pink;
+			background-color: globals.$neon-pink;
+			color: globals.$dark-pink;
 			text-shadow: none;
 		}
 
@@ -203,8 +203,8 @@ body {
 	}
 
 	&__button:hover {
-		background-color: colors.$neon-pink;
-		color: colors.$dark-pink;
+		background-color: globals.$neon-pink;
+		color: globals.$dark-pink;
 		text-shadow: none;
 	}
 }
@@ -238,8 +238,8 @@ body {
 	&__title-decoration {
 		height: 1px;
 		width: 50px;
-		color: colors.$white-color;
-		border: 1px solid colors.$white-color;
+		color: globals.$white-color;
+		border: 1px solid globals.$white-color;
 		margin-bottom: 2rem;
 	}
 
@@ -251,29 +251,59 @@ body {
 	}
 
 	&__box {
+		position: relative;
 		@include mixins.center-flex;
 		flex-direction: column;
 		padding: 1em;
 		margin: 1em;
 		width: 90%;
 		max-width: 420px;
-		color: colors.$white-color;
+		color: globals.$white-color;
 		box-shadow: 0px 10px 40px 0 rgba(49, 32, 43, 0.75);
 		border-radius: 1em;
 		text-align: center;
 	}
 
+	&__box-special-icon {
+		position: absolute;
+		color: rgb(155, 155, 155);
+
+		&--s {
+			top: -20px;
+			left: -20px;
+			font-size: 76px;
+		}
+
+		&--m {
+			bottom: -30px;
+			right: -30px;
+			font-size: 92px;
+		}
+
+		&--m-second {
+			top: -30px;
+			left: -30px;
+			font-size: 78px;
+			transform: rotateY(180deg);
+		}
+
+		&--l {
+			bottom: -30px;
+			left: -30px;
+			font-size: 88px;
+			transform: rotateY(180deg);
+		}
+	}
+
 	&__box-special-text {
 		padding: 0.75em;
-		color: colors.$neon-pink;
+		color: globals.$neon-pink;
 		font-size: 1.2em;
 		font-weight: 400;
 		line-height: 32px;
-		text-shadow: 0 0 0.3em currentColor;
-		transition: color 0.3s text-shadow 0.3s;
 
 		span {
-			color: colors.$white-color;
+			color: globals.$white-color;
 			text-shadow: none;
 		}
 	}
@@ -282,16 +312,15 @@ body {
 		padding: 0.25em 0;
 		color: transparent;
 		font-size: 7em;
-		font-family: 'Dancing Script', cursive;
+		font-family: globals.$special-font;
 		font-weight: 400;
 	}
 
 	&__box-image-type-text {
 		color: transparent;
-		text-shadow: 0 0 0.5em colors.$neon-pink;
+		text-shadow: 0 0 0.5em globals.$neon-pink;
 		text-transform: capitalize;
-		text-decoration: none;
-		-webkit-text-stroke-color: colors.$neon-pink;
+		-webkit-text-stroke-color: globals.$neon-pink;
 		-webkit-text-stroke-width: 1px;
 	}
 
@@ -305,16 +334,16 @@ body {
 		position: relative;
 		padding: 0.75em 3em;
 		margin: 0.75em 1.5em 1.5em;
-		color: colors.$neon-pink;
+		color: globals.$neon-pink;
 		background-color: transparent;
 		font-size: 0.9em;
-		font-family: 'Montserrat', sans-serif;
-		border: colors.$neon-pink 0.125em solid;
+		font-family: globals.$main-font;
+		border: globals.$neon-pink 0.125em solid;
 		border-radius: 0.25em;
 		text-shadow: 0 0 0.5em currentColor;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 		text-decoration: none;
-		transition: all 150ms linear;
+		transition: background-color 150ms linear, color 150ms linear, text-shadow 150ms linear;
 		cursor: pointer;
 
 		&::before {
@@ -324,7 +353,7 @@ body {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: colors.$neon-pink;
+			background-color: globals.$neon-pink;
 
 			pointer-events: none;
 
@@ -341,15 +370,15 @@ body {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			box-shadow: 0 0 2em 0.5em colors.$neon-pink;
+			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
 			transition: opacity 150ms linear;
 			opacity: 0;
 		}
 
 		&:hover,
 		&:focus {
-			background-color: colors.$neon-pink;
-			color: colors.$dark-pink;
+			background-color: globals.$neon-pink;
+			color: globals.$dark-pink;
 			text-shadow: none;
 		}
 
@@ -366,20 +395,19 @@ body {
 
 	&__error {
 		padding: 4em 0.5em 0;
-		color: colors.$white-color;
+		color: globals.$white-color;
 		font-size: 1.35em;
 		text-align: center;
 	}
 }
 
-.order,
-.contact {
+.order {
 	&__container {
 		width: 85%;
-		color: colors.$white-color;
-		border: colors.$neon-pink 0.125em solid;
+		color: globals.$white-color;
+		border: globals.$neon-pink 0.125em solid;
 		border-radius: 1em;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 		text-align: center;
 	}
 }
@@ -405,119 +433,177 @@ body {
 }
 
 .contact {
-	@include mixins.center-flex;
-	padding: 180px 0 4em;
-	min-height: 100vh;
+	position: relative;
+	padding: 30px 0 40px;
+	width: 100%;
 	background-color: #021533;
+	overflow: hidden;
 
-	.form {
-		&__box:nth-of-type(1) {
-			padding-top: 1.5em;
+	&__container,
+	&__title-box,
+	&__title-info-box {
+		@include mixins.center-flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		padding-bottom: 2rem;
+		font-size: 2.5rem;
+		text-align: center;
+		font-weight: 300;
+	}
+
+	&__title-box,
+	&__form {
+		width: 100%;
+	}
+
+	&__title-box {
+		padding-bottom: 2.5rem;
+		max-width: 600px;
+	}
+
+	&__title-subtext {
+		padding: 1rem;
+		width: 90%;
+		max-width: 400px;
+		text-align: center;
+		line-height: 1.8em;
+
+		span {
+			font-weight: 600;
+		}
+	}
+
+	&__title-info-box {
+		padding: 2rem 0;
+		width: 90%;
+		max-width: 400px;
+		list-style-type: none;
+		text-align: center;
+
+		li {
+			padding: 0.5em;
+			width: 100%;
 		}
 
-		&__box:nth-of-type(5) {
-			padding-bottom: 1.25em;
-			height: 200px;
+		p {
+			padding: 0.25rem 0;
+			font-weight: 300;
 		}
+
+		p:first-of-type {
+			font-weight: 500;
+		}
+	}
+
+	&__title-icon {
+		display: none;
+	}
+
+	&__form {
+		max-width: 600px;
 	}
 }
 
 .form {
-	position: relative;
 	@include mixins.center-flex;
 	flex-direction: column;
 	width: 100%;
 
-	&__title {
-		padding: 1.5em;
-		font-size: 1.5em;
-		font-weight: 200;
-	}
-
-	&__close-button {
-		position: absolute;
-		padding: 0.35em;
-		margin: 0.35em;
-		top: 0;
-		right: 0;
-		font-size: 1.6em;
-		color: colors.$special-contact-border;
-		text-decoration: none;
-		transition: color 0.3s;
-
-		&:hover {
-			color: colors.$white-color;
-		}
-	}
-
-	&__strap {
-		width: 90%;
-		border-color: colors.$special-contact-border;
-	}
-
-	&__box {
+	&__box,
+	&__recaptcha-box {
 		@include mixins.center-flex;
 		flex-direction: column;
-		padding: 1em 0;
 		width: 100%;
 	}
 
+	&__box {
+		padding: 1em;
+	}
+
+	&__recaptcha-box {
+		padding: 1em 0 1em 4px;
+	}
+
 	&__label {
-		padding-bottom: 5px;
-		font-size: 1.1em;
+		padding-bottom: 0.25em;
 	}
 
 	&__input,
 	&__textarea {
-		padding: 0.75em;
-		width: 90%;
-		background-color: colors.$dark-blue;
-		color: colors.$white-color;
-		font-family: 'Montserrat', sans-serif;
-		border: colors.$neon-pink 0.125em solid;
-		border-radius: 0.5em;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
-		text-shadow: 0 0 0.2em currentColor;
-		transition: box-shadow 0.3s;
-
-		&:focus {
-			outline: none;
-			box-shadow: inset 0 0 1em colors.$neon-pink, 0 0 1em colors.$neon-pink;
-		}
+		padding: 0.95em 3.25em 0.95em 0.75em;
+		width: 100%;
+		color: globals.$white-color;
+		background-color: transparent;
+		border: 1px solid globals.$dark-pink;
+		box-shadow: inset 0 0 0.25em globals.$white-color, 0 0 0.25em globals.$white-color;
+		font-family: globals.$main-font;
+		transition: border 0.3s, box-shadow 0.3s;
 	}
 
 	&__textarea {
-		min-height: 100px;
-		max-height: 120px;
+		height: 200px;
+		min-height: 120px;
+		max-height: 300px;
 		resize: vertical;
 	}
 
+	&__input,
+	&__textarea {
+		&:focus {
+			box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
+			outline: globals.$white-color;
+		}
+
+		&::placeholder {
+			color: globals.$placeholder-color;
+			opacity: 1;
+		}
+
+		&[aria-invalid='true'] {
+			border-color: globals.$neon-pink;
+			box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
+		}
+	}
+
 	&__input-error,
-	&__error {
+	&__textarea-error {
+		padding-top: 0.25em;
+		height: 1em;
+		width: 100%;
+		color: globals.$neon-pink;
+		text-shadow: 0 0 0.5em currentColor;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+	&__recaptcha-error {
 		padding: 8px;
 		height: 2px;
 		width: 90%;
-		color: colors.$neon-pink;
-		text-shadow: 0 0 0.5em currentColor;
+		color: globals.$neon-pink;
 		font-size: 0.95em;
+		text-align: center;
 	}
 
-	&__button {
+	&__submit {
 		display: inline-block;
 		position: relative;
 		padding: 1em 4em;
 		margin: 1.5em 0;
 		background-color: transparent;
-		color: colors.$neon-pink;
-		font-size: 0.9em;
-		font-family: 'Montserrat', sans-serif;
-		border: colors.$neon-pink 0.125em solid;
+		color: globals.$white-color;
+		font-size: 1em;
+		font-family: globals.$main-font;
+		border: 1px solid globals.$dark-pink;
 		border-radius: 0.25em;
+		box-shadow: inset 0 0 0.25em globals.$white-color, 0 0 0.25em globals.$white-color;
 		text-decoration: none;
-		text-shadow: 0 0 0.5em currentColor;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
 		transition: all 150ms linear;
 		cursor: pointer;
+
+		-webkit-transform: translate3D(0, 0, 0);
 
 		&::before {
 			content: '';
@@ -526,14 +612,14 @@ body {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: colors.$neon-pink;
+			background-color: globals.$white-color;
 
 			pointer-events: none;
 
 			transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
 			filter: blur(2em);
-			transition: opacity 150ms linear;
-			opacity: 0.7;
+			transition: opacity 150ms linear, background-color 150ms linear;
+			opacity: 0.3;
 		}
 
 		&::after {
@@ -543,20 +629,22 @@ body {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			box-shadow: 0 0 2em 0.5em colors.$neon-pink;
+			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
 			transition: opacity 150ms linear;
 			opacity: 0;
 		}
 
 		&:hover,
 		&:focus {
-			background-color: colors.$neon-pink;
-			color: colors.$dark-pink;
-			text-shadow: none;
+			background-color: globals.$neon-pink;
+			color: globals.$dark-pink;
+			box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
+			border-color: globals.$neon-pink;
 		}
 
 		&:hover::before,
 		&:focus::before {
+			background-color: globals.$neon-pink;
 			opacity: 1;
 		}
 
@@ -567,17 +655,27 @@ body {
 	}
 
 	&__special-text {
-		padding: 0 2em;
-		margin-bottom: 1em;
-		font-size: 0.9em;
+		padding: 1rem 1rem;
+		text-align: center;
 
-		a {
-			color: colors.$white-color;
-			transition: color 0.3s;
+		span {
+			font-style: italic;
+		}
+	}
 
-			&:hover {
-				color: colors.$neon-pink;
-			}
+	&__close-button {
+		position: absolute;
+		padding: 0.35em;
+		margin: 0.35em;
+		top: 0;
+		right: 0;
+		font-size: 1.6em;
+		color: globals.$special-contact-border;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: globals.$white-color;
 		}
 	}
 }
@@ -594,12 +692,12 @@ body {
 		overflow: hidden;
 
 		&--pink {
-			color: colors.$neon-pink;
+			color: globals.$neon-pink;
 			font-size: 45px;
 		}
 
 		&--white {
-			color: colors.$white-color;
+			color: globals.$white-color;
 			font-size: 60px;
 		}
 	}
@@ -613,16 +711,16 @@ body {
 	@include mixins.center-flex;
 	padding: 180px 0 4em;
 	min-height: 100vh;
-	color: colors.$white-color;
+	color: globals.$white-color;
 
 	&__container {
 		@include mixins.center-flex;
 		flex-direction: column;
 		width: 85%;
-		color: colors.$white-color;
-		border: colors.$neon-pink 0.125em solid;
+		color: globals.$white-color;
+		border: globals.$neon-pink 0.125em solid;
 		border-radius: 1em;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 		text-align: center;
 	}
 
@@ -634,7 +732,7 @@ body {
 
 	&__strap {
 		width: 90%;
-		border-color: colors.$special-contact-border;
+		border-color: globals.$special-contact-border;
 	}
 
 	&__box {
@@ -648,7 +746,7 @@ body {
 
 	&__title {
 		margin-bottom: 0.75em;
-		color: colors.$neon-pink;
+		color: globals.$neon-pink;
 		font-size: 1.1em;
 		font-weight: 500;
 		text-shadow: 0 0 0.5em currentColor;
@@ -670,7 +768,7 @@ body {
 	&__text-link {
 		position: relative;
 		display: inline-block;
-		color: colors.$white-color;
+		color: globals.$white-color;
 		font-weight: 500;
 		text-decoration: none;
 		transition: all 0.3s;
@@ -679,8 +777,8 @@ body {
 
 .footer {
 	padding: 1em 1em 0;
-	background-color: colors.$dark-blue;
-	color: colors.$white-color;
+	background-color: globals.$dark-blue;
+	color: globals.$white-color;
 	font-size: 1em;
 	text-align: center;
 
@@ -696,7 +794,7 @@ body {
 	&__icon {
 		display: flex;
 		margin: 0.65em 0.65em 0.35em;
-		color: colors.$white-color;
+		color: globals.$white-color;
 		font-size: 28px;
 	}
 
@@ -713,14 +811,14 @@ body {
 	padding: 1em;
 	width: 100%;
 	min-height: 100vh;
-	background-color: colors.$dark-blue;
+	background-color: globals.$dark-blue;
 
 	&__img {
 		width: 90%;
 	}
 
 	&__credits {
-		color: colors.$white-color;
+		color: globals.$white-color;
 		font-size: 0.8em;
 	}
 
@@ -729,13 +827,13 @@ body {
 		position: relative;
 		padding: 0.75em 3em;
 		margin: 2em 1em;
-		color: colors.$neon-pink;
-		border: colors.$neon-pink 0.125em solid;
+		color: globals.$neon-pink;
+		border: globals.$neon-pink 0.125em solid;
 		border-radius: 0.25em;
 		text-decoration: none;
 		text-transform: uppercase;
 		text-shadow: 0 0 0.5em currentColor;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 		transition: background-color 150ms linear;
 
 		&::before {
@@ -745,7 +843,7 @@ body {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: colors.$neon-pink;
+			background-color: globals.$neon-pink;
 
 			pointer-events: none;
 
@@ -762,15 +860,15 @@ body {
 			bottom: 0;
 			left: 0;
 			right: 0;
-			box-shadow: 0 0 2em 0.5em colors.$neon-pink;
+			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
 			transition: opacity 150ms linear;
 			opacity: 0;
 		}
 
 		&:hover,
 		&:focus {
-			background-color: colors.$neon-pink;
-			color: colors.$dark-pink;
+			background-color: globals.$neon-pink;
+			color: globals.$dark-pink;
 			text-shadow: none;
 		}
 

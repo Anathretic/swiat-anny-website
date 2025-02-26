@@ -1,4 +1,4 @@
-@use 'colors';
+@use 'globals';
 
 @keyframes title-animation {
 	0% {
@@ -6,8 +6,8 @@
 		text-shadow: none;
 	}
 	100% {
-		-webkit-text-stroke-color: colors.$neon-pink;
-		text-shadow: 0 0 0.5em colors.$neon-pink;
+		-webkit-text-stroke-color: globals.$neon-pink;
+		text-shadow: 0 0 0.5em globals.$neon-pink;
 	}
 }
 
@@ -23,8 +23,8 @@
 @keyframes border-animation {
 	0%,
 	100% {
-		border: colors.$neon-pink 0.125em solid;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		border: globals.$neon-pink 0.125em solid;
+		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 	}
 	40%,
 	60% {
