@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import {
 	getContactAndOrderFormInitialValues,
 	setButtonText,
+	setErrorValue,
 } from '../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
 import { CloseButtonModel, InputAndTextareaModel, ReCaptchaV2Model } from '../../../models/formElements.model';
 import { resetSize } from '../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
@@ -112,6 +113,7 @@ export const FormCloseButton: React.FC<CloseButtonModel> = ({ path }) => {
 			to={path}
 			className='form__close-button'
 			onClick={() => {
+				dispatch(setErrorValue(''));
 				dispatch(resetSize());
 				scrollToTop();
 			}}>

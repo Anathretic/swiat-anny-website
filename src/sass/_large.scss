@@ -16,18 +16,12 @@
 	}
 
 	.header {
-		background-color: transparent;
-		box-shadow: none;
-		transition: background-color 0.3s, box-shadow 0.3s;
+		transform: translateY(0);
+		opacity: 1;
 
 		&__title {
 			font-size: 3em;
 		}
-	}
-
-	.header-active {
-		background-color: rgb(0, 14, 36);
-		box-shadow: 0px 10px 40px -15px rgba(49, 32, 43, 1);
 	}
 
 	.offer,
@@ -128,7 +122,7 @@
 	}
 
 	.terms {
-		padding: 215px 0 6em;
+		padding: 155px 0 6em;
 
 		&__box:last-of-type {
 			margin-bottom: 3em;
@@ -302,9 +296,17 @@
 		}
 	}
 
+	.order {
+		.form {
+			&__title {
+				font-size: 2em;
+			}
+		}
+	}
+
 	.terms {
 		&__main-title {
-			font-size: 1.7em;
+			font-size: 2em;
 		}
 
 		&__title {

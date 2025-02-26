@@ -13,7 +13,7 @@
 	}
 
 	.header {
-		box-shadow: 0px 10px 40px -15px rgba(49, 32, 43, 1);
+		background-color: transparent;
 
 		&__box {
 			display: flex;
@@ -74,22 +74,8 @@
 			}
 		}
 
-		&__nav-link-active {
-			&::before {
-				content: '';
-				position: absolute;
-				top: 40%;
-				left: 12%;
-				width: 70%;
-				height: 100%;
-				background-color: globals.$neon-pink;
-
-				pointer-events: none;
-
-				transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
-				filter: blur(2em);
-				opacity: 0.85;
-			}
+		&-active {
+			background-color: rgb(0, 14, 36);
 		}
 	}
 
@@ -126,9 +112,27 @@
 		}
 	}
 
+	.order {
+		&__special-icon {
+			font-size: 82px;
+			top: -30px;
+			left: -30px;
+		}
+
+		.form {
+			&__title {
+				font-size: 1.85em;
+			}
+
+			&__close-button {
+				margin: 0.5em;
+			}
+		}
+	}
+
 	.terms {
 		&__main-title {
-			font-size: 1.6em;
+			font-size: 1.85em;
 		}
 
 		&__text-link {
@@ -158,6 +162,20 @@
 			&:hover::before,
 			&:focus::before {
 				opacity: 1;
+			}
+		}
+
+		&__special-icon {
+			font-size: 82px;
+
+			&--first {
+				top: -30px;
+				left: -30px;
+			}
+
+			&--second {
+				bottom: -30px;
+				right: -30px;
 			}
 		}
 	}

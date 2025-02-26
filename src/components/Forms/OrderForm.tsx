@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
@@ -90,6 +90,12 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 			dispatch(setErrorValue('Nie bądź 🤖!'));
 		}
 	};
+
+	useEffect(() => {
+		if (refCaptcha.current?.getValue() === '') {
+			dispatch(setErrorValue(''));
+		}
+	}, [dispatch]);
 
 	return (
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
