@@ -99,6 +99,16 @@
 		}
 	}
 
+	.opinions {
+		&__carousel-container {
+			animation: scroll-left 60s linear infinite;
+		}
+
+		&__error {
+			padding: 9em 0.5em 0;
+		}
+	}
+
 	.contact {
 		&__title-info-box {
 			list-style-type: disc;

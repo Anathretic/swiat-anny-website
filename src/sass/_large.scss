@@ -104,6 +104,13 @@
 		}
 	}
 
+	.opinions {
+		&__error {
+			padding: 7.5em 0.5em 0;
+			font-size: 1.5em;
+		}
+	}
+
 	.form {
 		&__label {
 			font-size: 1.1em;
@@ -295,6 +302,38 @@
 				top: -45px;
 				left: 77.5%;
 			}
+		}
+	}
+
+	.opinions {
+		&__wrapper {
+			padding: 3em 0 4em;
+		}
+
+		&__carousel-container {
+			animation: scroll-left 120s linear infinite;
+		}
+
+		&__box {
+			max-width: 940px;
+
+			h3 {
+				font-size: 1.3em;
+			}
+
+			p,
+			span {
+				font-size: 1.05em;
+			}
+		}
+	}
+
+	@keyframes scroll-left {
+		0% {
+			transform: translateX(100%);
+		}
+		100% {
+			transform: translateX(-360%);
 		}
 	}
 

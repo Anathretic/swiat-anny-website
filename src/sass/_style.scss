@@ -78,7 +78,7 @@ body {
 		font-size: 0.8em;
 		text-decoration: none;
 		text-align: center;
-		transition: color 0.3s text-shadow 0.3s;
+		transition: color 0.3s, text-shadow 0.3s;
 	}
 
 	&__nav-link:nth-of-type(1),
@@ -556,7 +556,9 @@ body {
 	position: relative;
 	padding: 30px 0 40px;
 	width: 100%;
-	background-color: globals.$dark-pink;
+	background-image: url('../images/opinions-background-image.jpg');
+	background-size: cover;
+	background-position: center;
 	overflow: hidden;
 
 	&__container {
@@ -588,8 +590,61 @@ body {
 	&__wrapper {
 		@include mixins.center-flex;
 		flex-direction: column;
+		width: 90%;
+		padding: 3em 0;
+		overflow: hidden;
+	}
+
+	&__carousel-container {
+		display: flex;
 		width: 100%;
-		padding-top: 1em;
+		animation: scroll-left 40s linear infinite;
+	}
+
+	&__box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 75%;
+		padding: 1em;
+		margin: 0 10%;
+		color: globals.$white-color;
+		box-shadow: 0px 0px 20px -15px rgba(224, 224, 224, 1);
+		border-radius: 1em;
+
+		h3 {
+			padding: 1em 0.25em;
+			font-weight: 200;
+			font-style: italic;
+		}
+
+		p {
+			padding: 1em 0.25em 3.5em;
+		}
+
+		span {
+			position: absolute;
+			bottom: 15px;
+			right: 15px;
+			font-weight: 200;
+			font-style: italic;
+			text-align: right;
+		}
+	}
+
+	&__box:nth-of-type(1) {
+		margin: 0 10% 0 0;
+	}
+
+	&__box:nth-of-type(5) {
+		margin: 0 0 0 10%;
+	}
+
+	&__error {
+		padding: 4em 0.5em 0;
+		color: globals.$white-color;
+		font-size: 1.35em;
+		text-align: center;
 	}
 }
 
@@ -846,7 +901,7 @@ body {
 		}
 	}
 
-	&--offer {
+	&--special {
 		padding: 6em 0.5em 0;
 	}
 }

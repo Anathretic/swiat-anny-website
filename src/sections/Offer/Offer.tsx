@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { OfferBox } from './offerComponents/OfferBox';
 import { Loader } from '../../components';
-import { OFFERS } from '../../graphql/offerGraph';
+import { OFFERS } from '../../graphql/graphModels';
 import { OfferDataModel } from '../../models/offer.model';
 
 const Offer: React.FC = () => {
@@ -11,7 +11,7 @@ const Offer: React.FC = () => {
 		<section id='oferta' className='offer'>
 			<div className='offer__container'>
 				<h2 className='offer__title'>Oferta</h2>
-				<div className='offer__title-decoration'/>
+				<div className='offer__title-decoration' />
 				{!error ? (
 					!loading ? (
 						<div className='offer__wrapper'>
@@ -27,7 +27,7 @@ const Offer: React.FC = () => {
 							))}
 						</div>
 					) : (
-						<Loader className='loader loader--offer' />
+						<Loader className='loader loader--special' />
 					)
 				) : (
 					<p className='offer__error'>Ups! Wygląda na to, że serwer ma przerwę..</p>

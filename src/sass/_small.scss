@@ -88,8 +88,14 @@
 		}
 	}
 
+	.opinions {
+		&__error {
+			padding: 7em 0.5em 0;
+		}
+	}
+
 	.loader {
-		&--offer {
+		&--special {
 			padding: 8em 0.5em 0;
 		}
 	}
@@ -197,14 +203,15 @@
 }
 
 @media screen and (min-height: 320px) and (max-height: 550px) {
-	.offer {
+	.offer,
+	.opinions {
 		&__error {
 			padding: 2em 0.5em 0;
 		}
 	}
 
 	.loader {
-		&--offer {
+		&--special {
 			padding: 3em 0.5em 0;
 		}
 	}
