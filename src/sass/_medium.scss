@@ -104,6 +104,11 @@
 			animation: scroll-left 60s linear infinite;
 		}
 
+		&__box-image {
+			width: 70px;
+			height: 70px;
+		}
+
 		&__error {
 			padding: 9em 0.5em 0;
 		}

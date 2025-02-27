@@ -17,7 +17,13 @@ const Opinions: React.FC = () => {
 						<div className='opinions__wrapper'>
 							<div className='opinions__carousel-container'>
 								{data.opinionsCollection.edges.map((data: OpinionsDataModel, id: number) => (
-									<OpinionItem key={id} title={data.node.title} opinion={data.node.opinion} name={data.node.name} />
+									<OpinionItem
+										key={id}
+										id={data.node.id}
+										title={data.node.title}
+										opinion={data.node.opinion}
+										name={data.node.name}
+									/>
 								))}
 							</div>
 						</div>

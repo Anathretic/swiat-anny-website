@@ -1,4 +1,5 @@
 export interface OpinionsItemModel {
+	id: string;
 	title: string;
 	opinion: string;
 	name: string;

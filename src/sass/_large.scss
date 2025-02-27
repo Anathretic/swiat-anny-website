@@ -105,6 +105,12 @@
 	}
 
 	.opinions {
+		&__box-image {
+			width: 80px;
+			height: 80px;
+			top: -35px;
+		}
+
 		&__error {
 			padding: 7.5em 0.5em 0;
 			font-size: 1.5em;
