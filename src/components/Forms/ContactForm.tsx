@@ -63,7 +63,7 @@ export const ContactForm: React.FC = () => {
 				.catch(err => {
 					dispatch(setErrorValue('Coś poszło nie tak..'));
 					if (err instanceof Error) {
-						console.log(`Twój błąd to: ${err.message}`);
+						console.error(`Twój błąd to: ${err.message}`);
 					}
 				})
 				.finally(() => {
@@ -76,9 +76,7 @@ export const ContactForm: React.FC = () => {
 	};
 
 	return (
-		<form className='form' onSubmit={handleSubmit(onSubmit)}>
-			<h2 className='form__title'>Kontakt</h2>
-			<hr className='form__strap' />
+		<form className='contact__form' onSubmit={handleSubmit(onSubmit)}>
 			{contactFormInputs.map((input, id) => (
 				<FormInput
 					key={id}
@@ -99,7 +97,6 @@ export const ContactForm: React.FC = () => {
 				{...register('message')}
 			/>
 			<FormRecaptchaV2 refCaptcha={refCaptcha} />
-			<hr className='form__strap' />
 			<FormSubmit />
 		</form>
 	);

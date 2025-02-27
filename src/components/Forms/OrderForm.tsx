@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
@@ -91,10 +91,16 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 		}
 	};
 
+	useEffect(() => {
+		if (refCaptcha.current?.getValue() === '') {
+			dispatch(setErrorValue(''));
+		}
+	}, [dispatch]);
+
 	return (
 		<form className='form' onSubmit={handleSubmit(onSubmit)}>
-			<h2 className='form__title'>Zamówienie</h2>
-			<FormCloseButton path='/oferta' />
+			<h3 className='form__title'>Zamówienie</h3>
+			<FormCloseButton path='/' />
 			<hr className='form__strap' />
 			{orderFormInputs.map((input, id) => (
 				<FormInput
@@ -126,10 +132,8 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 					<Link to='/regulamin' onClick={scrollToTop}>
 						regulamin
 					</Link>{' '}
-					oraz wyrażasz zgodę na realizację zamówienia. W przypadku, gdy rozmiar ma być inny proszę o wiadomość przez{' '}
-					<Link to='/kontakt' onClick={scrollToTop}>
-						formularz kontaktowy.
-					</Link>
+					oraz wyrażasz zgodę na realizację zamówienia. W przypadku, gdy rozmiar ma być inny proszę o wiadomość przez
+					formularz kontaktowy.
 				</p>
 			</div>
 		</form>

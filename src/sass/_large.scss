@@ -1,7 +1,11 @@
-@use 'colors';
+@use 'globals';
 
 @media screen and (min-width: 1024px) {
-	.homepage {
+	.cookie-banner-text {
+		padding: 1em;
+	}
+
+	.welcome {
 		&__title {
 			font-size: 7em;
 		}
@@ -12,26 +16,42 @@
 	}
 
 	.header {
-		background-color: transparent;
-		transition: background-color 0.3s;
+		transform: translateY(0);
+		opacity: 1;
 
 		&__title {
 			font-size: 3em;
 		}
+	}
 
-		&__nav-link {
-			font-size: 1.2em;
+	.history,
+	.offer,
+	.opinions,
+	.contact {
+		&__title {
+			font-size: 3rem;
 		}
 	}
 
-	.header-active {
-		background-color: rgb(0, 14, 36);
+	.history,
+	.opinions {
+		&__container {
+			padding-top: 0;
+			padding-bottom: 3.2em;
+		}
+	}
+
+	.history {
+		&__image-box {
+			img {
+				max-width: 450px;
+			}
+		}
 	}
 
 	.offer {
 		&__container {
 			flex-wrap: wrap;
-			margin-bottom: 3em;
 			padding-top: 0;
 			padding-bottom: 3.2em;
 		}
@@ -46,32 +66,95 @@
 			width: 30%;
 		}
 
+		&__box:nth-of-type(2) {
+			border: globals.$neon-pink 0.125em solid;
+			box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
+			animation: border-animation 5s infinite linear;
+		}
+
+		&__box-special-icon {
+			&--s {
+				top: -30px;
+				left: -30px;
+				font-size: 98px;
+			}
+
+			&--m {
+				bottom: -40px;
+				right: -40px;
+				font-size: 112px;
+			}
+
+			&--m-second {
+				top: -40px;
+				left: -40px;
+				font-size: 102px;
+			}
+
+			&--l {
+				top: -45px;
+				left: 75%;
+				font-size: 120px;
+			}
+		}
+
 		&__error {
+			padding: 7.5em 0.5em 0;
+			font-size: 1.5em;
+		}
+	}
+
+	.opinions {
+		&__box-image {
+			width: 80px;
+			height: 80px;
+			top: -35px;
+		}
+
+		&__error {
+			padding: 7.5em 0.5em 0;
 			font-size: 1.5em;
 		}
 	}
 
 	.form {
-		&__input,
-		&__textarea {
+		&__label {
+			font-size: 1.1em;
+		}
+
+		&__input-error {
 			font-size: 0.9em;
+		}
+
+		&__textarea-error {
+			font-size: 0.95em;
+		}
+
+		&__submit {
+			font-size: 1.1em;
+
+			&:hover {
+				color: globals.$dark-pink;
+				background-color: globals.$neon-pink;
+				border-color: globals.$neon-pink;
+			}
+		}
+
+		&__special-text {
+			font-size: 1.1rem;
 		}
 	}
 
 	.order,
-	.contact,
 	.terms {
 		&__container {
 			width: 50%;
 		}
 	}
 
-	.contact,
 	.terms {
-		padding: 215px 0 6em;
-	}
+		padding: 155px 0 6em;
 
-	.terms {
 		&__box:last-of-type {
 			margin-bottom: 3em;
 		}
@@ -105,7 +188,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-	.homepage {
+	.welcome {
 		&__title {
 			font-size: 10em;
 		}
@@ -115,52 +198,218 @@
 		}
 	}
 
-	.offer {
-		padding-top: 20px;
-
+	.history,
+	.opinions {
 		&__container {
-			margin-top: 140px;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.offer {
+		&__container {
 			width: 100%;
 			height: 100%;
 		}
 
 		&__box {
-			width: 25%;
-			max-width: 315px;
+			width: 30%;
+			max-width: 380px;
+		}
+	}
+}
+
+@media screen and (min-width: 1358px) {
+	.header {
+		&__nav-link {
+			font-size: 1.2em;
+		}
+	}
+
+	.history,
+	.opinions {
+		padding-top: 70px;
+
+		&__wrapper {
+			padding: 4em 0 2em;
+		}
+
+		&__title {
+			padding: 0.5rem 0.85rem;
+			font-size: 3.5rem;
+		}
+
+		&__title-decoration {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	.history {
+		&__wrapper {
+			align-items: start;
+			flex-direction: row;
+			gap: 3em;
+		}
+
+		&__image-box {
+			max-width: 600px;
+
+			img {
+				max-width: 450px;
+			}
+		}
+
+		&__content-container {
+			padding: 0 2em;
+		}
+
+		&__content-box:nth-of-type(1) {
+			padding: 0 0 2em;
+		}
+
+		&__content-box:nth-of-type(3) {
+			padding: 2em 0 0;
+		}
+	}
+
+	.offer {
+		padding-top: 70px;
+
+		&__wrapper {
+			padding: 4em 0 2em;
+		}
+
+		&__title {
+			padding: 0.5rem 0.85rem;
+			font-size: 3.5rem;
+		}
+
+		&__title-decoration {
+			margin-bottom: 2.5rem;
+		}
+
+		&__box-special-icon {
+			&--s {
+				top: -40px;
+				left: -40px;
+			}
+
+			&--m {
+				bottom: -40px;
+				right: -50px;
+			}
+
+			&--m-second {
+				top: -50px;
+				left: -50px;
+			}
+
+			&--l {
+				top: -45px;
+				left: 77.5%;
+			}
+		}
+	}
+
+	.opinions {
+		&__wrapper {
+			padding: 3em 0 4em;
+		}
+
+		&__carousel-container {
+			animation: scroll-left 120s linear infinite;
+		}
+
+		&__box {
+			max-width: 940px;
+
+			h3 {
+				font-size: 1.3em;
+			}
+
+			p,
+			span {
+				font-size: 1.05em;
+			}
+		}
+	}
+
+	@keyframes scroll-left {
+		0% {
+			transform: translateX(100%);
+		}
+		100% {
+			transform: translateX(-360%);
+		}
+	}
+
+	.contact {
+		padding-top: 70px;
+
+		&__container {
+			align-items: start;
+			flex-direction: row;
+		}
+
+		&__title-box {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: start;
+			margin-left: 4rem;
+		}
+
+		&__title,
+		&__title-subtext {
+			text-align: left;
+		}
+
+		&__title {
+			padding: 0.5rem 0.85rem 0 0.7rem;
+			width: 100%;
+			font-size: 3.5rem;
+		}
+
+		&__title-decoration {
+			display: none;
+		}
+
+		&__title-info-box {
+			padding: 2rem 2.25rem;
+			max-width: 400px;
+			justify-content: start;
+			font-size: 1.1rem;
+		}
+
+		&__title-icon {
+			position: absolute;
+			display: block;
+			color: rgba(155, 155, 155, 0.3);
+
+			&--first {
+				bottom: -0.75em;
+				left: 1.25em;
+			}
+
+			&--second {
+				bottom: -1.5em;
+				left: 3.5em;
+			}
+
+			&--third {
+				bottom: -0.4em;
+				left: 4.5em;
+			}
+		}
+
+		&__form {
+			margin-right: 2.5rem;
 		}
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.offer {
-		&__box {
-			padding: 2em 1em;
-			margin: 0 3em;
-			width: 25%;
-			max-width: 360px;
-		}
-
-		&__box:nth-of-type(2) {
-			width: 30%;
-			max-width: 380px;
-		}
-	}
-
-	.form {
-		&__title {
-			font-size: 1.7em;
-		}
-
-		&__input,
-		&__textarea,
-		&__input-error,
-		&__error {
-			width: 60%;
-		}
-	}
-
 	.order,
-	.contact,
 	.terms {
 		&__container {
 			width: 40%;
@@ -168,9 +417,17 @@
 		}
 	}
 
+	.order {
+		.form {
+			&__title {
+				font-size: 2em;
+			}
+		}
+	}
+
 	.terms {
 		&__main-title {
-			font-size: 1.7em;
+			font-size: 2em;
 		}
 
 		&__title {
@@ -183,23 +440,35 @@
 	}
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1485px) {
+	.cookie-banner-text {
+		font-size: 1.1em;
+	}
+
 	.offer {
-		&__container {
-			padding-top: 20px;
+		&__box {
+			padding: 2em 1em;
+			margin: 0 3em;
+			width: 35%;
+			max-width: 390px;
+		}
+
+		&__box:nth-of-type(2) {
+			height: 680px;
 		}
 	}
 }
 
-@media screen and (min-width: 2160px) {
-	.offer {
-		&__container {
-			padding-top: 80px;
+@media screen and (min-width: 1720px) {
+	.history {
+		&__wrapper {
+			gap: 6em;
 		}
 	}
 
-	.contact,
-	.terms {
-		padding: 185px 0 6em;
+	.contact {
+		&__title-box {
+			margin-left: 2em;
+		}
 	}
 }

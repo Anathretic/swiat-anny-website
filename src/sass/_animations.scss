@@ -1,28 +1,35 @@
-@use 'colors';
+@use 'globals';
 
 @keyframes title-animation {
-	0%,
-	100% {
-		-webkit-text-stroke-color: colors.$neon-pink;
-		text-shadow: 0 0 0.5em colors.$neon-pink;
-	}
-	20%,
-	80% {
+	0% {
 		-webkit-text-stroke-color: #111;
 		text-shadow: none;
+	}
+	100% {
+		-webkit-text-stroke-color: globals.$neon-pink;
+		text-shadow: 0 0 0.5em globals.$neon-pink;
+	}
+}
+
+@keyframes button-animation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 
 @keyframes border-animation {
 	0%,
 	100% {
-		border: #111 0.125em solid;
-		box-shadow: none;
+		border: globals.$neon-pink 0.125em solid;
+		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 	}
 	40%,
 	60% {
-		border: colors.$neon-pink 0.125em solid;
-		box-shadow: inset 0 0 0.5em colors.$neon-pink, 0 0 0.5em colors.$neon-pink;
+		border: #111 0.125em solid;
+		box-shadow: inset 0 0 0.5em transparent, 0 0 0.5em transparent;
 	}
 }
 
@@ -58,5 +65,14 @@
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+@keyframes scroll-left {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-465%);
 	}
 }
