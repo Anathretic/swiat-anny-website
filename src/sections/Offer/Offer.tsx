@@ -5,7 +5,9 @@ import { OFFERS } from '../../graphql/graphModels';
 import { OfferDataModel } from '../../models/offer.model';
 
 const Offer: React.FC = () => {
-	const { loading, error, data } = useQuery(OFFERS);
+	const { loading, error, data } = useQuery(OFFERS, {
+		fetchPolicy: 'cache-first',
+	});
 
 	return (
 		<section id='oferta' className='offer'>

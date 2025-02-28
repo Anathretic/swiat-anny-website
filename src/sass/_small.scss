@@ -52,6 +52,13 @@
 }
 
 @media screen and (min-width: 375px) {
+	.offer,
+	.opinions {
+		&__error {
+			padding: 7em 0.5em 0;
+		}
+	}
+
 	.offer {
 		&__box {
 			width: 80%;
@@ -81,16 +88,6 @@
 				left: -45px;
 				font-size: 120px;
 			}
-		}
-
-		&__error {
-			padding: 7em 0.5em 0;
-		}
-	}
-
-	.opinions {
-		&__error {
-			padding: 7em 0.5em 0;
 		}
 	}
 

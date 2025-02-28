@@ -70,8 +70,8 @@ body {
 	}
 
 	&__nav-link {
-		display: inline-block;
 		position: relative;
+		display: inline-block;
 		padding: 0.8em 0;
 		color: globals.$white-color;
 		border: 1px solid black;
@@ -136,93 +136,24 @@ body {
 	}
 
 	&__button {
-		display: inline-block;
-		position: relative;
+		@include mixins.special-button;
 		padding: 1em 2em;
-		color: globals.$neon-pink;
-		border: globals.$neon-pink 0.125em solid;
-		border-radius: 0.25em;
-		text-decoration: none;
 		text-transform: uppercase;
-		text-shadow: 0 0 0.5em currentColor;
-		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
-		transition: all 150ms linear;
-		opacity: 0;
-
 		animation: button-animation 1.25s linear forwards;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: globals.$neon-pink;
-
-			pointer-events: none;
-
-			transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
-			filter: blur(2em);
-			transition: opacity 150ms linear;
-			opacity: 0.7;
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
-			transition: opacity 150ms linear;
-			opacity: 0;
-		}
-
-		&:hover,
-		&:focus {
-			background-color: globals.$neon-pink;
-			color: globals.$dark-pink;
-			text-shadow: none;
-		}
-
-		&:hover::before,
-		&:focus::before {
-			opacity: 1;
-		}
-
-		&:hover::after,
-		&:focus::after {
-			opacity: 1;
-		}
-	}
-
-	&__button:hover {
-		background-color: globals.$neon-pink;
-		color: globals.$dark-pink;
-		text-shadow: none;
+		opacity: 0;
 	}
 }
 
-.history {
+.history,
+.offer,
+.opinions,
+.contact {
 	position: relative;
 	padding: 30px 0 40px;
 	width: 100%;
 	overflow: hidden;
 
-	&__container {
-		position: relative;
-		@include mixins.center-flex;
-		flex-direction: column;
-		padding: 1em 0;
-		margin: 0 auto;
-		width: 100%;
-		max-width: 2160px;
-	}
-
 	&__title {
-		position: relative;
 		padding-bottom: 0.5rem;
 		font-size: 2.5rem;
 		text-align: center;
@@ -236,13 +167,37 @@ body {
 		border: 1px solid globals.$white-color;
 		margin-bottom: 2rem;
 	}
+}
 
+.history,
+.offer,
+.opinions {
+	&__container {
+		position: relative;
+		@include mixins.center-flex;
+		flex-direction: column;
+		padding: 1em 0;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 2160px;
+	}
+}
+
+.history,
+.offer {
 	&__wrapper {
 		@include mixins.center-flex;
 		flex-direction: column;
 		width: 100%;
 		padding-top: 1em;
 	}
+}
+
+.history {
+	position: relative;
+	padding: 30px 0 40px;
+	width: 100%;
+	overflow: hidden;
 
 	&__content-container {
 		padding: 1em 2em;
@@ -279,46 +234,19 @@ body {
 	}
 }
 
+.offer,
+.opinions {
+	&__error {
+		padding: 4em 0.5em 0;
+		color: globals.$white-color;
+		font-size: 1.35em;
+		text-align: center;
+	}
+}
+
 .offer {
-	position: relative;
-	padding: 30px 0 40px;
-	width: 100%;
 	min-height: 75vh;
 	background-color: #021533;
-	overflow: hidden;
-
-	&__container {
-		position: relative;
-		@include mixins.center-flex;
-		flex-direction: column;
-		padding: 1em 0;
-		margin: 0 auto;
-		width: 100%;
-		max-width: 2160px;
-	}
-
-	&__title {
-		position: relative;
-		padding-bottom: 0.5rem;
-		font-size: 2.5rem;
-		text-align: center;
-		font-weight: 300;
-	}
-
-	&__title-decoration {
-		height: 1px;
-		width: 50px;
-		color: globals.$white-color;
-		border: 1px solid globals.$white-color;
-		margin-bottom: 2rem;
-	}
-
-	&__wrapper {
-		@include mixins.center-flex;
-		flex-direction: column;
-		width: 100%;
-		padding-top: 1em;
-	}
 
 	&__box {
 		position: relative;
@@ -401,74 +329,22 @@ body {
 	}
 
 	&__box-button {
-		display: inline-block;
-		position: relative;
+		@include mixins.special-button;
 		padding: 0.75em 3em;
 		margin: 0.75em 1.5em 1.5em;
-		color: globals.$neon-pink;
-		background-color: transparent;
 		font-size: 0.9em;
-		font-family: globals.$main-font;
-		border: globals.$neon-pink 0.125em solid;
-		border-radius: 0.25em;
-		text-shadow: 0 0 0.5em currentColor;
-		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
-		text-decoration: none;
-		transition: background-color 150ms linear, color 150ms linear, text-shadow 150ms linear;
 		cursor: pointer;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: globals.$neon-pink;
-
-			pointer-events: none;
-
-			transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
-			filter: blur(2em);
-			transition: opacity 150ms linear;
-			opacity: 0.7;
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
-			transition: opacity 150ms linear;
-			opacity: 0;
-		}
-
-		&:hover,
-		&:focus {
-			background-color: globals.$neon-pink;
-			color: globals.$dark-pink;
-			text-shadow: none;
-		}
-
-		&:hover::before,
-		&:focus::before {
-			opacity: 1;
-		}
-
-		&:hover::after,
-		&:focus::after {
-			opacity: 1;
-		}
 	}
+}
 
-	&__error {
-		padding: 4em 0.5em 0;
+.order,
+.terms {
+	&__container {
+		position: relative;
+		width: 85%;
 		color: globals.$white-color;
-		font-size: 1.35em;
-		text-align: center;
+		border-radius: 0.125em;
+		box-shadow: 0px 10px 40px 0 rgba(49, 32, 43, 0.75);
 	}
 }
 
@@ -481,11 +357,6 @@ body {
 	background-position: center;
 
 	&__container {
-		position: relative;
-		width: 85%;
-		color: globals.$white-color;
-		border-radius: 0.125em;
-		box-shadow: 0px 10px 40px 0 rgba(49, 32, 43, 0.75);
 		text-align: center;
 	}
 
@@ -553,39 +424,9 @@ body {
 }
 
 .opinions {
-	position: relative;
-	padding: 30px 0 40px;
-	width: 100%;
 	background-image: url('../images/opinions-section/opinions-background-image.jpg');
 	background-size: cover;
 	background-position: center;
-	overflow: hidden;
-
-	&__container {
-		position: relative;
-		@include mixins.center-flex;
-		flex-direction: column;
-		padding: 1em 0;
-		margin: 0 auto;
-		width: 100%;
-		max-width: 2160px;
-	}
-
-	&__title {
-		position: relative;
-		padding-bottom: 0.5rem;
-		font-size: 2.5rem;
-		text-align: center;
-		font-weight: 300;
-	}
-
-	&__title-decoration {
-		height: 1px;
-		width: 50px;
-		color: globals.$white-color;
-		border: 1px solid globals.$white-color;
-		margin-bottom: 2rem;
-	}
 
 	&__wrapper {
 		@include mixins.center-flex;
@@ -598,7 +439,7 @@ body {
 	&__carousel-container {
 		display: flex;
 		width: 100%;
-		animation: scroll-left 40s linear infinite;
+		animation: scroll-left 60s linear infinite;
 	}
 
 	&__box {
@@ -670,42 +511,16 @@ body {
 			background-image: url('../images/opinions-section//box-images/opinion-box-fifth.jpg');
 		}
 	}
-
-	&__error {
-		padding: 4em 0.5em 0;
-		color: globals.$white-color;
-		font-size: 1.35em;
-		text-align: center;
-	}
 }
 
 .contact {
-	position: relative;
-	padding: 30px 0 40px;
-	width: 100%;
 	background-color: #021533;
-	overflow: hidden;
 
 	&__container,
 	&__title-box,
 	&__title-info-box {
 		@include mixins.center-flex;
 		flex-direction: column;
-	}
-
-	&__title {
-		padding-bottom: 0.5rem;
-		font-size: 2.5rem;
-		text-align: center;
-		font-weight: 300;
-	}
-
-	&__title-decoration {
-		height: 1px;
-		width: 50px;
-		color: globals.$white-color;
-		border: 1px solid globals.$white-color;
-		margin-bottom: 2rem;
 	}
 
 	&__title-box,
@@ -948,13 +763,8 @@ body {
 	overflow: hidden;
 
 	&__container {
-		position: relative;
 		@include mixins.center-flex;
 		flex-direction: column;
-		width: 85%;
-		color: globals.$white-color;
-		border-radius: 0.125em;
-		box-shadow: 0px 10px 40px 0 rgba(49, 32, 43, 0.75);
 	}
 
 	&__main-title {
@@ -1072,63 +882,9 @@ body {
 	}
 
 	&__btn {
-		display: inline-block;
-		position: relative;
+		@include mixins.special-button;
 		padding: 0.75em 3em;
 		margin: 2em 1em;
-		color: globals.$neon-pink;
-		border: globals.$neon-pink 0.125em solid;
-		border-radius: 0.25em;
-		text-decoration: none;
 		text-transform: uppercase;
-		text-shadow: 0 0 0.5em currentColor;
-		box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
-		transition: background-color 150ms linear;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: globals.$neon-pink;
-
-			pointer-events: none;
-
-			transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
-			filter: blur(2em);
-			transition: opacity 150ms linear;
-			opacity: 0.7;
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
-			transition: opacity 150ms linear;
-			opacity: 0;
-		}
-
-		&:hover,
-		&:focus {
-			background-color: globals.$neon-pink;
-			color: globals.$dark-pink;
-			text-shadow: none;
-		}
-
-		&:hover::before,
-		&:focus::before {
-			opacity: 1;
-		}
-
-		&:hover::after,
-		&:focus::after {
-			opacity: 1;
-		}
 	}
 }

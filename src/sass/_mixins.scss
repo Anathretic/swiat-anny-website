@@ -1,5 +1,69 @@
+@use 'globals';
+
 @mixin center-flex {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@mixin special-button {
+	display: inline-block;
+	position: relative;
+	background-color: transparent;
+	color: globals.$neon-pink;
+	border: globals.$neon-pink 0.125em solid;
+	border-radius: 0.25em;
+	font-family: globals.$main-font;
+	text-decoration: none;
+	text-shadow: 0 0 0.5em currentColor;
+	box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
+	transition: all 150ms linear;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: globals.$neon-pink;
+
+		pointer-events: none;
+
+		transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
+		filter: blur(2em);
+		transition: opacity 150ms linear;
+		opacity: 0.7;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		box-shadow: 0 0 2em 0.5em globals.$neon-pink;
+		transition: opacity 150ms linear;
+		opacity: 0;
+	}
+
+	@media screen and (min-width: 1024px) {
+		&:hover,
+		&:focus {
+			background-color: globals.$neon-pink;
+			color: globals.$dark-pink;
+			text-shadow: none;
+		}
+
+		&:hover::before,
+		&:focus::before {
+			opacity: 1;
+		}
+
+		&:hover::after,
+		&:focus::after {
+			opacity: 1;
+		}
+	}
 }
