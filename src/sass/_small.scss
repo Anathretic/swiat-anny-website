@@ -108,6 +108,18 @@
 	}
 }
 
+@media screen and (max-width: 415px) {
+	.history {
+		&__image-box {
+			padding: 0 2em;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 500px) {
 	.offer {
 		&__box {

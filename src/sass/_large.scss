@@ -41,14 +41,6 @@
 		}
 	}
 
-	.history {
-		&__image-box {
-			img {
-				max-width: 450px;
-			}
-		}
-	}
-
 	.offer {
 		&__container {
 			flex-wrap: wrap;
@@ -250,10 +242,15 @@
 
 		&__image-box {
 			max-width: 600px;
+		}
 
-			img {
-				max-width: 450px;
-			}
+		&__image-box-icon {
+			display: block;
+			position: absolute;
+			top: -25%;
+			color: rgba(155, 155, 155, 0.3);
+			font-size: 1150px;
+			z-index: 0;
 		}
 
 		&__content-container {
@@ -264,7 +261,7 @@
 			padding: 0 0 2em;
 		}
 
-		&__content-box:nth-of-type(3) {
+		&__content-box:nth-of-type(5) {
 			padding: 2em 0 0;
 		}
 	}

@@ -1,3 +1,4 @@
+import { GiEasel } from 'react-icons/gi';
 import SectionImage from '../images/history-section-image.jpg';
 
 const History: React.FC = () => {
@@ -9,6 +10,7 @@ const History: React.FC = () => {
 				<div className='history__wrapper'>
 					<div className='history__image-box'>
 						<img src={SectionImage} alt='Obraz przedstawiający malarza, która nabiera farbę pędzlem z palety' />
+						<GiEasel className='history__image-box-icon' />
 					</div>
 					<div className='history__content-container'>
 						<div className='history__content-box'>
@@ -21,6 +23,7 @@ const History: React.FC = () => {
 								oglądając film o artystach, którzy tworzą dzieła za pomocą intensywnych, pełnych emocji ruchów.
 							</p>
 						</div>
+						<div className='history__special-decoration' />
 						<div className='history__content-box'>
 							<h3>II</h3>
 							<p>
@@ -32,6 +35,7 @@ const History: React.FC = () => {
 								podziwiali jej obrazy, ale czuli w nich autentyczność i pasję, które w końcu ujrzały światło dzienne.
 							</p>
 						</div>
+						<div className='history__special-decoration' />
 						<div className='history__content-box'>
 							<h3>III</h3>
 							<p>
