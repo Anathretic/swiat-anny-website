@@ -1,24 +1,22 @@
 import { useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 
+import throttle from 'lodash/throttle';
+
 const Header: React.FC = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 
-	const showHeaderBackground = () => {
-		if (window.scrollY > 30) {
-			setIsScrolled(true);
-		} else {
-			setIsScrolled(false);
-		}
-	};
-
 	useEffect(() => {
-		window.addEventListener('scroll', showHeaderBackground);
+		const handleScroll = throttle(() => {
+			setIsScrolled(window.scrollY > 30);
+		}, 100);
+
+		window.addEventListener('scroll', handleScroll);
 
 		return () => {
-			window.removeEventListener('scroll', showHeaderBackground);
+			window.removeEventListener('scroll', handleScroll);
 		};
-	}, [isScrolled]);
+	}, []);
 
 	return (
 		<header className={`header ${isScrolled && 'header-active'}`}>
