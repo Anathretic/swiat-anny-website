@@ -273,7 +273,6 @@ body {
 		width: 90%;
 		max-width: 420px;
 		color: globals.$white-color;
-		// box-shadow: 0px 10px 40px 0 rgba(49, 32, 43, 0.75);
 		border-radius: 1em;
 		text-align: center;
 	}
@@ -420,10 +419,6 @@ body {
 			color: globals.$special-contact-border;
 			text-decoration: none;
 			transition: color 0.3s;
-
-			&:hover {
-				color: globals.$white-color;
-			}
 		}
 
 		&__special-text {
@@ -434,10 +429,6 @@ body {
 			a {
 				color: globals.$white-color;
 				transition: color 0.3s;
-
-				&:hover {
-					color: globals.$neon-pink;
-				}
 			}
 		}
 	}
@@ -559,6 +550,11 @@ body {
 		max-width: 400px;
 		text-align: center;
 		line-height: 1.8em;
+
+		a {
+			color: globals.$white-color;
+			transition: color 0.3s;
+		}
 
 		span {
 			font-weight: 600;
@@ -722,25 +718,6 @@ body {
 			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
 			transition: opacity 150ms linear;
 			opacity: 0;
-		}
-
-		&:hover,
-		&:focus {
-			background-color: globals.$neon-pink;
-			color: globals.$dark-pink;
-			box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
-			border-color: globals.$neon-pink;
-		}
-
-		&:hover::before,
-		&:focus::before {
-			background-color: globals.$neon-pink;
-			opacity: 1;
-		}
-
-		&:hover::after,
-		&:focus::after {
-			opacity: 1;
 		}
 	}
 }

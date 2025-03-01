@@ -1,4 +1,5 @@
 @use 'globals';
+@use 'mixins';
 
 @media screen and (min-width: 1024px) {
 	.cookie-banner-text {
@@ -21,6 +22,36 @@
 
 		&__title {
 			font-size: 3em;
+		}
+
+		&__nav-link {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 40%;
+				left: 12%;
+				width: 70%;
+				height: 100%;
+				background-color: globals.$neon-pink;
+
+				pointer-events: none;
+
+				transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
+				filter: blur(2em);
+				transition: opacity 150ms linear;
+				opacity: 0;
+			}
+
+			&:hover,
+			&:focus {
+				color: globals.$neon-pink;
+				text-shadow: 0 0 0.5em currentColor;
+			}
+
+			&:hover::before,
+			&:focus::before {
+				opacity: 0.85;
+			}
 		}
 	}
 
@@ -109,6 +140,14 @@
 		}
 	}
 
+	.contact {
+		&__title-subtext {
+			a:hover {
+				color: globals.$neon-pink;
+			}
+		}
+	}
+
 	.form {
 		&__label {
 			font-size: 1.1em;
@@ -125,15 +164,38 @@
 		&__submit {
 			font-size: 1.1em;
 
-			&:hover {
-				color: globals.$dark-pink;
+			&:hover,
+			&:focus {
 				background-color: globals.$neon-pink;
+				color: globals.$dark-pink;
+				box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 				border-color: globals.$neon-pink;
+			}
+
+			&:hover::before,
+			&:focus::before {
+				background-color: globals.$neon-pink;
+				opacity: 1;
+			}
+
+			&:hover::after,
+			&:focus::after {
+				opacity: 1;
 			}
 		}
 
 		&__special-text {
 			font-size: 1.1rem;
+
+			a:hover {
+				color: globals.$neon-pink;
+			}
+		}
+
+		&__close-button {
+			&:hover {
+				color: globals.$white-color;
+			}
 		}
 	}
 
@@ -150,6 +212,36 @@
 		&__box:last-of-type {
 			margin-bottom: 3em;
 		}
+
+		&__text-link {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: globals.$neon-pink;
+
+				pointer-events: none;
+
+				transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
+				filter: blur(1em);
+				transition: opacity 150ms linear;
+				opacity: 0;
+			}
+
+			&:hover,
+			&:focus {
+				color: globals.$neon-pink;
+				text-shadow: 0 0 0.5em currentColor;
+			}
+
+			&:hover::before,
+			&:focus::before {
+				opacity: 1;
+			}
+		}
 	}
 
 	.footer {
@@ -161,6 +253,42 @@
 
 		&__icon {
 			font-size: 36px;
+		}
+
+		&__icon {
+			@include mixins.center-flex;
+			position: relative;
+			font-size: 36px;
+			transition: color 0.3s;
+
+			-webkit-transform: translate3D(0, 0, 0);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 80%;
+				left: 50%;
+				width: 100%;
+				height: 100%;
+				background-color: globals.$neon-pink;
+
+				pointer-events: none;
+
+				transform: perspective(3em) rotateX(40deg) scale(1, 0.35) translateX(-50%);
+				filter: blur(0.5em);
+				transition: opacity 150ms linear;
+				opacity: 0;
+			}
+
+			&:hover,
+			&:focus {
+				color: globals.$neon-pink;
+			}
+
+			&:hover::before,
+			&:focus::before {
+				opacity: 1;
+			}
 		}
 	}
 

@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import { ContactForm } from '../components/Forms/ContactForm';
+import { scrollToTop } from '../utils/scrollToTop';
 import { GiEasel } from 'react-icons/gi';
 
 const Contact: React.FC = () => {
@@ -14,7 +16,10 @@ const Contact: React.FC = () => {
 					</p>
 					<p className='contact__title-subtext'>
 						<span>Pamiętaj!</span> Wysyłając formularz wyrażasz zgodę na przetwarzanie Twoich danych zgodnie z
-						obowiązującą polityką prywatności.
+						obowiązującym{' '}
+						<Link to='/regulamin' onClick={scrollToTop}>
+							regulaminem.
+						</Link>
 					</p>
 					<ul className='contact__title-info-box'>
 						<li>
