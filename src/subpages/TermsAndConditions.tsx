@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import { MailToButton } from '../components';
+import { scrollToTop } from '../utils/scrollToTop';
 import { GiSpotedFlower } from 'react-icons/gi';
 
 const TermsAndConditions: React.FC = () => {
@@ -45,6 +47,12 @@ const TermsAndConditions: React.FC = () => {
 							Konrad Wojtyło
 						</a>
 					</p>
+				</div>
+				<hr className='terms__strap' />
+				<div className='terms__box'>
+					<Link to='/' className='terms__button' onClick={scrollToTop}>
+						Powrót
+					</Link>
 				</div>
 				<GiSpotedFlower className='terms__special-icon terms__special-icon--first' />
 				<GiSpotedFlower className='terms__special-icon terms__special-icon--second' />

@@ -3,13 +3,14 @@ $special-font: 'Dancing Script', 'cursive';
 
 $neon-pink: #ff00b7;
 $dark-pink: #31202b;
+$lighter-dark-blue: #021533;
 $dark-blue: #000e24;
 $white-color: #e0e0e0;
-$special-contact-border: rgba(224, 224, 224, 0.2);
-$placeholder-color: #8a8989;
+$gray-color: #9b9b9b;
+$transparent-gray-color: #e0e0e033;
 
 .dark-blue-gradient {
-	background-color: rgba(0, 14, 36, 0.8);
+	background-color: #000e24cc;
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 }
