@@ -10,10 +10,6 @@
 		&__title {
 			font-size: 7em;
 		}
-
-		&__button {
-			padding: 1em 5em;
-		}
 	}
 
 	.header {
@@ -161,29 +157,6 @@
 			font-size: 0.95em;
 		}
 
-		&__submit {
-			font-size: 1.1em;
-
-			&:hover,
-			&:focus {
-				background-color: globals.$neon-pink;
-				color: globals.$dark-pink;
-				box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
-				border-color: globals.$neon-pink;
-			}
-
-			&:hover::before,
-			&:focus::before {
-				background-color: globals.$neon-pink;
-				opacity: 1;
-			}
-
-			&:hover::after,
-			&:focus::after {
-				opacity: 1;
-			}
-		}
-
 		&__special-text {
 			font-size: 1.1rem;
 
@@ -207,8 +180,6 @@
 	}
 
 	.terms {
-		padding: 155px 0 6em;
-
 		&__box:last-of-type {
 			margin-bottom: 3em;
 		}
@@ -376,7 +347,7 @@
 			display: block;
 			position: absolute;
 			top: -25%;
-			color: rgba(155, 155, 155, 0.3);
+			color: globals.$transparent-gray-color;
 			font-size: 1150px;
 			z-index: 0;
 		}
@@ -491,7 +462,7 @@
 		&__title-icon {
 			position: absolute;
 			display: block;
-			color: rgba(155, 155, 155, 0.3);
+			color: globals.$transparent-gray-color;
 
 			&--first {
 				bottom: -0.75em;

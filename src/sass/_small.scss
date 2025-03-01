@@ -41,6 +41,16 @@
 }
 
 @media screen and (min-width: 350px) {
+	.welcome {
+		&__title {
+			font-size: 5em;
+		}
+
+		&__button {
+			padding: 1em 5em;
+		}
+	}
+
 	.history,
 	.offer,
 	.opinions,
@@ -172,11 +182,7 @@
 
 	.welcome {
 		&__title {
-			font-size: 5em;
-		}
-
-		&__button {
-			padding: 1em 4em;
+			font-size: 6em;
 		}
 	}
 

@@ -12,24 +12,31 @@ export const App: React.FC = () => {
 				<Route
 					element={
 						<>
-							<Header />
 							<Outlet />
 							<Footer />
 							<CookieBanner />
 						</>
 					}>
 					<Route
-						path='/'
 						element={
-							<main>
-								<Welcome />
-								<AboutMe />
-								<Offer />
-								<Opinions />
-								<Contact />
-							</main>
-						}
-					/>
+							<>
+								<Header />
+								<Outlet />
+							</>
+						}>
+						<Route
+							path='/'
+							element={
+								<main>
+									<Welcome />
+									<AboutMe />
+									<Offer />
+									<Opinions />
+									<Contact />
+								</main>
+							}
+						/>
+					</Route>
 					<Route path='/regulamin' element={<TermsAndConditions />} />
 				</Route>
 				<Route path='/zloz-zamowienie' element={<Order />} />

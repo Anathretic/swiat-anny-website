@@ -74,7 +74,7 @@ body {
 		display: inline-block;
 		padding: 0.8em 0;
 		color: globals.$white-color;
-		border: 1px solid black;
+		border: 1px solid #000;
 		font-size: 0.8em;
 		text-decoration: none;
 		text-align: center;
@@ -88,7 +88,7 @@ body {
 	}
 
 	&-active {
-		box-shadow: 0px 10px 40px -15px rgba(49, 32, 43, 1);
+		box-shadow: 0px 10px 40px -15px #31202b;
 		transform: translateY(0);
 		opacity: 1;
 	}
@@ -262,7 +262,7 @@ body {
 
 .offer {
 	min-height: 75vh;
-	background-color: #021533;
+	background-color: globals.$lighter-dark-blue;
 
 	&__box {
 		position: relative;
@@ -279,7 +279,7 @@ body {
 
 	&__box-special-icon {
 		position: absolute;
-		color: rgb(155, 155, 155);
+		color: globals.$gray-color;
 
 		&--s {
 			top: -20px;
@@ -358,6 +358,13 @@ body {
 
 .order,
 .terms {
+	@include mixins.center-flex;
+	padding: 5em 0;
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+
 	&__container {
 		position: relative;
 		width: 85%;
@@ -368,12 +375,7 @@ body {
 }
 
 .order {
-	@include mixins.center-flex;
-	padding: 5em 0;
-	min-height: 100vh;
 	background-image: url('../images/background-welcome.jpg');
-	background-size: cover;
-	background-position: center;
 
 	&__container {
 		text-align: center;
@@ -383,7 +385,7 @@ body {
 		position: absolute;
 		top: -20px;
 		left: -20px;
-		color: rgb(155, 155, 155);
+		color: globals.$gray-color;
 		font-size: 52px;
 		transform: rotate(-15deg);
 	}
@@ -397,7 +399,7 @@ body {
 
 		&__strap {
 			width: 90%;
-			border-color: globals.$special-contact-border;
+			border-color: globals.$transparent-gray-color;
 		}
 
 		&__box:nth-of-type(1) {
@@ -416,7 +418,7 @@ body {
 			top: 0;
 			right: 0;
 			font-size: 1.6em;
-			color: globals.$special-contact-border;
+			color: globals.$transparent-gray-color;
 			text-decoration: none;
 			transition: color 0.3s;
 		}
@@ -525,7 +527,7 @@ body {
 }
 
 .contact {
-	background-color: #021533;
+	background-color: globals.$lighter-dark-blue;
 
 	&__container,
 	&__title-box,
@@ -643,7 +645,7 @@ body {
 		}
 
 		&::placeholder {
-			color: globals.$placeholder-color;
+			color: globals.$gray-color;
 			opacity: 1;
 		}
 
@@ -674,51 +676,7 @@ body {
 	}
 
 	&__submit {
-		display: inline-block;
-		position: relative;
-		padding: 1em 4em;
-		margin: 1.5em 0;
-		background-color: transparent;
-		color: globals.$white-color;
-		font-size: 1em;
-		font-family: globals.$main-font;
-		border: 1px solid globals.$dark-pink;
-		border-radius: 0.25em;
-		box-shadow: inset 0 0 0.25em globals.$white-color, 0 0 0.25em globals.$white-color;
-		text-decoration: none;
-		transition: all 150ms linear;
-		cursor: pointer;
-
-		-webkit-transform: translate3D(0, 0, 0);
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 90%;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: globals.$white-color;
-
-			pointer-events: none;
-
-			transform: perspective(3em) rotateX(40deg) scale(1, 0.35);
-			filter: blur(2em);
-			transition: opacity 150ms linear, background-color 150ms linear;
-			opacity: 0.3;
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			box-shadow: 0 0 2em 0.5em globals.$neon-pink;
-			transition: opacity 150ms linear;
-			opacity: 0;
-		}
+		@include mixins.special-form-button;
 	}
 }
 
@@ -750,14 +708,8 @@ body {
 }
 
 .terms {
-	@include mixins.center-flex;
-	padding: 180px 0 4em;
-	min-height: 100vh;
 	color: globals.$white-color;
 	background-image: url('../images/background-welcome.jpg');
-	background-size: cover;
-	background-position: center;
-	overflow: hidden;
 
 	&__container {
 		@include mixins.center-flex;
@@ -772,7 +724,7 @@ body {
 
 	&__strap {
 		width: 90%;
-		border-color: globals.$special-contact-border;
+		border-color: globals.$transparent-gray-color;
 	}
 
 	&__box {
@@ -780,8 +732,14 @@ body {
 		margin-top: 1.25em;
 	}
 
+	&__box:nth-of-type(5) {
+		margin: 1.25em 0;
+	}
+
 	&__box:last-of-type {
-		margin-bottom: 2em;
+		@include mixins.center-flex;
+		margin-bottom: 1.75em;
+		width: 100%;
 	}
 
 	&__title {
@@ -814,9 +772,13 @@ body {
 		transition: color 0.3s linear, text-shadow 0.3s linear;
 	}
 
+	&__button {
+		@include mixins.special-form-button;
+	}
+
 	&__special-icon {
 		position: absolute;
-		color: rgb(155, 155, 155);
+		color: globals.$gray-color;
 		font-size: 52px;
 
 		&--first {
@@ -867,7 +829,7 @@ body {
 	padding: 1em;
 	width: 100%;
 	min-height: 100vh;
-	background-color: #021533;
+	background-color: globals.$lighter-dark-blue;
 
 	&__img {
 		width: 90%;
