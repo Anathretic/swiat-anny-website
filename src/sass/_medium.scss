@@ -80,6 +80,12 @@
 	}
 
 	.history {
+		&__image-box {
+			img {
+				max-width: 450px;
+			}
+		}
+
 		&__content-box {
 			max-width: 450px;
 		}
@@ -101,7 +107,7 @@
 
 	.opinions {
 		&__carousel-container {
-			animation: scroll-left 60s linear infinite;
+			animation: scroll-left 140s linear infinite;
 		}
 
 		&__box-image {

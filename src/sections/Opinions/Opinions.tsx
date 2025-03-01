@@ -5,7 +5,9 @@ import { OpinionItem } from './components/OpinionItem';
 import { OpinionsDataModel } from '../../models/opinions.model';
 
 const Opinions: React.FC = () => {
-	const { loading, error, data } = useQuery(OPINIONS);
+	const { loading, error, data } = useQuery(OPINIONS, {
+		fetchPolicy: 'cache-first',
+	});
 
 	return (
 		<section id='opinie' className='opinions'>

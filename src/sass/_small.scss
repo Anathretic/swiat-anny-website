@@ -52,6 +52,13 @@
 }
 
 @media screen and (min-width: 375px) {
+	.offer,
+	.opinions {
+		&__error {
+			padding: 7em 0.5em 0;
+		}
+	}
+
 	.offer {
 		&__box {
 			width: 80%;
@@ -82,16 +89,6 @@
 				font-size: 120px;
 			}
 		}
-
-		&__error {
-			padding: 7em 0.5em 0;
-		}
-	}
-
-	.opinions {
-		&__error {
-			padding: 7em 0.5em 0;
-		}
 	}
 
 	.loader {
@@ -107,6 +104,18 @@
 		&__textarea,
 		&__select {
 			width: 90%;
+		}
+	}
+}
+
+@media screen and (max-width: 415px) {
+	.history {
+		&__image-box {
+			padding: 0 2em;
+
+			img {
+				width: 100%;
+			}
 		}
 	}
 }

@@ -1,8 +1,8 @@
 import { FaInstagram } from 'react-icons/fa';
 
-const Footer: React.FC = () => {
-	const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 
+const Footer: React.FC = () => {
 	return (
 		<footer className='footer'>
 			<div className='footer__text'>
