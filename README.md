@@ -4,7 +4,7 @@
 
 A commercial website designed to place orders for images and facilitate user interaction via a contact form for enquiries. In addition, an order processing form was integrated, ensuring that users receive an email confirmation after placing an order.
 
-The offers section was implemented using Supabase. In order to broaden my skills and learn new tools, I decided to work with GraphQL and the Apollo client for this part of the project. This experience gave me an insight into a modern and efficient approach to data management.
+The offer and opinions section were implemented using Supabase. In order to broaden my skills and learn new tools, I decided to work with GraphQL and the Apollo client for this part of the project. This experience gave me an insight into a modern and efficient approach to data management.
 
 ## Links & Tools
 
