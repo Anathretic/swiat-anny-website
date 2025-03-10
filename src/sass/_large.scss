@@ -131,7 +131,7 @@
 		}
 
 		&__error {
-			padding: 7.5em 0.5em 0;
+			padding: 6.725em 0.5em;
 			font-size: 1.5em;
 		}
 	}
@@ -395,7 +395,7 @@
 		}
 
 		&__carousel-container {
-			animation: scroll-left 180s linear infinite;
+			animation: scroll-left 30s linear infinite;
 		}
 
 		&__box {
@@ -410,6 +410,10 @@
 				font-size: 1.05em;
 			}
 		}
+
+		&__stop-animation {
+			animation-play-state: paused;
+		}
 	}
 
 	@keyframes scroll-left {
@@ -417,7 +421,7 @@
 			transform: translateX(100%);
 		}
 		100% {
-			transform: translateX(-360%);
+			transform: translateX(-340%);
 		}
 	}
 

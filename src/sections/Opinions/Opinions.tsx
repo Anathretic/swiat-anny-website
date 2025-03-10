@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { OPINIONS } from '../../graphql/graphModels';
 import { Loader } from '../../components';
@@ -5,6 +6,7 @@ import { OpinionItem } from './components/OpinionItem';
 import { OpinionsDataModel } from '../../models/opinions.model';
 
 const Opinions: React.FC = () => {
+	const [stopAnimation, setStopAnimation] = useState(false);
 	const { loading, error, data } = useQuery(OPINIONS, {
 		fetchPolicy: 'cache-first',
 	});
@@ -17,7 +19,7 @@ const Opinions: React.FC = () => {
 				{!error ? (
 					!loading ? (
 						<div className='opinions__wrapper'>
-							<div className='opinions__carousel-container'>
+							<div className={`opinions__carousel-container ${stopAnimation ? 'opinions__stop-animation' : ''}`}>
 								{data.opinionsCollection.edges.map((data: OpinionsDataModel, id: number) => (
 									<OpinionItem
 										key={id}
@@ -25,6 +27,7 @@ const Opinions: React.FC = () => {
 										title={data.node.title}
 										opinion={data.node.opinion}
 										name={data.node.name}
+										setStopAnimation={setStopAnimation}
 									/>
 								))}
 							</div>

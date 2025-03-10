@@ -253,7 +253,7 @@ body {
 .offer,
 .opinions {
 	&__error {
-		padding: 4em 0.5em 0;
+		padding: 4em 0.5em;
 		color: globals.$white-color;
 		font-size: 1.35em;
 		text-align: center;
@@ -444,7 +444,7 @@ body {
 	&__wrapper {
 		@include mixins.center-flex;
 		flex-direction: column;
-		width: 90%;
+		width: 100%;
 		padding: 3em 0;
 		overflow: hidden;
 	}
@@ -459,10 +459,11 @@ body {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		flex: 0 0 75%;
+		flex: 0 0 100%;
 		padding: 1em;
 		margin: 0 10%;
 		color: globals.$white-color;
+		line-height: 1.6rem;
 		box-shadow: 0px 0px 20px -15px rgba(224, 224, 224, 1);
 		border-radius: 1em;
 
