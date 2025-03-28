@@ -31,7 +31,7 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 	});
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
-	const { orderSubmit } = useFormSubmits({ reset, refCaptcha });
+	const { orderSubmit } = useFormSubmits<OrderFormModel>({ reset, refCaptcha });
 	const orderFormInputs = orderFormInputsConfig(errors, register);
 	const dispatch = useAppDispatch();
 

@@ -25,7 +25,7 @@ export const ContactForm: React.FC = () => {
 	});
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
-	const { contactSubmit } = useFormSubmits({ reset, refCaptcha });
+	const { contactSubmit } = useFormSubmits<ContactFormModel>({ reset, refCaptcha });
 	const contactFormInputs = contactFormInputsConfig(errors, register);
 
 	return (
