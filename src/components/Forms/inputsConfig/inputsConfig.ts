@@ -1,6 +1,5 @@
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
-import { ContactFormModel } from '../../../models/contactForm.model';
-import { OrderFormModel } from '../../../models/orderForm.model.ts';
+import { ContactFormModel, OrderFormModel } from '../../../models/form.model.ts.ts';
 
 export const contactFormInputsConfig = (errors: FieldErrors, register: UseFormRegister<ContactFormModel>) => [
 	{
