@@ -15,12 +15,14 @@ const Order: React.FC = () => {
 	}, []);
 
 	return (
-		<section className='order'>
-			<div className='order__container dark-blue-gradient'>
-				<OrderForm selectedSize={selectedSize} />
-				<GiPalette className='order__special-icon' />
-			</div>
-		</section>
+		<main>
+			<section className='order'>
+				<div className='order__container dark-blue-gradient'>
+					<OrderForm selectedSize={selectedSize} />
+					<GiPalette className='order__special-icon' />
+				</div>
+			</section>
+		</main>
 	);
 };
 
