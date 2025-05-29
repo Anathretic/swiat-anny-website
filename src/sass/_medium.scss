@@ -44,6 +44,12 @@
 		}
 	}
 
+	.welcome {
+		&__subtext {
+			max-width: 350px;
+		}
+	}
+
 	.history {
 		&__image-box {
 			img {

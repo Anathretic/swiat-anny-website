@@ -110,7 +110,7 @@ body {
 	}
 
 	&__title {
-		margin-bottom: 1em;
+		margin-bottom: 0.25em;
 		color: globals.$white-color;
 		font-size: 4em;
 		font-family: 'Dancing Script', cursive;
@@ -135,11 +135,21 @@ body {
 		display: none;
 	}
 
+	&__subtext {
+		padding: 0 0.5em;
+		margin-bottom: 2em;
+		max-width: 300px;
+		text-align: center;
+		font-weight: 200;
+		animation: opacity-animation 1.25s linear forwards;
+		opacity: 0;
+	}
+
 	&__button {
 		@include mixins.special-button;
 		padding: 0.75em 3em;
 		text-transform: uppercase;
-		animation: button-animation 1.25s linear forwards;
+		animation: opacity-animation 1.25s linear forwards;
 		opacity: 0;
 
 		&::before {
