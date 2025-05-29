@@ -22,13 +22,6 @@
 			}
 		}
 	}
-
-	.form {
-		&__close-button {
-			padding: 0.1em 0.25em;
-			font-size: 1.6em;
-		}
-	}
 }
 
 @media screen and (max-width: 360px) {
@@ -145,11 +138,6 @@
 		.form {
 			&__box:nth-of-type(7) {
 				height: 130px;
-			}
-
-			&__close-button {
-				padding: 0.5em;
-				font-size: 2em;
 			}
 		}
 	}

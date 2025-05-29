@@ -9,6 +9,7 @@
 	.welcome {
 		&__title {
 			font-size: 7em;
+			-webkit-text-stroke-width: 1.5px;
 		}
 	}
 
@@ -162,12 +163,6 @@
 
 			a:hover {
 				color: globals.$neon-pink;
-			}
-		}
-
-		&__close-button {
-			&:hover {
-				color: globals.$white-color;
 			}
 		}
 	}
@@ -447,13 +442,14 @@
 		}
 
 		&__title {
-			padding: 0.5rem 0.85rem 0 0.7rem;
+			padding: 0.5rem 0.85rem 0.5rem 0.7rem;
 			width: 100%;
 			font-size: 3.5rem;
 		}
 
 		&__title-decoration {
-			display: none;
+			margin-left: 1.05em;
+			margin-bottom: 0;
 		}
 
 		&__title-info-box {

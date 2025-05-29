@@ -9,7 +9,7 @@ import {
 	setButtonText,
 	setErrorValue,
 } from '../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
-import { CloseButtonModel, InputAndTextareaModel, ReCaptchaV2Model } from '../../../models/formElements.model';
+import { InputAndTextareaModel, ReCaptchaV2Model, ReturnButtonModel } from '../../../models/formElements.model';
 import { resetSize } from '../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
 import { scrollToTop } from '../../../utils/scrollToTop';
 
@@ -105,19 +105,24 @@ export const FormSubmit: React.FC = () => {
 	);
 };
 
-export const FormCloseButton: React.FC<CloseButtonModel> = ({ path }) => {
+export const ReturnButton: React.FC<ReturnButtonModel> = ({ path }) => {
+	const { isLoading } = useAppSelector(getContactAndOrderFormInitialValues);
 	const dispatch = useAppDispatch();
 
 	return (
-		<Link
-			to={path}
-			className='form__close-button'
-			onClick={() => {
-				dispatch(setErrorValue(''));
-				dispatch(resetSize());
-				scrollToTop();
-			}}>
-			X
-		</Link>
+		<>
+			{!isLoading && (
+				<Link
+					to={path}
+					className='form__return-btn'
+					onClick={() => {
+						dispatch(setErrorValue(''));
+						dispatch(resetSize());
+						scrollToTop();
+					}}>
+					Powrót
+				</Link>
+			)}
+		</>
 	);
 };

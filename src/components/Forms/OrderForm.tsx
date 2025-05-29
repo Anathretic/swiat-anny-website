@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { FormCloseButton, FormInput, FormRecaptchaV2, FormSubmit, FormTextarea } from './components/FormElements';
+import { FormInput, FormRecaptchaV2, FormSubmit, FormTextarea, ReturnButton } from './components/FormElements';
 import { orderFormInputsConfig } from './inputsConfig/inputsConfig.ts';
 import { useAppDispatch } from '../../hooks/reduxHooks.ts';
 import { setErrorValue } from '../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice.ts';
@@ -44,7 +44,6 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 	return (
 		<form className='form' onSubmit={handleSubmit(orderSubmit)}>
 			<h3 className='form__title'>Zamówienie</h3>
-			<FormCloseButton path='/' />
 			<hr className='form__strap' />
 			{orderFormInputs.map((input, id) => (
 				<FormInput
@@ -70,6 +69,7 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 			<FormRecaptchaV2 refCaptcha={refCaptcha} />
 			<hr className='form__strap' />
 			<FormSubmit />
+			<ReturnButton path='/' />
 			<div className='form__box'>
 				<p className='form__special-text'>
 					Poprzez kliknięcie przycisku akceptujesz{' '}

@@ -27,6 +27,6 @@ export interface ReCaptchaV2Model {
 	refCaptcha: React.RefObject<ReCAPTCHA>;
 }
 
-export interface CloseButtonModel {
+export interface ReturnButtonModel {
 	path: string;
 }
