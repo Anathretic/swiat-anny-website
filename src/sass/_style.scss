@@ -618,10 +618,13 @@ body {
 
 	&__label {
 		padding-bottom: 0.25em;
+		width: 100%;
+		text-align: start;
 	}
 
 	&__input,
-	&__textarea {
+	&__textarea,
+	&__select {
 		padding: 0.95em 3.25em 0.95em 0.75em;
 		width: 100%;
 		color: globals.$white-color;
@@ -630,17 +633,7 @@ body {
 		box-shadow: inset 0 0 0.25em globals.$white-color, 0 0 0.25em globals.$white-color;
 		font-family: globals.$main-font;
 		transition: border 0.3s, box-shadow 0.3s;
-	}
 
-	&__textarea {
-		height: 200px;
-		min-height: 120px;
-		max-height: 300px;
-		resize: vertical;
-	}
-
-	&__input,
-	&__textarea {
 		&:focus {
 			border-color: globals.$neon-pink;
 			box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
@@ -658,8 +651,40 @@ body {
 		}
 	}
 
+	&__input,
+	&__select {
+		height: 44px;
+	}
+
+	&__select {
+		padding: 10px;
+		padding-right: 30px;
+		font-size: 0.9em;
+
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		background-image: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"292.4"%20height%3D"292.4"><path%20fill%3D"%23fff"%20d%3D"M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z"%2F><%2Fsvg>');
+		background-repeat: no-repeat;
+		background-position: right 0.9em top 50%;
+		background-size: 0.65em auto;
+		cursor: pointer;
+
+		option {
+			color: globals.$dark-blue;
+		}
+	}
+
+	&__textarea {
+		height: 200px;
+		min-height: 120px;
+		max-height: 300px;
+		resize: vertical;
+	}
+
 	&__input-error,
-	&__textarea-error {
+	&__textarea-error,
+	&__select-error {
 		padding-top: 0.25em;
 		height: 1em;
 		width: 100%;
@@ -673,7 +698,8 @@ body {
 		padding: 8px;
 		height: 2px;
 		width: 90%;
-		color: globals.$neon-pink;
+		color: globals.$error-color;
+		text-shadow: 0 0 0.25em currentColor;
 		font-size: 0.95em;
 		text-align: center;
 	}

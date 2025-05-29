@@ -105,7 +105,8 @@
 	.form {
 		&__input,
 		&__textarea,
-		&__select {
+		&__select,
+		&__label {
 			width: 90%;
 		}
 	}

@@ -9,12 +9,17 @@ import {
 	setButtonText,
 	setErrorValue,
 } from '../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
-import { InputAndTextareaModel, ReCaptchaV2Model, ReturnButtonModel } from '../../../models/formElements.model';
+import {
+	InputAndTextareaModel,
+	ReCaptchaV2Model,
+	ReturnButtonModel,
+	SelectModel,
+} from '../../../models/formElements.model';
 import { resetSize } from '../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
 import { scrollToTop } from '../../../utils/scrollToTop';
 
 export const FormInput: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLInputElement, InputAndTextareaModel>(
-	({ label, inputName, placeholder, value, readOnly, errorMessage, ...props }, ref) => {
+	({ label, inputName, placeholder, errorMessage, ...props }, ref) => {
 		return (
 			<div className='form__box'>
 				<label className='form__label' htmlFor={inputName}>
@@ -25,8 +30,6 @@ export const FormInput: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLI
 					type='text'
 					id={inputName}
 					placeholder={placeholder}
-					value={value}
-					readOnly={readOnly}
 					ref={ref}
 					autoComplete='off'
 					{...props}
@@ -57,6 +60,25 @@ export const FormTextarea: React.FC<InputAndTextareaModel> = React.forwardRef<
 		</div>
 	);
 });
+
+export const SelectElement: React.FC<SelectModel> = React.forwardRef<HTMLSelectElement, SelectModel>(
+	({ label, selectName, selectedSize, errorMessage, ...props }, ref) => {
+		return (
+			<div className='form__box'>
+				<label className='form__label' htmlFor={selectName}>
+					{label}
+				</label>
+				<select className='form__select' ref={ref} id={selectName} defaultValue={selectedSize} {...props}>
+					<option value=''> -- wybierz rozmiar -- </option>
+					<option value='20cm x 20cm'>20cm x 20cm</option>
+					<option value='30cm x 24cm'>30cm x 24cm</option>
+					<option value='40cm x 30cm'>40cm x 30cm</option>
+				</select>
+				<p className='form__select-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
+			</div>
+		);
+	}
+);
 
 export const FormRecaptchaV2: React.FC<ReCaptchaV2Model> = ({ refCaptcha }) => {
 	const isMobile = useMediaQuery({ query: '(max-width: 499px)' });

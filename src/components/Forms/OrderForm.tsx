@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { FormInput, FormRecaptchaV2, FormSubmit, FormTextarea, ReturnButton } from './components/FormElements';
+import {
+	FormInput,
+	FormRecaptchaV2,
+	FormSubmit,
+	FormTextarea,
+	ReturnButton,
+	SelectElement,
+} from './components/FormElements';
 import { orderFormInputsConfig } from './inputsConfig/inputsConfig.ts';
 import { useAppDispatch } from '../../hooks/reduxHooks.ts';
 import { setErrorValue } from '../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice.ts';
@@ -53,11 +60,17 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 					placeholder={input.placeholder}
 					errorMessage={input.errorMessage}
 					aria-invalid={input.isInvalid}
-					value={input.inputName === 'size' ? selectedSize : undefined}
-					readOnly={input.inputName === 'size' && true}
 					{...input.register}
 				/>
 			))}
+			<SelectElement
+				label='Rozmiar:'
+				selectName='size'
+				selectedSize={selectedSize}
+				errorMessage={errors.size?.message}
+				aria-invalid={errors.size ? true : false}
+				{...register('size')}
+			/>
 			<FormTextarea
 				label='Wiadomość:'
 				inputName='message'
@@ -72,7 +85,7 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 			<ReturnButton path='/' />
 			<div className='form__box'>
 				<p className='form__special-text'>
-					Poprzez kliknięcie przycisku akceptujesz{' '}
+					Poprzez kliknięcie przycisku "Wyślij" akceptujesz{' '}
 					<Link to='/regulamin' onClick={scrollToTop}>
 						regulamin
 					</Link>{' '}
