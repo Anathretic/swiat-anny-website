@@ -66,11 +66,10 @@
 		}
 	}
 
-	.history,
-	.opinions {
+	.history {
 		&__container {
 			padding-top: 0;
-			padding-bottom: 3.2em;
+			padding-bottom: 1.5em;
 		}
 	}
 
@@ -130,6 +129,11 @@
 	}
 
 	.opinions {
+		&__container {
+			padding-top: 0;
+			padding-bottom: 3.2em;
+		}
+
 		&__box-image {
 			width: 80px;
 			height: 80px;
@@ -346,13 +350,14 @@
 		}
 
 		&__image-box {
+			margin-top: 120px;
 			max-width: 600px;
 		}
 
 		&__image-box-icon {
 			display: block;
 			position: absolute;
-			top: -25%;
+			top: -21.5%;
 			color: globals.$transparent-gray-color;
 			font-size: 1150px;
 			z-index: 0;

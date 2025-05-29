@@ -208,6 +208,8 @@ body {
 }
 
 .history {
+	padding: 30px 0 0;
+
 	&__content-container {
 		@include mixins.center-flex;
 		flex-direction: column;
@@ -218,6 +220,7 @@ body {
 	&__image-box {
 		position: relative;
 		@include mixins.center-flex;
+		padding: 10px 0 30px;
 		width: 100%;
 
 		img {
