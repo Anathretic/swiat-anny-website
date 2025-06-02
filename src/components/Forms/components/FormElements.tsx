@@ -85,16 +85,13 @@ export const FormRecaptchaV2: React.FC<ReCaptchaV2Model> = ({ refCaptcha }) => {
 	const { errorValue } = useAppSelector(getContactAndOrderFormInitialValues);
 
 	return (
-		<div className='form__recaptcha-box'>
+		<div className={`form__recaptcha-box ${errorValue && 'form__recaptcha-error'}`}>
 			<ReCAPTCHA
 				key={isMobile ? 'compact-recaptcha' : 'normal-recaptcha'}
 				size={isMobile ? 'compact' : 'normal'}
 				sitekey={import.meta.env.VITE_SITE_KEY}
 				ref={refCaptcha}
 			/>
-			<div className='form__recaptcha-error'>
-				<p>{errorValue}</p>
-			</div>
 		</div>
 	);
 };
