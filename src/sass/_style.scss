@@ -431,6 +431,7 @@ body {
 
 			a {
 				color: globals.$white-color;
+				text-underline-offset: 2px;
 				transition: color 0.3s;
 			}
 		}
@@ -557,6 +558,7 @@ body {
 
 		a {
 			color: globals.$white-color;
+			text-underline-offset: 2px;
 			transition: color 0.3s;
 		}
 
@@ -575,6 +577,10 @@ body {
 		li {
 			padding: 0.5em;
 			width: 100%;
+
+			div:first-of-type {
+				display: none;
+			}
 		}
 
 		p {
@@ -585,10 +591,12 @@ body {
 		p:first-of-type {
 			font-weight: 500;
 		}
-	}
 
-	&__title-icon {
-		display: none;
+		a {
+			color: globals.$white-color;
+			text-underline-offset: 2px;
+			transition: color 0.3s;
+		}
 	}
 
 	&__form {

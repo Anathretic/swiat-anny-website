@@ -93,9 +93,27 @@
 
 	.contact {
 		&__title-info-box {
-			list-style-type: disc;
 			text-align: left;
 			max-width: 250px;
+
+			li {
+				display: flex;
+				align-items: center;
+
+				div:first-of-type {
+					display: block;
+					margin-left: -20px;
+					margin-right: 20px;
+
+					svg {
+						font-size: 28px;
+					}
+				}
+			}
+		}
+
+		&__special-list-container {
+			padding-top: 0.5em;
 		}
 	}
 

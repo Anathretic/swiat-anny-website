@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ContactForm } from '../components/Forms/ContactForm';
 import { scrollToTop } from '../utils/scrollToTop';
-import { GiEasel } from 'react-icons/gi';
+
+import { FiMail, FiPhone, FiInstagram } from 'react-icons/fi';
 
 const Contact: React.FC = () => {
 	return (
@@ -23,17 +24,35 @@ const Contact: React.FC = () => {
 					</p>
 					<ul className='contact__title-info-box'>
 						<li>
-							<p>E-mail:</p>
-							<p>annawojtylo73@gmail.com</p>
+							<div>
+								<FiMail />
+							</div>
+							<div>
+								<p>E-mail:</p>
+								<p>annawojtylo73@gmail.com</p>
+							</div>
 						</li>
 						<li>
-							<p>Telefon:</p>
-							<p>+48 533 864 903</p>
+							<div>
+								<FiPhone />
+							</div>
+							<div>
+								<p>Telefon:</p>
+								<p>+48 533 864 903</p>
+							</div>
+						</li>
+						<li>
+							<div className='contact__special-list-container'>
+								<FiInstagram />
+							</div>
+							<div>
+								<p>Instagram:</p>
+								<a href='https://www.instagram.com/swiat_anny_anna_maluje/' target='_blank' rel='noreferrer'>
+									swiat_anny_anna_maluje
+								</a>
+							</div>
 						</li>
 					</ul>
-					<GiEasel className='contact__title-icon contact__title-icon--first' fontSize={200} />
-					<GiEasel className='contact__title-icon contact__title-icon--second' fontSize={120} />
-					<GiEasel className='contact__title-icon contact__title-icon--third' fontSize={90} />
 				</div>
 				<ContactForm />
 			</div>
