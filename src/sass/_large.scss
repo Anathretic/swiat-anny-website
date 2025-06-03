@@ -134,6 +134,10 @@
 			padding-bottom: 3.2em;
 		}
 
+		.carousel {
+			max-width: 600px;
+		}
+
 		&__box-image {
 			width: 80px;
 			height: 80px;
@@ -404,15 +408,23 @@
 
 	.opinions {
 		&__wrapper {
-			padding: 3em 0 4em;
+			padding: 2em 0 0.5em;
 		}
 
-		&__carousel-container {
-			animation: scroll-left 180s linear infinite;
+		.carousel {
+			max-width: 900px;
+		}
+
+		.carousel .control-prev {
+			left: -15px;
+		}
+
+		.carousel .control-next {
+			right: -15px;
 		}
 
 		&__box {
-			max-width: 940px;
+			max-width: 700px;
 
 			h3 {
 				font-size: 1.3em;
@@ -422,19 +434,6 @@
 			span {
 				font-size: 1.05em;
 			}
-		}
-
-		&__stop-animation {
-			animation-play-state: paused;
-		}
-	}
-
-	@keyframes scroll-left {
-		0% {
-			transform: translateX(100%);
-		}
-		100% {
-			transform: translateX(-340%);
 		}
 	}
 

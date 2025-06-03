@@ -52,6 +52,20 @@
 			font-size: 2.75rem;
 		}
 	}
+
+	.opinions {
+		.carousel {
+			max-width: 350px;
+		}
+
+		.carousel .control-prev {
+			left: -10px;
+		}
+
+		.carousel .control-next {
+			right: -10px;
+		}
+	}
 }
 
 @media screen and (min-width: 375px) {
@@ -102,6 +116,12 @@
 }
 
 @media screen and (min-width: 400px) {
+	.opinions {
+		.carousel {
+			max-width: 400px;
+		}
+	}
+
 	.form {
 		&__input,
 		&__textarea,
@@ -140,6 +160,12 @@
 			&__box:nth-of-type(7) {
 				height: 130px;
 			}
+		}
+	}
+
+	.opinions {
+		.carousel {
+			max-width: 500px;
 		}
 	}
 
