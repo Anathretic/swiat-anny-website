@@ -110,7 +110,7 @@ body {
 	}
 
 	&__title {
-		margin-bottom: 1em;
+		margin-bottom: 0.25em;
 		color: globals.$white-color;
 		font-size: 4em;
 		font-family: 'Dancing Script', cursive;
@@ -118,7 +118,7 @@ body {
 		text-shadow: 0 0 0.5em transparent;
 		text-align: center;
 		-webkit-text-fill-color: transparent;
-		-webkit-text-stroke-width: 2px;
+		-webkit-text-stroke-width: 1px;
 		-webkit-text-stroke-color: #111;
 		-webkit-transform: translate3D(0, 0, 0);
 
@@ -135,11 +135,21 @@ body {
 		display: none;
 	}
 
+	&__subtext {
+		padding: 0 0.5em;
+		margin-bottom: 2em;
+		max-width: 300px;
+		text-align: center;
+		font-weight: 200;
+		animation: opacity-animation 1.25s linear forwards;
+		opacity: 0;
+	}
+
 	&__button {
 		@include mixins.special-button;
-		padding: 1em 2em;
+		padding: 0.75em 3em;
 		text-transform: uppercase;
-		animation: button-animation 1.25s linear forwards;
+		animation: opacity-animation 1.25s linear forwards;
 		opacity: 0;
 
 		&::before {
@@ -198,6 +208,8 @@ body {
 }
 
 .history {
+	padding: 30px 0 0;
+
 	&__content-container {
 		@include mixins.center-flex;
 		flex-direction: column;
@@ -208,6 +220,7 @@ body {
 	&__image-box {
 		position: relative;
 		@include mixins.center-flex;
+		padding: 10px 0 30px;
 		width: 100%;
 
 		img {
@@ -402,6 +415,10 @@ body {
 			border-color: globals.$transparent-gray-color;
 		}
 
+		&__strap:last-of-type {
+			margin-top: 1em;
+		}
+
 		&__box:nth-of-type(1) {
 			padding-top: 1.5em;
 		}
@@ -411,18 +428,6 @@ body {
 			height: 200px;
 		}
 
-		&__close-button {
-			position: absolute;
-			padding: 0.35em;
-			margin: 0.35em;
-			top: 0;
-			right: 0;
-			font-size: 1.6em;
-			color: globals.$transparent-gray-color;
-			text-decoration: none;
-			transition: color 0.3s;
-		}
-
 		&__special-text {
 			padding: 0 2em;
 			margin-bottom: 1em;
@@ -430,6 +435,7 @@ body {
 
 			a {
 				color: globals.$white-color;
+				text-underline-offset: 2px;
 				transition: color 0.3s;
 			}
 		}
@@ -445,54 +451,81 @@ body {
 		@include mixins.center-flex;
 		flex-direction: column;
 		width: 100%;
-		padding: 3em 0;
 		overflow: hidden;
 	}
 
-	&__carousel-container {
-		display: flex;
+	.carousel {
+		max-width: 320px;
 		width: 100%;
-		animation: scroll-left 80s linear infinite;
+	}
+
+	.carousel .slide {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.carousel .control-arrow {
+		background: none;
+		width: 40px;
+		height: 40px;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: opacity 0.3s;
+		opacity: 0.9;
+
+		&:focus,
+		&:active,
+		&:hover {
+			background: none;
+		}
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+
+	.carousel .control-prev {
+		left: -5px;
+	}
+
+	.carousel .control-next {
+		right: -5px;
 	}
 
 	&__box {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		flex: 0 0 100%;
 		padding: 1em;
-		margin: 0 10%;
+		margin: 2em;
 		color: globals.$white-color;
 		line-height: 1.6rem;
 		box-shadow: 0px 0px 20px -15px rgba(224, 224, 224, 1);
 		border-radius: 1em;
 
+		h3,
+		p {
+			text-align: left;
+		}
+
 		h3 {
-			padding: 1em 0.25em;
-			font-weight: 200;
-			font-style: italic;
+			padding: 1em 2em 1em 0.25em;
+			font-weight: 500;
 		}
 
 		p {
 			padding: 1em 0.25em 3.5em;
+			font-weight: 300;
 		}
 
 		span {
 			position: absolute;
 			bottom: 15px;
 			right: 15px;
-			font-weight: 200;
-			font-style: italic;
+			font-weight: 400;
 			text-align: right;
 		}
-	}
-
-	&__box:nth-of-type(1) {
-		margin: 0 10% 0 0;
-	}
-
-	&__box:nth-of-type(5) {
-		margin: 0 0 0 10%;
 	}
 
 	&__box-image {
@@ -556,6 +589,7 @@ body {
 
 		a {
 			color: globals.$white-color;
+			text-underline-offset: 2px;
 			transition: color 0.3s;
 		}
 
@@ -574,6 +608,10 @@ body {
 		li {
 			padding: 0.5em;
 			width: 100%;
+
+			div:first-of-type {
+				display: none;
+			}
 		}
 
 		p {
@@ -584,10 +622,12 @@ body {
 		p:first-of-type {
 			font-weight: 500;
 		}
-	}
 
-	&__title-icon {
-		display: none;
+		a {
+			color: globals.$white-color;
+			text-underline-offset: 2px;
+			transition: color 0.3s;
+		}
 	}
 
 	&__form {
@@ -613,14 +653,22 @@ body {
 
 	&__recaptcha-box {
 		padding: 1em 0 1em 4px;
+
+		div div div div iframe {
+			border: 1px solid transparent;
+			border-radius: 0.35em;
+		}
 	}
 
 	&__label {
 		padding-bottom: 0.25em;
+		width: 100%;
+		text-align: start;
 	}
 
 	&__input,
-	&__textarea {
+	&__textarea,
+	&__select {
 		padding: 0.95em 3.25em 0.95em 0.75em;
 		width: 100%;
 		color: globals.$white-color;
@@ -629,18 +677,9 @@ body {
 		box-shadow: inset 0 0 0.25em globals.$white-color, 0 0 0.25em globals.$white-color;
 		font-family: globals.$main-font;
 		transition: border 0.3s, box-shadow 0.3s;
-	}
 
-	&__textarea {
-		height: 200px;
-		min-height: 120px;
-		max-height: 300px;
-		resize: vertical;
-	}
-
-	&__input,
-	&__textarea {
 		&:focus {
+			border-color: globals.$neon-pink;
 			box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
 			outline: globals.$white-color;
 		}
@@ -651,32 +690,62 @@ body {
 		}
 
 		&[aria-invalid='true'] {
-			border-color: globals.$neon-pink;
-			box-shadow: inset 0 0 0.5em globals.$neon-pink, 0 0 0.5em globals.$neon-pink;
+			border-color: globals.$error-color;
+			box-shadow: inset 0 0 0.5em globals.$error-color, 0 0 0.5em globals.$error-color;
 		}
 	}
 
+	&__input,
+	&__select {
+		height: 44px;
+	}
+
+	&__select {
+		padding: 10px;
+		padding-right: 30px;
+		font-size: 0.9em;
+
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		background-image: url('data:image/svg+xml;charset=US-ASCII,<svg%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"292.4"%20height%3D"292.4"><path%20fill%3D"%23fff"%20d%3D"M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z"%2F><%2Fsvg>');
+		background-repeat: no-repeat;
+		background-position: right 0.9em top 50%;
+		background-size: 0.65em auto;
+		cursor: pointer;
+
+		option {
+			color: globals.$dark-blue;
+		}
+	}
+
+	&__textarea {
+		height: 200px;
+		min-height: 120px;
+		max-height: 300px;
+		resize: vertical;
+	}
+
 	&__input-error,
-	&__textarea-error {
+	&__textarea-error,
+	&__select-error {
 		padding-top: 0.25em;
 		height: 1em;
 		width: 100%;
-		color: globals.$neon-pink;
-		text-shadow: 0 0 0.5em currentColor;
+		color: globals.$error-color;
+		text-shadow: 0 0 0.25em currentColor;
 		font-size: 0.8em;
 		text-align: center;
 	}
 
 	&__recaptcha-error {
-		padding: 8px;
-		height: 2px;
-		width: 90%;
-		color: globals.$neon-pink;
-		font-size: 0.95em;
-		text-align: center;
+		div div div div iframe {
+			border: 3px solid globals.$error-color;
+		}
 	}
 
-	&__submit {
+	&__submit,
+	&__return-btn {
 		@include mixins.special-form-button;
 	}
 }

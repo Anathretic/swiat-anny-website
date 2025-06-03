@@ -6,12 +6,6 @@
 		padding: 1em;
 	}
 
-	.welcome {
-		&__title {
-			font-size: 7em;
-		}
-	}
-
 	.header {
 		transform: translateY(0);
 		opacity: 1;
@@ -51,6 +45,18 @@
 		}
 	}
 
+	.welcome {
+		&__title {
+			font-size: 7em;
+			-webkit-text-stroke-width: 1.5px;
+		}
+
+		&__subtext {
+			font-size: 1.2em;
+			max-width: 400px;
+		}
+	}
+
 	.history,
 	.offer,
 	.opinions,
@@ -60,11 +66,10 @@
 		}
 	}
 
-	.history,
-	.opinions {
+	.history {
 		&__container {
 			padding-top: 0;
-			padding-bottom: 3.2em;
+			padding-bottom: 1.5em;
 		}
 	}
 
@@ -124,6 +129,15 @@
 	}
 
 	.opinions {
+		&__container {
+			padding-top: 0;
+			padding-bottom: 3.2em;
+		}
+
+		.carousel {
+			max-width: 600px;
+		}
+
 		&__box-image {
 			width: 80px;
 			height: 80px;
@@ -137,7 +151,8 @@
 	}
 
 	.contact {
-		&__title-subtext {
+		&__title-subtext,
+		&__title-info-box li {
 			a:hover {
 				color: globals.$neon-pink;
 			}
@@ -149,7 +164,8 @@
 			font-size: 1.1em;
 		}
 
-		&__input-error {
+		&__input-error,
+		&__select-error {
 			font-size: 0.9em;
 		}
 
@@ -162,12 +178,6 @@
 
 			a:hover {
 				color: globals.$neon-pink;
-			}
-		}
-
-		&__close-button {
-			&:hover {
-				color: globals.$white-color;
 			}
 		}
 	}
@@ -281,7 +291,13 @@
 @media screen and (min-width: 1280px) {
 	.welcome {
 		&__title {
+			margin-bottom: 0.1em;
 			font-size: 10em;
+		}
+
+		&__subtext {
+			margin: 1em 0 3em;
+			font-size: 1.25em;
 		}
 
 		&__button {
@@ -340,13 +356,14 @@
 		}
 
 		&__image-box {
+			margin-top: 120px;
 			max-width: 600px;
 		}
 
 		&__image-box-icon {
 			display: block;
 			position: absolute;
-			top: -25%;
+			top: -21.5%;
 			color: globals.$transparent-gray-color;
 			font-size: 1150px;
 			z-index: 0;
@@ -391,15 +408,23 @@
 
 	.opinions {
 		&__wrapper {
-			padding: 3em 0 4em;
+			padding: 2em 0 0.5em;
 		}
 
-		&__carousel-container {
-			animation: scroll-left 180s linear infinite;
+		.carousel {
+			max-width: 900px;
+		}
+
+		.carousel .control-prev {
+			left: -15px;
+		}
+
+		.carousel .control-next {
+			right: -15px;
 		}
 
 		&__box {
-			max-width: 940px;
+			max-width: 700px;
 
 			h3 {
 				font-size: 1.3em;
@@ -409,19 +434,6 @@
 			span {
 				font-size: 1.05em;
 			}
-		}
-
-		&__stop-animation {
-			animation-play-state: paused;
-		}
-	}
-
-	@keyframes scroll-left {
-		0% {
-			transform: translateX(100%);
-		}
-		100% {
-			transform: translateX(-340%);
 		}
 	}
 
@@ -447,45 +459,39 @@
 		}
 
 		&__title {
-			padding: 0.5rem 0.85rem 0 0.7rem;
+			padding: 0.5rem 0.85rem 0.5rem 0.7rem;
 			width: 100%;
 			font-size: 3.5rem;
 		}
 
 		&__title-decoration {
-			display: none;
+			margin-left: 1.05em;
+			margin-bottom: 0;
 		}
 
 		&__title-info-box {
-			padding: 2rem 2.25rem;
+			padding: 2rem 2.25rem 2rem 0.5rem;
 			max-width: 400px;
 			justify-content: start;
 			font-size: 1.1rem;
-		}
 
-		&__title-icon {
-			position: absolute;
-			display: block;
-			color: globals.$transparent-gray-color;
-
-			&--first {
-				bottom: -0.75em;
-				left: 1.25em;
-			}
-
-			&--second {
-				bottom: -1.5em;
-				left: 3.5em;
-			}
-
-			&--third {
-				bottom: -0.4em;
-				left: 4.5em;
+			li div:first-of-type {
+				margin-left: 0;
 			}
 		}
 
 		&__form {
 			margin-right: 2.5rem;
+
+			.form__recaptcha-box {
+				align-items: start;
+				margin-left: 2.45em;
+			}
+
+			.form__box:last-of-type {
+				align-items: start;
+				margin-left: 1.7em;
+			}
 		}
 	}
 }

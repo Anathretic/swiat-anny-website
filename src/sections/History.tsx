@@ -5,16 +5,16 @@ const History: React.FC = () => {
 	return (
 		<section id='historia' className='history'>
 			<div className='history__container'>
-				<h2 className='history__title'>Historia</h2>
-				<div className='history__title-decoration' />
 				<div className='history__wrapper'>
 					<div className='history__image-box'>
 						<img src={SectionImage} alt='Obraz przedstawiający malarza, która nabiera farbę pędzlem z palety' />
 						<GiEasel className='history__image-box-icon' />
 					</div>
 					<div className='history__content-container'>
+						<h2 className='history__title'>Historia</h2>
+						<div className='history__title-decoration' />
 						<div className='history__content-box'>
-							<h3>I</h3>
+							<h3>Jak to się zaczęło?</h3>
 							<p>
 								W wieku 50 lat Anna poczuła, że nadszedł czas na wielką zmianę. Przez całe życie marzyła o malowaniu,
 								ale nigdy nie miała odwagi, by podjąć ten krok. Zajmowała się pracą biurową, żyła według ustalonych
@@ -25,7 +25,7 @@ const History: React.FC = () => {
 						</div>
 						<div className='history__special-decoration' />
 						<div className='history__content-box'>
-							<h3>II</h3>
+							<h3>Malując siebie. Sztuka terapią</h3>
 							<p>
 								Pierwsze obrazy powstały w jej niewielkim studio, które zamieniła w przestrzeń twórczą. Farby wylewały
 								się na płótno w przypadkowy sposób, tworząc niepowtarzalne kształty i kolory. Anna odkryła, że to w tej
@@ -37,7 +37,7 @@ const History: React.FC = () => {
 						</div>
 						<div className='history__special-decoration' />
 						<div className='history__content-box'>
-							<h3>III</h3>
+							<h3>Późny start, wielkie serce</h3>
 							<p>
 								Anna czuła, że podjęła najlepszą decyzję w swoim życiu. Choć nie była już najmłodsza, malowanie dało jej
 								poczucie wolności i spełnienia, o którym marzyła przez tyle lat. Odkryła, że nigdy nie jest za późno, by

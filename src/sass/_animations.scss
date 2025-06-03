@@ -7,11 +7,11 @@
 	}
 	100% {
 		-webkit-text-stroke-color: globals.$neon-pink;
-		text-shadow: 0 0 0.5em globals.$neon-pink;
+		text-shadow: 0 0 0.25em globals.$neon-pink;
 	}
 }
 
-@keyframes button-animation {
+@keyframes opacity-animation {
 	0% {
 		opacity: 0;
 	}
@@ -65,14 +65,5 @@
 	}
 	100% {
 		transform: rotate(360deg);
-	}
-}
-
-@keyframes scroll-left {
-	0% {
-		transform: translateX(100%);
-	}
-	100% {
-		transform: translateX(-595%);
 	}
 }

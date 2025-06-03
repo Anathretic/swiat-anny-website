@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
 	return (
 		<footer className='footer'>
 			<div className='footer__text'>
-				<span>Chciałbyś zobaczyć jak wykonuje swoje obrazy? Sprawdź mój profil na Instagramie!</span>
+				<span>Chciałbyś zobaczyć jak powstają obrazy? Sprawdź Świat Anny na Instagramie!</span>
 				<div className='footer__icons-box'>
 					<a
 						href='https://www.instagram.com/swiat_anny_anna_maluje/'

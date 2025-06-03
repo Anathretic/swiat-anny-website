@@ -35,12 +35,18 @@
 			margin: 0.75em;
 			padding: 0.5em;
 			border: none;
-			text-transform: uppercase;
+			letter-spacing: 1px;
 			transition: all 0.3s;
 		}
 
 		&-active {
 			background-color: globals.$dark-blue;
+		}
+	}
+
+	.welcome {
+		&__subtext {
+			max-width: 350px;
 		}
 	}
 
@@ -71,10 +77,6 @@
 	}
 
 	.opinions {
-		&__carousel-container {
-			animation: scroll-left 140s linear infinite;
-		}
-
 		&__box-image {
 			width: 70px;
 			height: 70px;
@@ -87,9 +89,27 @@
 
 	.contact {
 		&__title-info-box {
-			list-style-type: disc;
 			text-align: left;
 			max-width: 250px;
+
+			li {
+				display: flex;
+				align-items: center;
+
+				div:first-of-type {
+					display: block;
+					margin-left: -20px;
+					margin-right: 20px;
+
+					svg {
+						font-size: 28px;
+					}
+				}
+			}
+		}
+
+		&__special-list-container {
+			padding-top: 0.5em;
 		}
 	}
 
@@ -114,10 +134,6 @@
 		.form {
 			&__title {
 				font-size: 1.85em;
-			}
-
-			&__close-button {
-				margin: 0.5em;
 			}
 		}
 	}

@@ -61,12 +61,4 @@ export const orderFormInputsConfig = (errors: FieldErrors, register: UseFormRegi
 		isInvalid: !!errors.phone,
 		register: register('phone'),
 	},
-	{
-		label: 'Rozmiar:',
-		inputName: 'size',
-		placeholder: 'Wprowadź rozmiar..',
-		errorMessage: errors.size?.message,
-		isInvalid: !!errors.size,
-		register: register('size'),
-	},
 ];

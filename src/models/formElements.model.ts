@@ -10,8 +10,13 @@ export interface InputAndTextareaModel {
 	inputName: string;
 	errorMessage: ErrorMessage;
 	placeholder?: string;
-	value?: string;
-	readOnly?: boolean;
+}
+
+export interface SelectModel {
+	label: string;
+	selectName: string;
+	selectedSize: string;
+	errorMessage: ErrorMessage;
 }
 
 export interface InputConfigModel {
@@ -27,6 +32,6 @@ export interface ReCaptchaV2Model {
 	refCaptcha: React.RefObject<ReCAPTCHA>;
 }
 
-export interface CloseButtonModel {
+export interface ReturnButtonModel {
 	path: string;
 }
