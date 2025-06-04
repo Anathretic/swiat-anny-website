@@ -35,6 +35,7 @@ export const useFormSubmits = <T extends FormTypes>({ reset, refCaptcha }: UseFo
 			params,
 			publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`,
 			reset,
+			additionalActions: [],
 		});
 	};
 

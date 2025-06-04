@@ -15,5 +15,5 @@ export interface HandleEmailJsModel {
 	params: Record<string, unknown>;
 	publicKey: string;
 	reset: () => void;
-	additionalActions?: (() => void)[];
+	additionalActions: (() => void)[];
 }
