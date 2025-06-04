@@ -459,15 +459,29 @@
 
 		&__form {
 			margin-right: 2.5rem;
+		}
 
-			.form__recaptcha-box {
+		.form {
+			margin-right: 2.5rem;
+
+			&__recaptcha-box {
 				align-items: start;
 				margin-left: 2.45em;
 			}
 
-			.form__box:last-of-type {
+			&__box:last-of-type {
 				align-items: start;
 				margin-left: 1.7em;
+
+				.loader {
+					margin: 1.57em 0;
+					margin-left: 22.5%;
+				}
+			}
+
+			&__submit {
+				max-width: 300px;
+				width: 300px;
 			}
 		}
 	}
