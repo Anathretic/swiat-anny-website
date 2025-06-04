@@ -62,6 +62,16 @@ const TermsAndConditions: React.FC = () => {
 									Konrad Wojtyło
 								</a>
 							</p>
+							<p className='terms__text' style={{ marginTop: '0.5em' }}>
+								Korekty i audyt UX/UI:{' '}
+								<a
+									className='terms__text-link'
+									href='https://www.linkedin.com/in/edyta-honkisz/'
+									target='_blank'
+									rel='noreferrer'>
+									Edyta Honkisz
+								</a>
+							</p>
 						</div>
 						<hr className='terms__strap' />
 						<div className='terms__box'>

@@ -17,7 +17,7 @@ import { orderFormInputs } from './config/formsConfig.ts';
 import { orderSchema } from '../../schemas/schemas';
 import { OrderComponentModel, OrderFormModel } from '../../models/form.model.ts.ts';
 import { scrollToTop } from '../../utils/scrollToTop.ts';
-import { useFormSubmits } from '../../hooks/useFormSubmits.ts';
+import { useFormSubmits } from '../../hooks/useForm/useFormSubmits.ts';
 
 export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 	const {
