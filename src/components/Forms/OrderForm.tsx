@@ -11,9 +11,9 @@ import {
 	ReturnButton,
 	SelectElement,
 } from './components/FormElements';
-import { orderFormInputsConfig } from './inputsConfig/inputsConfig.ts';
 import { useAppDispatch } from '../../hooks/reduxHooks.ts';
 import { setErrorValue } from '../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice.ts';
+import { orderFormInputs } from './config/formsConfig.ts';
 import { orderSchema } from '../../schemas/schemas';
 import { OrderComponentModel, OrderFormModel } from '../../models/form.model.ts.ts';
 import { scrollToTop } from '../../utils/scrollToTop.ts';
@@ -39,7 +39,6 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
 	const { orderSubmit } = useFormSubmits<OrderFormModel>({ reset, refCaptcha });
-	const orderFormInputs = orderFormInputsConfig(errors, register);
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
@@ -52,17 +51,20 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 		<form className='form' onSubmit={handleSubmit(orderSubmit)}>
 			<h3 className='form__title'>Zamówienie</h3>
 			<hr className='form__strap' />
-			{orderFormInputs.map((input, id) => (
-				<FormInput
-					key={id}
-					label={input.label}
-					inputName={input.inputName}
-					placeholder={input.placeholder}
-					errorMessage={input.errorMessage}
-					aria-invalid={input.isInvalid}
-					{...input.register}
-				/>
-			))}
+			{orderFormInputs.map((input, id) => {
+				const error = errors[input.inputName];
+				return (
+					<FormInput
+						key={id}
+						label={input.label}
+						inputName={input.inputName}
+						placeholder={input.placeholder}
+						errorMessage={error?.message as string}
+						aria-invalid={!!error}
+						{...register(input.inputName)}
+					/>
+				);
+			})}
 			<SelectElement
 				label='Rozmiar:'
 				selectName='size'
