@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useFormSubmits } from '../../hooks/useFormSubmits.ts';
+import { useFormSubmits } from '../../hooks/useForm/useFormSubmits.ts';
 import { FormInput, FormRecaptchaV2, FormSubmit, FormTextarea } from './components/FormElements';
 import { contactFormInputs } from './config/formsConfig.ts';
 import { ContactFormModel } from '../../models/form.model.ts';
