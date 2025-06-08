@@ -40,7 +40,7 @@
 		}
 
 		&__button {
-			padding: 1em 5em;
+			padding: 0.75em 5em;
 		}
 	}
 
@@ -122,12 +122,47 @@
 		}
 	}
 
+	.contact {
+		&__title-subtext,
+		&__title-info-box {
+			padding: 1em 0;
+			width: 84%;
+		}
+
+		&__title-info-box {
+			li {
+				display: flex;
+				align-items: center;
+
+				div:first-of-type {
+					display: block;
+					margin-right: 20px;
+
+					svg {
+						font-size: 28px;
+					}
+				}
+			}
+		}
+	}
+
 	.form {
 		&__input,
 		&__textarea,
 		&__select,
 		&__label {
 			width: 90%;
+		}
+	}
+
+	.order {
+		.form {
+			&__input,
+			&__textarea,
+			&__select,
+			&__label {
+				width: 98%;
+			}
 		}
 	}
 }
@@ -160,6 +195,13 @@
 			&__box:nth-of-type(7) {
 				height: 130px;
 			}
+
+			&__input,
+			&__textarea,
+			&__select,
+			&__label {
+				width: 90%;
+			}
 		}
 	}
 
@@ -185,7 +227,7 @@
 
 	.notfound {
 		&__btn {
-			padding: 1em 4em;
+			padding: 0.75em 4em;
 		}
 	}
 }

@@ -138,6 +138,10 @@
 			max-width: 600px;
 		}
 
+		.carousel .slide {
+			padding-top: 0.5em;
+		}
+
 		&__box-image {
 			width: 80px;
 			height: 80px;
@@ -257,11 +261,6 @@
 			width: 35%;
 			max-width: 660px;
 		}
-
-		&__btn {
-			padding: 1em 5em;
-			font-size: 1.1em;
-		}
 	}
 }
 
@@ -278,7 +277,7 @@
 		}
 
 		&__button {
-			padding: 1em 6em;
+			padding: 0.75em 6em;
 		}
 	}
 
@@ -303,6 +302,12 @@
 	.header {
 		&__nav-link {
 			font-size: 1.2em;
+		}
+	}
+
+	.welcome {
+		&__button {
+			font-size: 1.25em;
 		}
 	}
 
@@ -446,14 +451,18 @@
 			margin-bottom: 0;
 		}
 
+		&__title-subtext {
+			padding: 2rem 4rem 1rem 1rem;
+		}
+
 		&__title-info-box {
-			padding: 2rem 2.25rem 2rem 0.5rem;
+			padding: 2rem 2.25rem 2rem 1.55rem;
 			max-width: 400px;
 			justify-content: start;
 			font-size: 1.1rem;
 
 			li div:first-of-type {
-				margin-left: 0;
+				margin-left: -9px;
 			}
 		}
 

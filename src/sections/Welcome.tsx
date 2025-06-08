@@ -18,7 +18,7 @@ const Welcome: React.FC = () => {
 				</h1>
 				<p className='welcome__subtext'>Kolory, które poruszają. Obrazy, które mówią bez słów.</p>
 				<HashLink smooth to='/#oferta' className='welcome__button'>
-					odkryj
+					Oferta
 				</HashLink>
 			</div>
 		</section>
