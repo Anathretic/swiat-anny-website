@@ -26,7 +26,7 @@ const PageNotFound: React.FC = () => {
 						Error 404 image by Storyset
 					</a>
 					<Link to='/' className='notfound__btn'>
-						home
+						Home
 					</Link>
 				</section>
 			</main>

@@ -48,6 +48,10 @@
 		&__subtext {
 			max-width: 350px;
 		}
+
+		&__button {
+			font-size: 1.15em;
+		}
 	}
 
 	.history {
@@ -65,10 +69,7 @@
 	.offer {
 		&__box {
 			width: 50%;
-		}
-
-		&__box-button {
-			font-size: 1em;
+			padding: 1em 0.5em;
 		}
 
 		&__error {
@@ -88,26 +89,6 @@
 	}
 
 	.contact {
-		&__title-info-box {
-			text-align: left;
-			max-width: 250px;
-
-			li {
-				display: flex;
-				align-items: center;
-
-				div:first-of-type {
-					display: block;
-					margin-left: -20px;
-					margin-right: 20px;
-
-					svg {
-						font-size: 28px;
-					}
-				}
-			}
-		}
-
 		&__special-list-container {
 			padding-top: 0.5em;
 		}
@@ -134,6 +115,11 @@
 		.form {
 			&__title {
 				font-size: 1.85em;
+			}
+
+			&__submit,
+			&__return-btn {
+				width: 250px;
 			}
 		}
 	}
@@ -168,7 +154,8 @@
 
 	.notfound {
 		&__btn {
-			padding: 1em 5em;
+			padding: 0.75em 5em;
+			font-size: 1.1em;
 		}
 
 		&__img {

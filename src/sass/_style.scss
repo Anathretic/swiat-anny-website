@@ -50,7 +50,7 @@ body {
 	}
 
 	&__title {
-		padding-bottom: 0.15em;
+		padding-bottom: 0.1em;
 		font-size: 2.2em;
 		font-family: 'Dancing Script', cursive;
 		font-weight: 400;
@@ -75,7 +75,7 @@ body {
 		padding: 0.8em 0;
 		color: globals.$white-color;
 		border: 1px solid #000;
-		font-size: 0.8em;
+		font-size: 0.9em;
 		text-decoration: none;
 		text-align: center;
 		transition: color 0.3s, text-shadow 0.3s;
@@ -147,8 +147,7 @@ body {
 
 	&__button {
 		@include mixins.special-button;
-		padding: 0.75em 3em;
-		text-transform: uppercase;
+		padding: 0.75em 3.5em;
 		animation: opacity-animation 1.25s linear forwards;
 		opacity: 0;
 
@@ -281,7 +280,7 @@ body {
 		position: relative;
 		@include mixins.center-flex;
 		flex-direction: column;
-		padding: 1em;
+		padding: 1em 0.25em;
 		margin: 1em;
 		width: 90%;
 		max-width: 420px;
@@ -352,15 +351,14 @@ body {
 
 	&__box-text {
 		padding: 1em 0.5em;
-		font-size: 0.9em;
 		line-height: 1.5em;
 	}
 
 	&__box-button {
 		@include mixins.special-button;
-		padding: 0.75em 3em;
+		padding: 0.75em 3.5em;
 		margin: 0.75em 1.5em 1.5em;
-		font-size: 0.9em;
+		font-size: 1em;
 		cursor: pointer;
 
 		&::before {
@@ -438,6 +436,11 @@ body {
 				text-underline-offset: 2px;
 				transition: color 0.3s;
 			}
+		}
+
+		&__submit,
+		&__return-btn {
+			width: 190px;
 		}
 	}
 }
@@ -580,11 +583,13 @@ body {
 		max-width: 600px;
 	}
 
-	&__title-subtext {
-		padding: 1rem;
+	&__title-subtext,
+	&__title-info-box {
+		padding: 1em 0.2em;
 		width: 90%;
-		max-width: 400px;
-		text-align: center;
+	}
+
+	&__title-subtext {
 		line-height: 1.8em;
 
 		a {
@@ -599,14 +604,10 @@ body {
 	}
 
 	&__title-info-box {
-		padding: 2rem 0;
-		width: 90%;
-		max-width: 400px;
 		list-style-type: none;
-		text-align: center;
 
 		li {
-			padding: 0.5em;
+			padding: 0.5em 0;
 			width: 100%;
 
 			div:first-of-type {
@@ -747,6 +748,7 @@ body {
 	&__submit,
 	&__return-btn {
 		@include mixins.special-form-button;
+		padding: 0.75em 4em;
 	}
 }
 
@@ -842,6 +844,7 @@ body {
 
 	&__button {
 		@include mixins.special-form-button;
+		padding: 0.75em 4em;
 	}
 
 	&__special-icon {
@@ -910,9 +913,8 @@ body {
 
 	&__btn {
 		@include mixins.special-button;
-		padding: 0.75em 3em;
+		padding: 0.75em 3.5em;
 		margin: 2em 1em;
-		text-transform: uppercase;
 
 		&::before {
 			opacity: 0.7;
