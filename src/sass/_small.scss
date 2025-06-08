@@ -16,10 +16,9 @@
 	}
 
 	.contact {
-		&__title-info-box {
-			li {
-				padding: 0.5em 0;
-			}
+		&__title-info-box li {
+			align-items: start;
+			flex-direction: column;
 		}
 	}
 }
@@ -127,22 +126,6 @@
 		&__title-info-box {
 			padding: 1em 0;
 			width: 84%;
-		}
-
-		&__title-info-box {
-			li {
-				display: flex;
-				align-items: center;
-
-				div:first-of-type {
-					display: block;
-					margin-right: 20px;
-
-					svg {
-						font-size: 28px;
-					}
-				}
-			}
 		}
 	}
 

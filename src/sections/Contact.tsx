@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
 							</div>
 						</li>
 						<li>
-							<div className='contact__special-list-container'>
+							<div>
 								<FiInstagram />
 							</div>
 							<div>

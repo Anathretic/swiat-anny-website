@@ -607,12 +607,28 @@ body {
 		list-style-type: none;
 
 		li {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
 			padding: 0.5em 0;
 			width: 100%;
 
 			div:first-of-type {
-				display: none;
+				display: block;
+				margin-right: 20px;
+
+				svg {
+					font-size: 28px;
+				}
 			}
+		}
+
+		li:nth-of-type(2) div svg {
+			margin-top: 5px;
+		}
+
+		li:last-of-type div svg {
+			margin-top: 10px;
 		}
 
 		p {
