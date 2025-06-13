@@ -134,10 +134,10 @@ export const ReturnButton: React.FC<ReturnButtonModel> = ({ path }) => {
 				<Link
 					to={path}
 					className='form__return-btn'
-					onClick={() => {
+					onClick={e => {
 						dispatch(setErrorValue(''));
 						dispatch(resetSize());
-						scrollToTop();
+						scrollToTop(e);
 					}}>
 					Powrót
 				</Link>

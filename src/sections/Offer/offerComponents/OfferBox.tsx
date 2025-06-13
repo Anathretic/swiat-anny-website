@@ -28,8 +28,8 @@ export const OfferBox: React.FC<OfferBoxModel> = ({ paintingSize, text, imageTyp
 			<Link
 				to='/zloz-zamowienie'
 				className='offer__box-button'
-				onClick={() => {
-					scrollToTop();
+				onClick={e => {
+					scrollToTop(e);
 					dispatch(setSize(paintingSize));
 				}}>
 				Wybierz
