@@ -5,6 +5,7 @@ import { scrollToTop } from '../utils/scrollToTop';
 const CookieBanner: React.FC = ({ ...otherProps }) => {
 	return (
 		<CookieConsent
+			buttonId='cookie-btn'
 			location='bottom'
 			buttonText='OK'
 			style={{
