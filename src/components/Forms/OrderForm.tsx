@@ -76,7 +76,7 @@ export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
 			<FormTextarea
 				label='Wiadomość:'
 				inputName='message'
-				placeholder='Opisz jak widzisz swoją kompozycję..'
+				placeholder='Opisz jak widzisz swoją kompozycję'
 				errorMessage={errors.message?.message}
 				aria-invalid={errors.message ? true : false}
 				{...register('message')}

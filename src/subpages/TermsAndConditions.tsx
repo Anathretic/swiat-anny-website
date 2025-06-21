@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { MailToButton } from '../components';
 import { scrollToTop } from '../utils/scrollToTop';
 import { GiSpotedFlower } from 'react-icons/gi';
 
@@ -51,7 +50,9 @@ const TermsAndConditions: React.FC = () => {
 							<h2 className='terms__title'>4. Pozostałe informacje</h2>
 							<p className='terms__text'>
 								W razie jakichkolwiek pytań proszę o kontakt na mój adres mailowy:{' '}
-								<MailToButton label='annawojtylo73@gmail.com' mailto='mailto:annawojtylo73@gmail.com' />
+								<a href='mailto:annawojtylo73@gmail.com' className='terms__text-link'>
+									annawojtylo73@gmail.com
+								</a>
 							</p>
 						</div>
 						<div className='terms__box'>
