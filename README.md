@@ -13,3 +13,5 @@ The offer and opinions section were implemented using Supabase. In order to broa
 **Tools:** [EmailJS](https://www.emailjs.com/), [Supabase](https://supabase.com/)
 
 **URL:** [Świat Anny](https://swiat-anny.pl/)
+
+_This project is closed-source and proprietary. See the LICENSE file for more information._
