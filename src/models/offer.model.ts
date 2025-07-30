@@ -1,12 +1,12 @@
-export interface OfferBoxModel {
+export type OfferBoxModel = {
 	paintingSize: string;
 	text: string;
 	imageType: string;
 	price: string;
 	delay: string;
-}
+};
 
-export interface OfferDataModel {
+export type OfferDataModel = {
 	id: number;
 	node: OfferBoxModel;
-}
+};

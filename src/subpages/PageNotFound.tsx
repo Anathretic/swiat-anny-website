@@ -21,7 +21,7 @@ const PageNotFound: React.FC = () => {
 			</Helmet>
 			<main>
 				<section className='notfound'>
-					<img className='notfound__img' src={NotFoundImage} alt='Page not found image' />
+					<img className='notfound__img' src={NotFoundImage} alt='Obrazek error 404' />
 					<a href='https://storyset.com/online' className='notfound__credits' target='_blank'>
 						Error 404 image by Storyset
 					</a>

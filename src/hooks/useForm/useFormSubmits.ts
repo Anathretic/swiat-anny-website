@@ -5,7 +5,7 @@ import { useAppDispatch } from '../reduxHooks.ts';
 import { resetSize } from '../../redux/paintingSizeReduxSlice/paintingSizeSlice.ts';
 import { scrollToTop } from '../../utils/scrollToTop.ts';
 import { ContactFormModel, OrderFormModel } from '../../models/form.model.ts.ts';
-import { FormTypes, UseFormSubmitsModel } from '../../models/useFormHooks.model.ts';
+import { FormTypes, UseFormSubmitsModel } from '../../models/hooks.model.ts';
 
 export const useFormSubmits = <T extends FormTypes>({ reset, refCaptcha }: UseFormSubmitsModel<T>) => {
 	const navigate = useNavigate();

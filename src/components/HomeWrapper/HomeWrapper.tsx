@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { HomeWrapperModel } from '../../models/homeWrapper.model';
+import { HomeWrapperModel } from '../../models/simpleComponents.model';
 
 const HomeWrapper: React.FC<HomeWrapperModel> = ({ children }) => {
 	return (

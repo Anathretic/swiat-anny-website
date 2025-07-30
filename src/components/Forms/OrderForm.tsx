@@ -15,11 +15,11 @@ import { useAppDispatch } from '../../hooks/reduxHooks.ts';
 import { setErrorValue } from '../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice.ts';
 import { orderFormInputs } from './config/formsConfig.ts';
 import { orderSchema } from '../../schemas/schemas';
-import { OrderComponentModel, OrderFormModel } from '../../models/form.model.ts.ts';
+import { OrderFormComponentModel, OrderFormModel } from '../../models/form.model.ts.ts';
 import { scrollToTop } from '../../utils/scrollToTop.ts';
 import { useFormSubmits } from '../../hooks/useForm/useFormSubmits.ts';
 
-export const OrderForm: React.FC<OrderComponentModel> = ({ selectedSize }) => {
+export const OrderForm: React.FC<OrderFormComponentModel> = ({ selectedSize }) => {
 	const {
 		register,
 		reset,

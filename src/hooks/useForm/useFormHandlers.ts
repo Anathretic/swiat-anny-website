@@ -6,7 +6,7 @@ import {
 	setErrorValue,
 	setIsLoading,
 } from '../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
-import { HandleEmailJsModel } from '../../models/useFormHooks.model';
+import { HandleEmailJsModel } from '../../models/hooks.model';
 
 export const useFormHandlers = () => {
 	const dispatch = useAppDispatch();
