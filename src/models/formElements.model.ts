@@ -5,33 +5,29 @@ import { ContactFormModel, OrderFormModel } from './form.model.ts.ts';
 type Form = ContactFormModel | OrderFormModel;
 type ErrorMessage = string | FieldError | Merge<FieldError, FieldErrorsImpl<Form>> | undefined;
 
-export interface InputAndTextareaModel {
+type DefaultInputModel = {
 	label: string;
 	inputName: string;
-	errorMessage: ErrorMessage;
-	placeholder?: string;
-}
-
-export interface SelectModel {
-	label: string;
 	selectName: string;
 	selectedSize: string;
 	errorMessage: ErrorMessage;
-}
+	placeholder?: string;
+};
 
-export interface InputConfigModel {
-	label: string;
-	inputName: string;
-	placeholder: string;
+export type InputAndTextareaModel = Pick<DefaultInputModel, 'label' | 'inputName' | 'errorMessage' | 'placeholder'>;
+
+export type SelectModel = Pick<DefaultInputModel, 'label' | 'selectName' | 'selectedSize' | 'errorMessage'>;
+
+export type InputConfigModel = Pick<DefaultInputModel, 'label' | 'inputName' | 'placeholder'> & {
 	errorMessage: string | undefined;
 	isInvalid: boolean;
 	register: ReturnType<UseFormRegister<Form>>;
-}
+};
 
-export interface ReCaptchaV2Model {
+export type ReCaptchaV2Model = {
 	refCaptcha: React.RefObject<ReCAPTCHA>;
-}
+};
 
-export interface ReturnButtonModel {
+export type ReturnButtonModel = {
 	path: string;
-}
+};

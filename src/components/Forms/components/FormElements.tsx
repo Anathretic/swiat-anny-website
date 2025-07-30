@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import ReCAPTCHA from 'react-google-recaptcha';
-import Loader from '../../Loader';
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import {
 	getContactAndOrderFormInitialValues,
@@ -15,6 +14,7 @@ import {
 	ReturnButtonModel,
 	SelectModel,
 } from '../../../models/formElements.model';
+import { FormLoader } from './FormLoader';
 import { resetSize } from '../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
 import { scrollToTop } from '../../../utils/scrollToTop';
 
@@ -113,13 +113,9 @@ export const FormSubmit: React.FC = () => {
 
 	return (
 		<div className='form__box'>
-			{isLoading ? (
-				<Loader className='loader' />
-			) : (
-				<button className='form__submit' type='submit'>
-					{buttonText}
-				</button>
-			)}
+			<button className={`form__submit ${isLoading && 'form__submit--is-loading'}`} type='submit'>
+				{isLoading ? <FormLoader /> : buttonText}
+			</button>
 		</div>
 	);
 };

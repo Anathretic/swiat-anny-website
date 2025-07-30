@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { scrollToTop } from '../utils/scrollToTop';
 import { GiSpotedFlower } from 'react-icons/gi';
 
 const TermsAndConditions: React.FC = () => {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<Helmet htmlAttributes={{ lang: 'pl' }}>
@@ -76,9 +78,15 @@ const TermsAndConditions: React.FC = () => {
 						</div>
 						<hr className='terms__strap' />
 						<div className='terms__box'>
-							<Link to='/' className='terms__button' onClick={scrollToTop}>
+							<button
+								type='button'
+								className='terms__button'
+								onClick={() => {
+									navigate(-1);
+									scrollToTop();
+								}}>
 								Powrót
-							</Link>
+							</button>
 						</div>
 						<GiSpotedFlower className='terms__special-icon terms__special-icon--first' />
 						<GiSpotedFlower className='terms__special-icon terms__special-icon--second' />

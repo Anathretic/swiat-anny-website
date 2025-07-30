@@ -189,6 +189,10 @@
 				color: globals.$neon-pink;
 			}
 		}
+
+		&__loader {
+			height: 22px;
+		}
 	}
 
 	.order,
@@ -494,11 +498,6 @@
 			&__box:last-of-type {
 				align-items: start;
 				margin-left: 1.7em;
-
-				.loader {
-					margin: 1.57em 0;
-					margin-left: 22.5%;
-				}
 			}
 
 			&__submit {

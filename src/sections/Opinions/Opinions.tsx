@@ -33,7 +33,7 @@ const Opinions: React.FC = () => {
 							</Carousel>
 						</div>
 					) : (
-						<Loader className='loader loader--special' />
+						<Loader />
 					)
 				) : (
 					<p className='opinions__error'>Ups! Wygląda na to, że serwer ma przerwę..</p>
