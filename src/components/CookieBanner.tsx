@@ -5,26 +5,11 @@ import { scrollToTop } from '../utils/scrollToTop';
 const CookieBanner: React.FC = ({ ...otherProps }) => {
 	return (
 		<CookieConsent
-			buttonId='cookie-btn'
+			disableStyles={true}
+			containerClasses='cookie-banner-container'
+			buttonClasses='cookie-banner-button'
 			location='bottom'
-			buttonText='OK'
-			style={{
-				color: '#fff',
-				backgroundColor: '#a34087',
-				fontSize: '12px',
-				padding: '10px',
-				textAlign: 'center',
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-			}}
-			buttonStyle={{
-				backgroundColor: '#ffdf00',
-				fontSize: '14px',
-				padding: '10px',
-				width: '100px',
-				borderRadius: '8px',
-			}}
+			buttonText='Zamknij'
 			expires={1}
 			{...otherProps}>
 			<p className='cookie-banner-text'>
