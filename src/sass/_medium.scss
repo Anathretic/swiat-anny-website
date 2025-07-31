@@ -1,6 +1,20 @@
 @use 'globals';
 
 @media screen and (min-width: 768px) {
+	.cookie-banner-container {
+		justify-content: space-evenly;
+		flex-direction: row;
+		height: 100px;
+	}
+
+	.cookie-banner-button {
+		margin-top: 0;
+	}
+
+	.cookie-banner-text {
+		max-width: 460px;
+	}
+
 	html {
 		scroll-padding-top: 100px;
 	}

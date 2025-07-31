@@ -2,13 +2,12 @@
 @use 'mixins';
 
 @media screen and (min-width: 1024px) {
-	.cookie-banner-text {
-		padding: 1em;
-		margin-left: -3rem;
+	.cookie-banner-link:hover {
+		color: globals.$darker-yellow-color;
 	}
 
-	#cookie-btn {
-		margin-right: 3rem !important;
+	.cookie-banner-button:hover {
+		background-color: globals.$darker-yellow-color;
 	}
 
 	.header {
@@ -308,14 +307,6 @@
 }
 
 @media screen and (min-width: 1358px) {
-	.cookie-banner-text {
-		margin-left: -23.5rem;
-	}
-
-	#cookie-btn {
-		margin-right: 3.1rem !important;
-	}
-
 	.header {
 		&__nav-link {
 			font-size: 1.2em;
@@ -541,10 +532,6 @@
 }
 
 @media screen and (min-width: 1485px) {
-	.cookie-banner-text {
-		font-size: 1.1em;
-	}
-
 	.offer {
 		&__box {
 			padding: 2em 1em;
@@ -561,11 +548,14 @@
 
 @media screen and (min-width: 1536px) {
 	.cookie-banner-text {
-		margin-left: -29.5rem;
+		max-width: 900px;
+		font-size: 1.1em;
 	}
 
-	#cookie-btn {
-		margin-right: 3.55rem !important;
+	.cookie-banner-button {
+		padding: 10px;
+		width: 160px;
+		font-size: 1.3em;
 	}
 }
 
@@ -583,12 +573,12 @@
 	}
 }
 
-@media screen and (min-width: 1920px) {
-	.cookie-banner-text {
-		margin-left: -25rem;
+@media screen and (min-width: 2520px) {
+	.cookie-banner-container {
+		justify-content: center;
 	}
 
-	#cookie-btn {
-		margin-right: 13rem !important;
+	.cookie-banner-text {
+		margin-right: 32rem;
 	}
 }
