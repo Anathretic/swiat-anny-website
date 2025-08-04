@@ -61,7 +61,11 @@ const TermsAndConditions: React.FC = () => {
 							<h2 className='terms__title'>5. Projekt strony</h2>
 							<p className='terms__text'>
 								Wstępna makieta oraz cały kod:{' '}
-								<a className='terms__text-link' href='https://konrad-wojtylo.com/' target='_blank' rel='noreferrer'>
+								<a
+									className='terms__text-link'
+									href='https://www.linkedin.com/in/konrad-wojtylo/'
+									target='_blank'
+									rel='noreferrer'>
 									Konrad Wojtyło
 								</a>
 							</p>
