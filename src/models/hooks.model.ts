@@ -1,6 +1,6 @@
 import { UseFormReset } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { ContactFormModel, OrderFormModel } from './form.model.ts.ts';
+import { ContactFormModel, OrderFormModel } from './form.model.ts';
 
 export type FormTypes = ContactFormModel | OrderFormModel;
 

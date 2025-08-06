@@ -4,8 +4,9 @@ import { useFormHandlers } from './useFormHandlers.ts';
 import { useAppDispatch } from '../reduxHooks.ts';
 import { resetSize } from '../../redux/paintingSizeReduxSlice/paintingSizeSlice.ts';
 import { scrollToTop } from '../../utils/scrollToTop.ts';
-import { ContactFormModel, OrderFormModel } from '../../models/form.model.ts.ts';
+import { ContactFormModel, OrderFormModel } from '../../models/form.model.ts';
 import { FormTypes, UseFormSubmitsModel } from '../../models/hooks.model.ts';
+import { sendOrder } from '../../supabase/supabaseOption.ts';
 
 export const useFormSubmits = <T extends FormTypes>({ reset, refCaptcha }: UseFormSubmitsModel<T>) => {
 	const navigate = useNavigate();
@@ -67,7 +68,8 @@ export const useFormSubmits = <T extends FormTypes>({ reset, refCaptcha }: UseFo
 			publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`,
 			reset,
 			additionalActions: [
-				() => {
+				async () => {
+					await sendOrder({ order: params });
 					setTimeout(() => {
 						dispatch(resetSize());
 						navigate('/');

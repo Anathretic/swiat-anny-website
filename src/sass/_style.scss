@@ -670,11 +670,6 @@ body {
 
 		p {
 			padding: 0.25rem 0;
-			font-weight: 300;
-		}
-
-		p:first-of-type {
-			font-weight: 500;
 		}
 
 		a {
@@ -847,6 +842,7 @@ body {
 	&__container {
 		@include mixins.center-flex;
 		flex-direction: column;
+		max-width: 850px;
 	}
 
 	&__main-title {
@@ -865,7 +861,7 @@ body {
 		margin-top: 1.25em;
 	}
 
-	&__box:nth-of-type(5) {
+	&__box:nth-of-type(11) {
 		margin: 1.25em 0;
 	}
 
@@ -879,28 +875,29 @@ body {
 		margin-bottom: 0.75em;
 		color: globals.$white-color;
 		font-size: 1.1em;
-		font-weight: 200;
+		font-weight: 400;
 		font-style: italic;
 	}
 
 	&__text {
-		font-weight: 200;
 		font-size: 0.9em;
+		line-height: 1.5em;
 
 		&--special {
 			margin-top: 1em;
-		}
-
-		span {
-			font-weight: 500;
 		}
 	}
 
 	&__text-link {
 		color: globals.$white-color;
-		font-weight: 500;
-		text-decoration: none;
-		transition: color 0.3s linear;
+		text-underline-offset: 2px;
+		transition: color 0.3s;
+	}
+
+	ul {
+		margin-left: 1.25em;
+		font-size: 0.9em;
+		line-height: 1.5em;
 	}
 
 	&__button {

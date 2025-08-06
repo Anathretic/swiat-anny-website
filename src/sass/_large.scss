@@ -194,8 +194,7 @@
 		}
 	}
 
-	.order,
-	.terms {
+	.order {
 		&__container {
 			width: 50%;
 		}
@@ -346,7 +345,7 @@
 		}
 
 		&__image-box {
-			margin-top: 120px;
+			margin-top: 130px;
 			max-width: 600px;
 		}
 
@@ -500,8 +499,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-	.order,
-	.terms {
+	.order {
 		&__container {
 			width: 40%;
 			max-width: 620px;
@@ -522,10 +520,11 @@
 		}
 
 		&__title {
-			font-size: 1.2em;
+			font-size: 1.25em;
 		}
 
-		&__text {
+		&__text,
+		ul {
 			font-size: 1em;
 		}
 	}
