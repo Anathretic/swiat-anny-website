@@ -15,7 +15,7 @@ import { useAppDispatch } from '../../hooks/reduxHooks.ts';
 import { setErrorValue } from '../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice.ts';
 import { orderFormInputs } from './config/formsConfig.ts';
 import { orderSchema } from '../../schemas/schemas';
-import { OrderFormComponentModel, OrderFormModel } from '../../models/form.model.ts.ts';
+import { OrderFormComponentModel, OrderFormModel } from '../../models/form.model.ts';
 import { scrollToTop } from '../../utils/scrollToTop.ts';
 import { useFormSubmits } from '../../hooks/useForm/useFormSubmits.ts';
 

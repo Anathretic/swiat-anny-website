@@ -1,6 +1,6 @@
 import ReCAPTCHA from 'react-google-recaptcha';
 import { FieldError, FieldErrorsImpl, Merge, UseFormRegister } from 'react-hook-form';
-import { ContactFormModel, OrderFormModel } from './form.model.ts.ts';
+import { ContactFormModel, OrderFormModel } from './form.model.ts';
 
 type Form = ContactFormModel | OrderFormModel;
 type ErrorMessage = string | FieldError | Merge<FieldError, FieldErrorsImpl<Form>> | undefined;

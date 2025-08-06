@@ -106,14 +106,11 @@
 		margin: 1.82em 0;
 	}
 
-	.order,
-	.terms {
+	.order {
 		&__container {
 			width: 66%;
 		}
-	}
 
-	.order {
 		&__special-icon {
 			font-size: 82px;
 			top: -30px;
@@ -133,6 +130,10 @@
 	}
 
 	.terms {
+		&__container {
+			width: 80%;
+		}
+
 		&__main-title {
 			font-size: 1.85em;
 		}

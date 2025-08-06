@@ -1,4 +1,4 @@
-import { ContactFormModel, OrderFormModel } from '../../../models/form.model.ts.ts';
+import { ContactFormModel, OrderFormModel } from '../../../models/form.model.ts';
 import { InputAndTextareaConfigModel } from '../../../models/inputConfig.model.ts';
 import { emailField, firstnameField, phoneField, secondnameField, subjectField } from './inputsConfig.ts';
 
