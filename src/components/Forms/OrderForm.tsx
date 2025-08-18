@@ -49,7 +49,7 @@ export const OrderForm: React.FC<OrderFormComponentModel> = ({ selectedSize }) =
 
 	return (
 		<form className='form' onSubmit={handleSubmit(orderSubmit)}>
-			<h3 className='form__title'>Zamówienie</h3>
+			<h1 className='form__title'>Złóż zamówienie</h1>
 			<hr className='form__strap' />
 			{orderFormInputs.map((input, id) => {
 				const error = errors[input.inputName];
