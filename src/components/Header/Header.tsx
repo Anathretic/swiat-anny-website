@@ -21,11 +21,11 @@ const Header: React.FC = () => {
 	return (
 		<header className={`header ${isScrolled && 'header-active'}`}>
 			<div className='header__box'>
-				<h2 className='header__title'>
+				<div className='header__title'>
 					<HashLink smooth to='/#'>
 						Świat Anny
 					</HashLink>
-				</h2>
+				</div>
 				<nav className='header__nav'>
 					<HashLink smooth to='/#historia' className={'header__nav-link'}>
 						Historia
