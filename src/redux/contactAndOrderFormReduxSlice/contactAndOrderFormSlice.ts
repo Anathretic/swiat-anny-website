@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { ContactAndOrderFormSliceModel } from '../../models/reduxSlices.model';
+import { ContactAndOrderFormSliceModel } from '../../shared/models/reduxSlices.model';
 
 const initialState: ContactAndOrderFormSliceModel = {
 	isLoading: false,
