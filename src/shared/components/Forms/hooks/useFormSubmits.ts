@@ -70,8 +70,8 @@ export const useFormSubmits = <T extends FormTypes>({ reset, refCaptcha }: UseFo
 			additionalActions: [
 				async () => {
 					await sendOrder({ order: params });
+					dispatch(resetSize());
 					setTimeout(() => {
-						dispatch(resetSize());
 						navigate('/');
 						scrollToTop();
 					}, 2500);
