@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
-import { getPaintingSizeInitialValue } from '../../redux/paintingSizeReduxSlice/paintingSizeSlice';
+import { getPaintingSizeInitialValue } from '../../shared/redux/sharedSlices/paintingSizeSlice.ts';
 import { useAppSelector } from '../../shared/hooks/reduxHooks.ts';
-import { OrderForm } from '../../shared/components/Forms/OrderForm.tsx';
+import { OrderForm } from './components/OrderForm.tsx';
 import { GiPalette } from 'react-icons/gi';
 
 const Order: React.FC = () => {

@@ -1,11 +1,7 @@
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppDispatch } from '../../../hooks/reduxHooks';
-import {
-	setButtonText,
-	setErrorValue,
-	setIsLoading,
-} from '../../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
+import { setButtonText, setErrorValue, setIsLoading } from '../../../redux/sharedSlices/contactAndOrderFormSlice';
 import { HandleEmailJsModel } from '../models/hooks.model';
 
 export const useFormHandlers = () => {
