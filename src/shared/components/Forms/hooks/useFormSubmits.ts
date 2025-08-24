@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { SubmitHandler } from 'react-hook-form';
 import { useFormHandlers } from './useFormHandlers.ts';
 import { useAppDispatch } from '../../../hooks/reduxHooks.ts';
-import { resetSize } from '../../../../redux/paintingSizeReduxSlice/paintingSizeSlice.ts';
+import { resetSize } from '../../../redux/sharedSlices/paintingSizeSlice.ts';
 import { scrollToTop } from '../../../utils/scrollToTop.ts';
 import { ContactFormModel, OrderFormModel } from '../models/forms.model.ts';
 import { FormTypes, UseFormSubmitsModel } from '../models/hooks.model.ts';

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import { PaintingSizeSliceModel } from '../../shared/models/reduxSlices.model';
+import { PaintingSizeSliceModel } from '../../models/reduxSlices.model';
 
 const initialState: PaintingSizeSliceModel = {
 	size: '',

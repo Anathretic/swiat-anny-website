@@ -2,11 +2,16 @@ import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useFormSubmits } from './hooks/useFormSubmits.ts';
-import { FormInput, FormRecaptchaV2, FormSubmit, FormTextarea } from './components/FormElements';
-import { contactFormInputs } from './config/formsConfig.ts';
-import { ContactFormModel } from './models/forms.model.ts';
-import { contactSchema } from '../../../schemas/schemas.ts';
+import { useFormSubmits } from '../../../../shared/components/Forms/hooks/useFormSubmits.ts';
+import {
+	FormInput,
+	FormRecaptchaV2,
+	FormSubmit,
+	FormTextarea,
+} from '../../../../shared/components/Forms/components/FormElements.tsx';
+import { contactFormInputs } from '../config/formConfig.ts';
+import { ContactFormModel } from '../../../../shared/components/Forms/models/forms.model.ts';
+import { contactSchema } from '../../../../shared/schemas/schemas.ts';
 
 export const ContactForm: React.FC = () => {
 	const {

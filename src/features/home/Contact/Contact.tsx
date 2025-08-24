@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ContactForm } from '../../../shared/components/Forms/ContactForm';
+import { ContactForm } from './components/ContactForm';
 import { scrollToTop } from '../../../shared/utils/scrollToTop';
 import { FiMail, FiPhone, FiInstagram } from 'react-icons/fi';
 

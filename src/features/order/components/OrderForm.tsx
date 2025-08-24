@@ -10,14 +10,14 @@ import {
 	FormTextarea,
 	ReturnButton,
 	SelectElement,
-} from './components/FormElements';
-import { useAppDispatch } from '../../hooks/reduxHooks.ts';
-import { setErrorValue } from '../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice.ts';
-import { orderFormInputs } from './config/formsConfig.ts';
-import { orderSchema } from '../../../schemas/schemas.ts';
-import { OrderFormComponentModel, OrderFormModel } from './models/forms.model.ts';
-import { scrollToTop } from '../../utils/scrollToTop.ts';
-import { useFormSubmits } from './hooks/useFormSubmits.ts';
+} from '../../../shared/components/Forms/components/FormElements.tsx';
+import { useAppDispatch } from '../../../shared/hooks/reduxHooks.ts';
+import { setErrorValue } from '../../../shared/redux/sharedSlices/contactAndOrderFormSlice.ts';
+import { orderFormInputs } from '../config/formConfig.ts';
+import { orderSchema } from '../../../shared/schemas/schemas.ts';
+import { OrderFormComponentModel, OrderFormModel } from '../../../shared/components/Forms/models/forms.model.ts';
+import { scrollToTop } from '../../../shared/utils/scrollToTop.ts';
+import { useFormSubmits } from '../../../shared/components/Forms/hooks/useFormSubmits.ts';
 
 export const OrderForm: React.FC<OrderFormComponentModel> = ({ selectedSize }) => {
 	const {

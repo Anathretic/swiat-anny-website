@@ -7,9 +7,8 @@ import {
 	getContactAndOrderFormInitialValues,
 	setButtonText,
 	setErrorValue,
-} from '../../../../redux/contactAndOrderFormReduxSlice/contactAndOrderFormSlice';
-import { resetSize } from '../../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
-
+} from '../../../redux/sharedSlices/contactAndOrderFormSlice';
+import { resetSize } from '../../../redux/sharedSlices/paintingSizeSlice';
 import { scrollToTop } from '../../../utils/scrollToTop';
 import { InputAndTextareaModel, ReCaptchaV2Model, ReturnButtonModel, SelectModel } from '../models/components.model';
 import { FormLoader } from './FormLoader';

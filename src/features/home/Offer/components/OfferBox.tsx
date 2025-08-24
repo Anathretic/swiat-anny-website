@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { setSize } from '../../../../redux/paintingSizeReduxSlice/paintingSizeSlice';
+import { setSize } from '../../../../shared/redux/sharedSlices/paintingSizeSlice';
 import { useAppDispatch } from '../../../../shared/hooks/reduxHooks';
 import { scrollToTop } from '../../../../shared/utils/scrollToTop';
 import { OfferBoxModel } from '../models/offer.model';
