@@ -27,7 +27,7 @@ export const Home: React.FC = () => {
 				<meta property='og:url' content='https://swiat-anny.pl/' />
 				<link rel='canonical' href='https://swiat-anny.pl/' />
 			</Helmet>
-			<main>
+			<main className='special-main'>
 				<Welcome />
 				<History />
 				<Offer />

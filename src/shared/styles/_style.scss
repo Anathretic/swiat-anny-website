@@ -21,6 +21,13 @@ body {
 	font-family: globals.$main-font;
 }
 
+.special-main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 .cookie-banner-container {
 	position: fixed;
 	bottom: 0;
@@ -52,6 +59,10 @@ body {
 	font-size: 14px;
 	transition: background-color 0.3s;
 	cursor: pointer;
+
+	&:active {
+		transform: translateY(1px);
+	}
 }
 
 .cookie-banner-text {
@@ -96,6 +107,10 @@ body {
 			color: globals.$white-color;
 			text-decoration: none;
 		}
+
+		&:active {
+			transform: translateY(1px);
+		}
 	}
 
 	&__nav {
@@ -134,8 +149,9 @@ body {
 .welcome {
 	@include mixins.center-flex;
 	width: 100%;
-	height: 100%;
-	min-height: 100vh;
+	height: 100vh;
+	max-width: 2720px;
+	max-height: 1820px;
 	background-image: url('../../images/main-background.jpg');
 	background-size: cover;
 	background-position: center;
@@ -190,6 +206,10 @@ body {
 
 		&::before {
 			opacity: 0.7;
+		}
+
+		&:active {
+			transform: translateY(1px);
 		}
 	}
 }
@@ -310,7 +330,6 @@ body {
 }
 
 .offer {
-	min-height: 75vh;
 	background-color: globals.$lighter-dark-blue;
 
 	&__box {
@@ -400,6 +419,10 @@ body {
 
 		&::before {
 			opacity: 0;
+		}
+
+		&:active {
+			transform: translateY(1px);
 		}
 	}
 }
@@ -798,6 +821,10 @@ body {
 	&__return-btn {
 		@include mixins.special-form-button;
 		padding: 0.75em 4em;
+
+		&:active {
+			transform: translateY(1px);
+		}
 	}
 
 	&__submit {
@@ -904,6 +931,10 @@ body {
 	&__button {
 		@include mixins.special-form-button;
 		padding: 0.75em 4em;
+
+		&:active {
+			transform: translateY(1px);
+		}
 	}
 
 	&__special-icon {
@@ -944,6 +975,10 @@ body {
 		margin: 0.65em 0.65em 0.35em;
 		color: globals.$white-color;
 		font-size: 28px;
+
+		&:active {
+			transform: translateY(1px);
+		}
 	}
 
 	&__copyright {
@@ -977,6 +1012,10 @@ body {
 
 		&::before {
 			opacity: 0.7;
+		}
+
+		&:active {
+			transform: translateY(1px);
 		}
 	}
 }

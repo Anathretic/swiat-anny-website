@@ -6,6 +6,15 @@ import { GiSpotedFlower } from 'react-icons/gi';
 const TermsAndConditions: React.FC = () => {
 	const navigate = useNavigate();
 
+	const handleBack = () => {
+		if (window.history.state?.idx > 1) {
+			navigate(-1);
+		} else {
+			navigate('/');
+		}
+		scrollToTop();
+	};
+
 	return (
 		<>
 			<Helmet htmlAttributes={{ lang: 'pl' }}>
@@ -213,13 +222,7 @@ const TermsAndConditions: React.FC = () => {
 						</div>
 						<hr className='terms__strap' />
 						<div className='terms__box'>
-							<button
-								type='button'
-								className='terms__button'
-								onClick={() => {
-									navigate(-1);
-									scrollToTop();
-								}}>
+							<button type='button' className='terms__button' onClick={handleBack}>
 								Powrót
 							</button>
 						</div>

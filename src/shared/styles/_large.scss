@@ -46,6 +46,10 @@
 			&:focus::before {
 				opacity: 0.85;
 			}
+
+			&:active {
+				opacity: 0;
+			}
 		}
 	}
 
@@ -164,6 +168,10 @@
 			a:hover {
 				color: globals.$neon-pink;
 			}
+
+			a:active {
+				opacity: 0;
+			}
 		}
 	}
 
@@ -187,6 +195,10 @@
 			a:hover {
 				color: globals.$neon-pink;
 			}
+
+			a:active {
+				opacity: 0;
+			}
 		}
 
 		&__loader {
@@ -209,6 +221,10 @@
 			&:hover,
 			&:focus {
 				color: globals.$neon-pink;
+			}
+
+			&:active {
+				opacity: 0;
 			}
 		}
 	}
@@ -267,6 +283,12 @@
 		&__img {
 			width: 35%;
 			max-width: 660px;
+		}
+
+		&__credits {
+			&:active {
+				opacity: 0;
+			}
 		}
 	}
 }
