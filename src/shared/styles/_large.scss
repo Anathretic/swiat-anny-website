@@ -2,8 +2,14 @@
 @use 'mixins';
 
 @media screen and (min-width: 1024px) {
-	.cookie-banner-link:hover {
-		color: globals.$darker-yellow-color;
+	.cookie-banner-link {
+		&:hover {
+			color: globals.$darker-yellow-color;
+		}
+
+		&:active {
+			opacity: 0.55;
+		}
 	}
 
 	.cookie-banner-button:hover {
@@ -36,19 +42,17 @@
 				opacity: 0;
 			}
 
-			&:hover,
-			&:focus {
+			&:hover {
 				color: globals.$neon-pink;
 				text-shadow: 0 0 0.5em currentColor;
 			}
 
-			&:hover::before,
-			&:focus::before {
+			&:hover::before {
 				opacity: 0.85;
 			}
 
 			&:active {
-				opacity: 0;
+				opacity: 0.55;
 			}
 		}
 	}
@@ -170,7 +174,7 @@
 			}
 
 			a:active {
-				opacity: 0;
+				opacity: 0.55;
 			}
 		}
 	}
@@ -197,7 +201,7 @@
 			}
 
 			a:active {
-				opacity: 0;
+				opacity: 0.55;
 			}
 		}
 
@@ -218,13 +222,12 @@
 		}
 
 		&__text-link {
-			&:hover,
-			&:focus {
+			&:hover {
 				color: globals.$neon-pink;
 			}
 
 			&:active {
-				opacity: 0;
+				opacity: 0.55;
 			}
 		}
 	}
@@ -265,13 +268,11 @@
 				opacity: 0;
 			}
 
-			&:hover,
-			&:focus {
+			&:hover {
 				color: globals.$neon-pink;
 			}
 
-			&:hover::before,
-			&:focus::before {
+			&:hover::before {
 				opacity: 1;
 			}
 		}
@@ -287,7 +288,7 @@
 
 		&__credits {
 			&:active {
-				opacity: 0;
+				opacity: 0.55;
 			}
 		}
 	}

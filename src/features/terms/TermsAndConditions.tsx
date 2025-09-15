@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { scrollToTop } from '../../shared/utils/scrollToTop';
 import { GiSpotedFlower } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 const TermsAndConditions: React.FC = () => {
 	const navigate = useNavigate();
@@ -39,9 +40,9 @@ const TermsAndConditions: React.FC = () => {
 							<p className='terms__text'>
 								Niniejszy dokument określa zasady przetwarzania danych osobowych oraz wykorzystywania plików cookies
 								przez stronę internetową Świat Anny, dostępną pod adresem{' '}
-								<a href='https://swiat-anny.pl/' className='terms__text-link'>
+								<Link to='/' className='terms__text-link'>
 									swiat-anny.pl
-								</a>
+								</Link>
 							</p>
 							<p className='terms__text terms__text--special'>Administratorem danych osobowych jest Anna Wojtyło.</p>
 							<p className='terms__text terms__text--special'>
