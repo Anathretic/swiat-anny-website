@@ -1,5 +1,5 @@
 import { GiEasel } from 'react-icons/gi';
-import SectionImage from './images/history-section-image.jpg';
+import SectionImage from '../../../assets/home/history/history-section-image.jpg';
 
 const History: React.FC = () => {
 	return (

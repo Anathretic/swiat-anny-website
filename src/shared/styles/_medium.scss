@@ -188,3 +188,11 @@
 		}
 	}
 }
+
+@media screen and (min-width: 990px) and (min-height: 990px) {
+	.welcome {
+		&__button {
+			display: block;
+		}
+	}
+}

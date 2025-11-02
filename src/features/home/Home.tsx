@@ -5,7 +5,7 @@ import Offer from './Offer/Offer';
 import Opinions from './Opinions/Opinions';
 import Contact from './Contact/Contact';
 
-export const Home: React.FC = () => {
+const Home: React.FC = () => {
 	return (
 		<>
 			<Helmet htmlAttributes={{ lang: 'pl' }}>
@@ -37,3 +37,5 @@ export const Home: React.FC = () => {
 		</>
 	);
 };
+
+export default Home;
