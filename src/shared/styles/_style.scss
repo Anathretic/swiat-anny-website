@@ -151,7 +151,7 @@ body {
 	width: 100%;
 	height: 100vh;
 	max-height: 1820px;
-	background-image: url('../../images/main-background.jpg');
+	background-image: url('../../assets/main-background/main-background.jpg');
 	background-size: cover;
 	background-position: center;
 
@@ -199,6 +199,7 @@ body {
 
 	&__button {
 		@include mixins.special-button;
+		display: none;
 		padding: 0.75em 3.5em;
 		animation: opacity-animation 1.25s linear forwards;
 		opacity: 0;
@@ -446,7 +447,7 @@ body {
 }
 
 .order {
-	background-image: url('../../images/main-background.jpg');
+	background-image: url('../../assets/main-background/main-background.jpg');
 
 	&__container {
 		text-align: center;
@@ -506,7 +507,7 @@ body {
 }
 
 .opinions {
-	background-image: url('../../features/home/Opinions/images/opinions-background-image.jpg');
+	background-image: url('../../assets/home/opinions/opinions-background-image.jpg');
 	background-size: cover;
 	background-position: center;
 
@@ -602,23 +603,23 @@ body {
 		background-position: center;
 
 		&--1 {
-			background-image: url('../../features/home/Opinions/images/box-images/opinion-box-first.jpg');
+			background-image: url('../../assets/home/opinions/box-images/opinion-box-first.jpg');
 		}
 
 		&--2 {
-			background-image: url('../../features/home/Opinions/images/box-images/opinion-box-second.jpg');
+			background-image: url('../../assets/home/opinions/box-images/opinion-box-second.jpg');
 		}
 
 		&--3 {
-			background-image: url('../../features/home/Opinions/images/box-images/opinion-box-third.jpg');
+			background-image: url('../../assets/home/opinions/box-images/opinion-box-third.jpg');
 		}
 
 		&--4 {
-			background-image: url('../../features/home/Opinions/images/box-images/opinion-box-fourth.jpg');
+			background-image: url('../../assets/home/opinions/box-images/opinion-box-fourth.jpg');
 		}
 
 		&--5 {
-			background-image: url('../../features/home/Opinions/images/box-images/opinion-box-fifth.jpg');
+			background-image: url('../../assets/home/opinions/box-images/opinion-box-fifth.jpg');
 		}
 	}
 }
@@ -864,7 +865,7 @@ body {
 
 .terms {
 	color: globals.$white-color;
-	background-image: url('../../images/main-background.jpg');
+	background-image: url('../../assets/main-background/main-background.jpg');
 
 	&__container {
 		@include mixins.center-flex;

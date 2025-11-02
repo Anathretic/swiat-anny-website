@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import NotFoundImage from './images/notfound-img.svg';
+import NotFoundImage from '../../assets/page-not-found/page-not-found-img.svg';
 
 const PageNotFound: React.FC = () => {
 	const currentUrl = window.location.href;
