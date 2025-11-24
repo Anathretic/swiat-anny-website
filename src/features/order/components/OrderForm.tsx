@@ -4,6 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {
+	CheckboxElement,
 	FormInput,
 	FormRecaptchaV2,
 	FormSubmit,
@@ -19,6 +20,8 @@ import { OrderFormComponentModel, OrderFormModel } from '../../../shared/compone
 import { scrollToTop } from '../../../shared/utils/scrollToTop.ts';
 import { useFormSubmits } from '../../../shared/components/Forms/hooks/useFormSubmits.ts';
 
+import * as yup from 'yup';
+
 export const OrderForm: React.FC<OrderFormComponentModel> = ({ selectedSize }) => {
 	const {
 		register,
@@ -33,8 +36,9 @@ export const OrderForm: React.FC<OrderFormComponentModel> = ({ selectedSize }) =
 			phone: '',
 			size: undefined,
 			message: '',
+			privacyPolicy: false,
 		},
-		resolver: yupResolver(orderSchema),
+		resolver: yupResolver(orderSchema as yup.ObjectSchema<OrderFormModel>),
 	});
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
@@ -82,6 +86,12 @@ export const OrderForm: React.FC<OrderFormComponentModel> = ({ selectedSize }) =
 				{...register('message')}
 			/>
 			<FormRecaptchaV2 refCaptcha={refCaptcha} />
+			<CheckboxElement
+				label='Wyrażam zgodę na przetwarzanie moich danych zgodnie z obowiązującym '
+				inputName='privacyPolicy'
+				{...register('privacyPolicy')}
+				errorMessage={errors.privacyPolicy?.message}
+			/>
 			<hr className='form__strap' />
 			<FormSubmit />
 			<ReturnButton path='/' />

@@ -180,6 +180,26 @@
 	}
 
 	.form {
+		&__box {
+			&--checkbox {
+				label {
+					a:hover {
+						color: globals.$neon-pink;
+					}
+
+					a:active {
+						opacity: 0.55;
+					}
+				}
+			}
+
+			&--checkbox-error {
+				a:hover {
+					color: globals.$error-color !important;
+				}
+			}
+		}
+
 		&__label {
 			font-size: 1.1em;
 		}

@@ -14,7 +14,15 @@ export const useFormSubmits = <T extends FormTypes>({ reset, refCaptcha }: UseFo
 
 	const { handleReCaptcha, handleEmailJs, handleErrors } = useFormHandlers();
 
-	const contactSubmit: SubmitHandler<ContactFormModel> = async ({ firstName, email, subject, message }) => {
+	const contactSubmit: SubmitHandler<ContactFormModel> = async ({
+		firstName,
+		email,
+		subject,
+		message,
+		privacyPolicy,
+	}) => {
+		if (!privacyPolicy) return;
+
 		const token = handleReCaptcha(refCaptcha);
 
 		if (!token) {
@@ -40,7 +48,17 @@ export const useFormSubmits = <T extends FormTypes>({ reset, refCaptcha }: UseFo
 		});
 	};
 
-	const orderSubmit: SubmitHandler<OrderFormModel> = async ({ firstName, secondName, email, phone, size, message }) => {
+	const orderSubmit: SubmitHandler<OrderFormModel> = async ({
+		firstName,
+		secondName,
+		email,
+		phone,
+		size,
+		message,
+		privacyPolicy,
+	}) => {
+		if (!privacyPolicy) return;
+
 		const token = handleReCaptcha(refCaptcha);
 
 		if (!token) {

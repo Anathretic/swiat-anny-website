@@ -108,6 +108,9 @@ const TermsAndConditions: React.FC = () => {
 								przepisami RODO.
 							</p>
 							<p className='terms__text terms__text--special'>
+								Dane przesyłane za pomocą formularzy są zabezpieczone poprzez szyfrowane połączenie SSL (HTTPS).
+							</p>
+							<p className='terms__text terms__text--special'>
 								Dane nie są przekazywane poza EOG, z wyjątkiem sytuacji, gdy dostawca (np. EmailJS) zapewnia odpowiedni
 								poziom ochrony danych (np. poprzez standardowe klauzule umowne).
 							</p>
@@ -134,6 +137,9 @@ const TermsAndConditions: React.FC = () => {
 								<li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
 							</ul>
 							<p className='terms__text terms__text--special'>
+								Dane użytkowników nie są wykorzystywane do zautomatyzowanego podejmowania decyzji ani profilowania.
+							</p>
+							<p className='terms__text terms__text--special'>
 								W celu realizacji powyższych praw należy skontaktować się z administratorem:{' '}
 								<a href='mailto:annawojtylo73@gmail.com' className='terms__text-link'>
 									annawojtylo73@gmail.com
@@ -159,6 +165,10 @@ const TermsAndConditions: React.FC = () => {
 									</a>
 								</li>
 							</ul>
+							<p className='terms__text terms__text--special'>
+								Podstawą przetwarzania danych przez mechanizm reCAPTCHA jest art. 6 ust. 1 lit. f RODO — prawnie
+								uzasadniony interes administratora polegający na ochronie strony przed nadużyciami i spamem.
+							</p>
 						</div>
 						<div className='terms__box'>
 							<h2 className='terms__title'>8. Pliki cookies</h2>

@@ -4,6 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useFormSubmits } from '../../../../shared/components/Forms/hooks/useFormSubmits.ts';
 import {
+	CheckboxElement,
 	FormInput,
 	FormRecaptchaV2,
 	FormSubmit,
@@ -12,6 +13,8 @@ import {
 import { contactFormInputs } from '../config/formConfig.ts';
 import { ContactFormModel } from '../../../../shared/components/Forms/models/forms.model.ts';
 import { contactSchema } from '../../../../shared/schemas/schemas.ts';
+
+import * as yup from 'yup';
 
 export const ContactForm: React.FC = () => {
 	const {
@@ -25,8 +28,9 @@ export const ContactForm: React.FC = () => {
 			email: '',
 			subject: '',
 			message: '',
+			privacyPolicy: false,
 		},
-		resolver: yupResolver(contactSchema),
+		resolver: yupResolver(contactSchema as yup.ObjectSchema<ContactFormModel>),
 	});
 
 	const refCaptcha = useRef<ReCAPTCHA>(null);
@@ -57,6 +61,12 @@ export const ContactForm: React.FC = () => {
 				{...register('message')}
 			/>
 			<FormRecaptchaV2 refCaptcha={refCaptcha} />
+			<CheckboxElement
+				label='Wyrażam zgodę na przetwarzanie moich danych zgodnie z obowiązującym '
+				inputName='privacyPolicy'
+				{...register('privacyPolicy')}
+				errorMessage={errors.privacyPolicy?.message}
+			/>
 			<FormSubmit />
 		</form>
 	);
