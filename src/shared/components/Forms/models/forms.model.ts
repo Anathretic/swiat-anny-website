@@ -8,13 +8,14 @@ type DefaultFormModel = {
 	phone: string;
 	size: Size;
 	message: string;
+	privacyPolicy: boolean;
 };
 
-export type ContactFormModel = Pick<DefaultFormModel, 'firstName' | 'email' | 'subject' | 'message'>;
+export type ContactFormModel = Pick<DefaultFormModel, 'firstName' | 'email' | 'subject' | 'message' | 'privacyPolicy'>;
 
 export type OrderFormModel = Pick<
 	DefaultFormModel,
-	'firstName' | 'secondName' | 'email' | 'phone' | 'size' | 'message'
+	'firstName' | 'secondName' | 'email' | 'phone' | 'size' | 'message' | 'privacyPolicy'
 >;
 
 export type OrderFormComponentModel = {

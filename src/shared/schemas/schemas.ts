@@ -26,6 +26,7 @@ export const contactSchema = yup.object({
 		.min(5, 'Rozpisz się..')
 		.max(2500, 'Nie więcej niż 500 słów..')
 		.required(errorMessage.requiredField),
+	privacyPolicy: yup.boolean().oneOf([true], 'Musisz wyrazić zgodę na politykę prywatności'),
 });
 
 export const orderSchema = yup

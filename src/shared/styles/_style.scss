@@ -722,6 +722,39 @@ body {
 
 	&__box {
 		padding: 1em;
+
+		&--checkbox {
+			width: 100%;
+
+			div {
+				display: flex;
+				justify-content: space-between;
+				align-items: start;
+				flex-direction: row;
+				width: 100%;
+			}
+
+			input[type='checkbox'] {
+				width: 18px;
+				height: 18px;
+			}
+
+			label {
+				padding: 0 0.75em 0 0;
+				font-size: 0.75em;
+				line-height: 1.6em;
+
+				a {
+					color: inherit;
+					text-underline-offset: 2px;
+					transition: color 0.3s;
+				}
+			}
+
+			&-error {
+				color: globals.$error-color;
+			}
+		}
 	}
 
 	&__recaptcha-box {

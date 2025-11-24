@@ -18,6 +18,12 @@ export type InputAndTextareaModel = Pick<DefaultInputModel, 'label' | 'inputName
 
 export type SelectModel = Pick<DefaultInputModel, 'label' | 'selectName' | 'selectedSize' | 'errorMessage'>;
 
+export interface CheckboxModel extends React.InputHTMLAttributes<HTMLInputElement> {
+	label: string;
+	inputName: string;
+	errorMessage: ErrorMessage;
+}
+
 export type ReCaptchaV2Model = {
 	refCaptcha: React.RefObject<ReCAPTCHA>;
 };

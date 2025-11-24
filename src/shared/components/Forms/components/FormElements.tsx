@@ -10,7 +10,13 @@ import {
 } from '../../../redux/sharedSlices/contactAndOrderFormSlice';
 import { resetSize } from '../../../redux/sharedSlices/paintingSizeSlice';
 import { scrollToTop } from '../../../utils/scrollToTop';
-import { InputAndTextareaModel, ReCaptchaV2Model, ReturnButtonModel, SelectModel } from '../models/components.model';
+import {
+	CheckboxModel,
+	InputAndTextareaModel,
+	ReCaptchaV2Model,
+	ReturnButtonModel,
+	SelectModel,
+} from '../models/components.model';
 import { FormLoader } from './FormLoader';
 
 export const FormInput: React.FC<InputAndTextareaModel> = React.forwardRef<HTMLInputElement, InputAndTextareaModel>(
@@ -70,6 +76,21 @@ export const SelectElement: React.FC<SelectModel> = React.forwardRef<HTMLSelectE
 					<option value='40cm x 30cm'>40cm x 30cm</option>
 				</select>
 				<p className='form__select-error'>{`${errorMessage === undefined ? '' : errorMessage}`}</p>
+			</div>
+		);
+	}
+);
+
+export const CheckboxElement: React.FC<CheckboxModel> = React.forwardRef<HTMLInputElement, CheckboxModel>(
+	({ label, inputName, errorMessage, ...props }, ref) => {
+		return (
+			<div className='form__box form__box--checkbox'>
+				<div>
+					<label className={`form__label ${errorMessage && 'form__box--checkbox-error'}`} htmlFor={inputName}>
+						{label} <Link to='/regulamin'>regulaminem.</Link>
+					</label>
+					<input className='form__input' type='checkbox' id={inputName} ref={ref} {...props} />
+				</div>
 			</div>
 		);
 	}
