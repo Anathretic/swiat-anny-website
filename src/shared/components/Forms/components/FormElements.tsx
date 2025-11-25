@@ -84,9 +84,9 @@ export const SelectElement: React.FC<SelectModel> = React.forwardRef<HTMLSelectE
 export const CheckboxElement: React.FC<CheckboxModel> = React.forwardRef<HTMLInputElement, CheckboxModel>(
 	({ label, inputName, errorMessage, ...props }, ref) => {
 		return (
-			<div className='form__box form__box--checkbox'>
+			<div className={`form__box form__box--checkbox ${errorMessage && 'form__box--checkbox-error'}`}>
 				<div>
-					<label className={`form__label ${errorMessage && 'form__box--checkbox-error'}`} htmlFor={inputName}>
+					<label className='form__label' htmlFor={inputName}>
 						{label} <Link to='/regulamin'>regulaminem.</Link>
 					</label>
 					<input className='form__input' type='checkbox' id={inputName} ref={ref} {...props} />

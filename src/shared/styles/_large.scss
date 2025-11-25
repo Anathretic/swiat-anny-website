@@ -194,8 +194,10 @@
 			}
 
 			&--checkbox-error {
-				a:hover {
-					color: globals.$error-color !important;
+				label {
+					a:hover {
+						color: globals.$error-color;
+					}
 				}
 			}
 		}

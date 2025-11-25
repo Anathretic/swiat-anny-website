@@ -741,18 +741,26 @@ body {
 
 			label {
 				padding: 0 0.75em 0 0;
+				color: globals.$white-color;
 				font-size: 0.75em;
 				line-height: 1.6em;
+				transition: color 0.3s;
 
 				a {
-					color: inherit;
+					color: globals.$white-color;
 					text-underline-offset: 2px;
 					transition: color 0.3s;
 				}
 			}
+		}
 
-			&-error {
+		&--checkbox-error {
+			label {
 				color: globals.$error-color;
+
+				a {
+					color: globals.$error-color;
+				}
 			}
 		}
 	}
