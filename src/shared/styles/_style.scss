@@ -781,9 +781,13 @@ body {
 	}
 
 	&__input,
+	&__textarea {
+		padding: 0.95em 0.75em;
+	}
+
+	&__input,
 	&__textarea,
 	&__select {
-		padding: 0.95em 3.25em 0.95em 0.75em;
 		width: 100%;
 		color: globals.$white-color;
 		background-color: transparent;
@@ -815,8 +819,7 @@ body {
 	}
 
 	&__select {
-		padding: 10px;
-		padding-right: 30px;
+		padding: 10px 30px 10px 10px;
 		font-size: 0.9em;
 
 		-moz-appearance: none;
